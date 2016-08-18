@@ -1,0 +1,6 @@
+/mnt/nvme0n1/data/broadout/HG02571_gatk_best_practices_8t_30s_2016-07-06_18-21-01/.exec3820458776454162323: fork: retry: No child processes
+/mnt/nvme0n1/data/broadout/HG02571_gatk_best_practices_8t_30s_2016-07-06_18-21-01/.exec3820458776454162323: fork: retry: No child processes
+/mnt/nvme0n1/data/broadout/HG02571_gatk_best_practices_8t_30s_2016-07-06_18-21-01/.exec3820458776454162323: fork: retry: No child processes
+/mnt/nvme0n1/data/broadout/HG02571_gatk_best_practices_8t_30s_2016-07-06_18-21-01/.exec3820458776454162323: fork: retry: No child processes
+Error occurred during initialization of VM
+java.lang.OutOfMemoryError: unable to create new native thread

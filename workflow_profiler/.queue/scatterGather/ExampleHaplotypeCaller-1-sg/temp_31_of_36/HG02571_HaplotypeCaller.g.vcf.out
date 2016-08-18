@@ -1,0 +1,15 @@
+ 'java'  '-Xmx4096m'  '-XX:+UseParallelOldGC'  '-XX:ParallelGCThreads=4'  '-XX:GCTimeLimit=50'  '-XX:GCHeapFreeLimit=10'  '-Djava.io.tmpdir=/mnt/nvme0n1/data/broadout/HG02571_gatk_best_practices_8t_30s_2016-07-06_18-21-01'  '-cp' '/mnt/nvme0n1/Broad_Ref_Pipeline_approved_package/Queue_Broad_BestPractices/Queue.jar'  'org.broadinstitute.gatk.engine.CommandLineGATK'  '-T' 'HaplotypeCaller'  '-I' '/mnt/nvme0n1/data/broadout/HG02571_gatk_best_practices_8t_30s_2016-07-06_18-21-01/HG02571_final.bam'  '-L' '/mnt/nvme0n1/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleHaplotypeCaller-1-sg/temp_31_of_36/scatter.intervals'  '-R' '/mnt/nvme0n1/Broad_Ref_Pipeline_approved_package/b37bundle/human_g1k_v37.fasta'  '-variant_index_type' 'LINEAR'  '-variant_index_parameter' '128000'  '-o' '/mnt/nvme0n1/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleHaplotypeCaller-1-sg/temp_31_of_36/HG02571_HaplotypeCaller.g.vcf'  '-ERC' 'GVCF' 
+java.lang.OutOfMemoryError: unable to create new native thread
+	at java.lang.Thread.start0(Native Method)
+	at java.lang.Thread.start(Thread.java:714)
+	at java.util.concurrent.ThreadPoolExecutor.addWorker(ThreadPoolExecutor.java:950)
+	at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1357)
+	at org.broadinstitute.gatk.queue.engine.shell.CMPShellJobRunner.start(CMPShellJobRunner.scala:96)
+	at org.broadinstitute.gatk.queue.engine.FunctionEdge.start(FunctionEdge.scala:84)
+	at org.broadinstitute.gatk.queue.engine.QGraph.runJobs(QGraph.scala:440)
+	at org.broadinstitute.gatk.queue.engine.QGraph.run(QGraph.scala:156)
+	at org.broadinstitute.gatk.queue.QCommandLine.execute(QCommandLine.scala:170)
+	at org.broadinstitute.gatk.utils.commandline.CommandLineProgram.start(CommandLineProgram.java:248)
+	at org.broadinstitute.gatk.utils.commandline.CommandLineProgram.start(CommandLineProgram.java:155)
+	at org.broadinstitute.gatk.queue.QCommandLine$.main(QCommandLine.scala:61)
+	at org.broadinstitute.gatk.queue.QCommandLine.main(QCommandLine.scala)

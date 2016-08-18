@@ -1,0 +1,54 @@
+INFO  20:06:12,302 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  20:06:12,304 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
+INFO  20:06:12,304 HelpFormatter - Copyright (c) 2010 The Broad Institute 
+INFO  20:06:12,304 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
+INFO  20:06:12,307 HelpFormatter - Program Args: -T PrintReads -I /mnt/nvme0n1/data/broadout/HG02571_gatk_best_practices_8t_30s_2016-07-06_18-21-01/HG02571_realign.bam -L /mnt/nvme0n1/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExamplePrintReads-1-sg/temp_06_of_36/scatter.intervals -R /mnt/nvme0n1/Broad_Ref_Pipeline_approved_package/b37bundle/human_g1k_v37.fasta -BQSR /mnt/nvme0n1/data/broadout/HG02571_gatk_best_practices_8t_30s_2016-07-06_18-21-01/HG02571_recal.grp -o /mnt/nvme0n1/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExamplePrintReads-1-sg/temp_06_of_36/HG02571_final.bam 
+INFO  20:06:12,321 HelpFormatter - Executing as bshifaw@application-1-1.hudson.intel.com on Linux 3.10.0-327.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_91-b14. 
+INFO  20:06:12,321 HelpFormatter - Date/Time: 2016/07/06 20:06:12 
+INFO  20:06:12,321 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  20:06:12,322 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  20:06:12,532 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  20:06:13,639 ContextCovariate - 		Context sizes: base substitution model 2, indel substitution model 3 
+INFO  20:06:13,899 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  20:06:13,919 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  20:06:14,007 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.09 
+INFO  20:06:14,087 IntervalUtils - Processing 171115067 bp from intervals 
+INFO  20:06:14,640 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  20:06:15,493 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  20:06:15,494 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  20:06:15,494 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  20:06:15,494 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  20:06:15,539 ReadShardBalancer$1 - Loading BAM index data 
+INFO  20:06:16,455 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  20:06:45,573 ProgressMeter -       6:2838964         0.0    30.0 s      49.7 w        1.7%    30.1 m      29.6 m 
+INFO  20:07:15,662 ProgressMeter -       6:6970147    100001.0    60.0 s      10.0 m        4.1%    24.5 m      23.5 m 
+INFO  20:07:45,695 ProgressMeter -      6:12163711    200002.0    90.0 s       7.5 m        7.1%    21.1 m      19.6 m 
+INFO  20:08:17,158 ProgressMeter -      6:17543434    300003.0     2.0 m       6.8 m       10.3%    19.7 m      17.7 m 
+INFO  20:08:47,159 ProgressMeter -      6:22287671    400006.0     2.5 m       6.3 m       13.0%    19.3 m      16.8 m 
+INFO  20:09:17,160 ProgressMeter -      6:26388420    500013.0     3.0 m       6.1 m       15.4%    19.6 m      16.5 m 
+INFO  20:09:47,161 ProgressMeter -      6:28499569    700020.0     3.5 m       5.0 m       16.7%    21.1 m      17.6 m 
+INFO  20:10:17,172 ProgressMeter -      6:30515171    800022.0     4.0 m       5.0 m       17.8%    22.5 m      18.5 m 
+INFO  20:10:47,172 ProgressMeter -      6:31170578   1000028.0     4.5 m       4.5 m       18.2%    24.8 m      20.3 m 
+INFO  20:11:17,173 ProgressMeter -      6:31842912   1200039.0     5.0 m       4.2 m       18.6%    27.0 m      21.9 m 
+INFO  20:11:47,174 ProgressMeter -      6:32169953   1300041.0     5.5 m       4.3 m       18.8%    29.3 m      23.8 m 
+INFO  20:12:17,175 ProgressMeter -      6:33359776   1500045.0     6.0 m       4.0 m       19.5%    30.9 m      24.8 m 
+INFO  20:12:47,176 ProgressMeter -      6:35259516   1700048.0     6.5 m       3.8 m       20.6%    31.6 m      25.1 m 
+INFO  20:13:17,570 ProgressMeter -      6:38864023   1900050.0     7.0 m       3.7 m       22.7%    30.9 m      23.9 m 
+INFO  20:13:47,571 ProgressMeter -      6:42933845   2100056.0     7.5 m       3.6 m       25.1%    30.0 m      22.5 m 
+INFO  20:14:17,572 ProgressMeter -      6:43594677   2300060.0     8.0 m       3.5 m       25.5%    31.5 m      23.5 m 
+INFO  20:14:47,573 ProgressMeter -      6:49928075   2500067.0     8.5 m       3.4 m       29.2%    29.2 m      20.7 m 
+INFO  20:15:27,574 ProgressMeter -      6:69348656   2800084.0     9.2 m       3.3 m       40.5%    22.7 m      13.5 m 
+INFO  20:15:57,628 ProgressMeter -      6:77372616   3000086.0     9.7 m       3.2 m       45.2%    21.5 m      11.8 m 
+INFO  20:16:27,981 ProgressMeter -      6:89977445   3200090.0    10.2 m       3.2 m       52.6%    19.4 m       9.2 m 
+INFO  20:16:57,982 ProgressMeter -     6:106634415   3400092.0    10.7 m       3.1 m       62.3%    17.2 m       6.5 m 
+INFO  20:17:27,986 ProgressMeter -     6:112392744   3700096.0    11.2 m       3.0 m       65.7%    17.1 m       5.9 m 
+INFO  20:18:08,314 ProgressMeter -     6:129920390   4000108.0    11.9 m       3.0 m       75.9%    15.6 m       3.8 m 
+INFO  20:18:39,582 ProgressMeter -     6:141515128   4300113.0    12.4 m       2.9 m       82.7%    15.0 m       2.6 m 
+INFO  20:19:09,583 ProgressMeter -     6:154568607   4700127.0    12.9 m       2.7 m       90.3%    14.3 m      82.0 s 
+INFO  20:19:39,584 ProgressMeter -     6:161066082   5100176.0    13.4 m       2.6 m       94.1%    14.2 m      50.0 s 
+INFO  20:19:53,411 Walker - [REDUCE RESULT] Traversal result is: org.broadinstitute.gatk.engine.io.stubs.SAMFileWriterStub@5b58129f 
+INFO  20:19:53,558 ProgressMeter -            done   5322360.0    13.6 m       2.6 m      100.0%    13.6 m       0.0 s 
+INFO  20:19:53,559 ProgressMeter - Total runtime 818.06 secs, 13.63 min, 0.23 hours 
+INFO  20:19:53,559 MicroScheduler - 0 reads were filtered out during the traversal out of approximately 5322360 total reads (0.00%) 
+INFO  20:19:53,559 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  20:19:53,559 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 

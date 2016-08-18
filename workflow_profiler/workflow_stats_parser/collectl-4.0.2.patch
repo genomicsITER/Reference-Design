@@ -1,0 +1,13 @@
+diff -rupN collectl-4.0.2/formatit.ph collectl-4.0.2-patch/formatit.ph
+--- collectl-4.0.2/formatit.ph	2015-05-27 15:02:55.000000000 +0200
++++ collectl-4.0.2-patch/formatit.ph	2015-09-11 12:30:19.000000000 +0200
+@@ -5413,7 +5413,8 @@ sub printPlot
+     {
+         # don't see how total can ever be 0, but let's be careful anyways
+         my $misses=$numaStat[$i]->{for}+$numaStat[$i]->{miss};
+-        my $hitrate=($misses) ? $numaStat[$i]->{hits}/($numaStat[$i]->{hits}+$misses)*100 : 100;
++        # my $hitrate=($misses) ? $numaStat[$i]->{hits}/($numaStat[$i]->{hits}+$misses)*100 : 100;
++        my $hitrate=($numaStat[$i]->{hits}+$misses) ? $numaStat[$i]->{hits}/($numaStat[$i]->{hits}+$misses)*100 : 100;
+ 
+ 	$numaPlot.=sprintf("$SEP%d$SEP%d$SEP%d$SEP%d$SEP%d$SEP%d$SEP%.2f",
+ 	                $numaMem[$i]->{used}, $numaMem[$i]->{free}, $numaMem[$i]->{slab},

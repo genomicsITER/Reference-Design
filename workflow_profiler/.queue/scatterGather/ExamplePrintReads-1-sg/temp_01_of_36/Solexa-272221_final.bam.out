@@ -1,0 +1,238 @@
+INFO  09:26:31,426 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  09:26:31,428 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
+INFO  09:26:31,428 HelpFormatter - Copyright (c) 2010 The Broad Institute 
+INFO  09:26:31,428 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
+INFO  09:26:31,431 HelpFormatter - Program Args: -T PrintReads -I /mnt/ssdbroad/output/Solexa-272221_gatk_best_practices_36t_30s_2016-02-11_11-59-19/Solexa-272221_realign.bam -L /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExamplePrintReads-1-sg/temp_01_of_36/scatter.intervals -R /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.fasta -BQSR /mnt/ssdbroad/output/Solexa-272221_gatk_best_practices_36t_30s_2016-02-11_11-59-19/Solexa-272221_recal.grp -o /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExamplePrintReads-1-sg/temp_01_of_36/Solexa-272221_final.bam 
+INFO  09:26:31,437 HelpFormatter - Executing as beris@dna on Linux 2.6.32-573.el6.x86_64 amd64; OpenJDK 64-Bit Server VM 1.7.0_79-mockbuild_2015_07_24_09_26-b00. 
+INFO  09:26:31,437 HelpFormatter - Date/Time: 2016/02/12 09:26:31 
+INFO  09:26:31,437 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  09:26:31,437 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  09:26:31,548 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  09:26:32,679 ContextCovariate - 		Context sizes: base substitution model 2, indel substitution model 3 
+INFO  09:26:32,787 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  09:26:32,802 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  09:26:32,876 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.07 
+INFO  09:26:32,908 IntervalUtils - Processing 249250621 bp from intervals 
+INFO  09:26:33,014 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  09:26:33,840 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  09:26:33,841 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  09:26:33,841 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  09:26:33,841 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  09:26:33,866 ReadShardBalancer$1 - Loading BAM index data 
+INFO  09:26:35,049 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  09:27:09,974 ProgressMeter -        1:238879         0.0    36.0 s      59.7 w        0.1%    10.4 h      10.4 h 
+INFO  09:27:40,048 ProgressMeter -        1:869355    200002.0    66.0 s       5.5 m        0.3%     5.3 h       5.2 h 
+INFO  09:28:10,403 ProgressMeter -       1:1406283    300006.0    96.0 s       5.4 m        0.6%     4.7 h       4.7 h 
+INFO  09:28:40,404 ProgressMeter -       1:2470064    600011.0     2.1 m       3.5 m        1.0%     3.5 h       3.5 h 
+INFO  09:29:10,542 ProgressMeter -       1:3267849    800014.0     2.6 m       3.3 m        1.3%     3.3 h       3.3 h 
+INFO  09:29:40,543 ProgressMeter -       1:4267506   1000016.0     3.1 m       3.1 m        1.7%     3.0 h       3.0 h 
+INFO  09:30:10,974 ProgressMeter -       1:5177633   1200018.0     3.6 m       3.0 m        2.1%     2.9 h       2.8 h 
+INFO  09:30:40,994 ProgressMeter -       1:6311319   1500021.0     4.1 m       2.7 m        2.5%     2.7 h       2.6 h 
+INFO  09:31:10,995 ProgressMeter -       1:7263524   1800024.0     4.6 m       2.6 m        2.9%     2.6 h       2.6 h 
+INFO  09:31:41,118 ProgressMeter -       1:8253990   2000026.0     5.1 m       2.6 m        3.3%     2.6 h       2.5 h 
+INFO  09:32:11,133 ProgressMeter -       1:9217930   2300029.0     5.6 m       2.4 m        3.7%     2.5 h       2.4 h 
+INFO  09:32:41,180 ProgressMeter -      1:10117411   2500031.0     6.1 m       2.4 m        4.1%     2.5 h       2.4 h 
+INFO  09:33:11,181 ProgressMeter -      1:11114537   2800036.0     6.6 m       2.4 m        4.5%     2.5 h       2.4 h 
+INFO  09:33:41,601 ProgressMeter -      1:12196955   3000038.0     7.1 m       2.4 m        4.9%     2.4 h       2.3 h 
+INFO  09:34:12,190 ProgressMeter -      1:13625425   3300042.0     7.6 m       2.3 m        5.5%     2.3 h       2.2 h 
+INFO  09:34:42,190 ProgressMeter -      1:14752542   3600046.0     8.1 m       2.3 m        5.9%     2.3 h       2.2 h 
+INFO  09:35:12,191 ProgressMeter -      1:15781669   3900050.0     8.6 m       2.2 m        6.3%     2.3 h       2.1 h 
+INFO  09:35:42,986 ProgressMeter -      1:16837379   4200054.0     9.2 m       2.2 m        6.8%     2.3 h       2.1 h 
+INFO  09:36:13,754 ProgressMeter -      1:17545194   4400057.0     9.7 m       2.2 m        7.0%     2.3 h       2.1 h 
+INFO  09:36:53,755 ProgressMeter -      1:18994566   4800065.0    10.3 m       2.2 m        7.6%     2.3 h       2.1 h 
+INFO  09:37:33,756 ProgressMeter -      1:20387762   5200069.0    11.0 m       2.1 m        8.2%     2.2 h       2.1 h 
+INFO  09:38:04,063 ProgressMeter -      1:21465411   5500073.0    11.5 m       2.1 m        8.6%     2.2 h       2.0 h 
+INFO  09:38:34,064 ProgressMeter -      1:22371115   5700075.0    12.0 m       2.1 m        9.0%     2.2 h       2.0 h 
+INFO  09:39:04,065 ProgressMeter -      1:23457713   6000080.0    12.5 m       2.1 m        9.4%     2.2 h       2.0 h 
+INFO  09:39:34,066 ProgressMeter -      1:24547625   6200083.0    13.0 m       2.1 m        9.8%     2.2 h     119.0 m 
+INFO  09:40:04,067 ProgressMeter -      1:25588257   6500086.0    13.5 m       2.1 m       10.3%     2.2 h     118.0 m 
+INFO  09:40:34,126 ProgressMeter -      1:26692437   6800090.0    14.0 m       2.1 m       10.7%     2.2 h     116.7 m 
+INFO  09:41:05,504 ProgressMeter -      1:27742841   7000092.0    14.5 m       2.1 m       11.1%     2.2 h     115.9 m 
+INFO  09:41:35,513 ProgressMeter -      1:28802748   7300100.0    15.0 m       2.1 m       11.6%     2.2 h     114.9 m 
+INFO  09:42:05,514 ProgressMeter -      1:29875469   7600104.0    15.5 m       2.0 m       12.0%     2.2 h     113.9 m 
+INFO  09:42:35,515 ProgressMeter -      1:31135559   7900108.0    16.0 m       2.0 m       12.5%     2.1 h     112.2 m 
+INFO  09:43:05,516 ProgressMeter -      1:32099726   8100110.0    16.5 m       2.0 m       12.9%     2.1 h     111.7 m 
+INFO  09:43:45,517 ProgressMeter -      1:33495485   8500115.0    17.2 m       2.0 m       13.4%     2.1 h     110.7 m 
+INFO  09:44:15,518 ProgressMeter -      1:34544993   8800119.0    17.7 m     120.0 s       13.9%     2.1 h     109.9 m 
+INFO  09:44:45,519 ProgressMeter -      1:35621370   9100122.0    18.2 m     119.0 s       14.3%     2.1 h     109.0 m 
+INFO  09:45:15,771 ProgressMeter -      1:36618558   9300124.0    18.7 m     120.0 s       14.7%     2.1 h     108.5 m 
+INFO  09:45:45,772 ProgressMeter -      1:37685940   9600128.0    19.2 m     119.0 s       15.1%     2.1 h     107.7 m 
+INFO  09:46:15,773 ProgressMeter -      1:38762778   9900131.0    19.7 m     119.0 s       15.6%     2.1 h     106.9 m 
+INFO  09:46:45,774 ProgressMeter -      1:39834651   1.0200134E7    20.2 m     118.0 s       16.0%     2.1 h     106.1 m 
+INFO  09:47:15,775 ProgressMeter -      1:40854185   1.0500138E7    20.7 m     118.0 s       16.4%     2.1 h     105.5 m 
+INFO  09:47:45,776 ProgressMeter -      1:41951007   1.070014E7    21.2 m     118.0 s       16.8%     2.1 h     104.7 m 
+INFO  09:48:15,777 ProgressMeter -      1:42951142   1.1000143E7    21.7 m     118.0 s       17.2%     2.1 h     104.1 m 
+INFO  09:48:45,778 ProgressMeter -      1:44074085   1.1300146E7    22.2 m     117.0 s       17.7%     2.1 h     103.3 m 
+INFO  09:49:25,779 ProgressMeter -      1:45561810   1.170015E7    22.9 m     117.0 s       18.3%     2.1 h     102.2 m 
+INFO  09:49:55,780 ProgressMeter -      1:46646358   1.2000155E7    23.4 m     116.0 s       18.7%     2.1 h     101.4 m 
+INFO  09:50:35,781 ProgressMeter -      1:48041799   1.2400159E7    24.0 m     116.0 s       19.3%     2.1 h     100.6 m 
+INFO  09:51:06,350 ProgressMeter -      1:49122134   1.2600161E7    24.5 m     116.0 s       19.7%     2.1 h     100.0 m 
+INFO  09:51:36,351 ProgressMeter -      1:50097322   1.2900164E7    25.0 m     116.0 s       20.1%     2.1 h      99.5 m 
+INFO  09:52:06,352 ProgressMeter -      1:51087866   1.3200169E7    25.5 m     116.0 s       20.5%     2.1 h      99.0 m 
+INFO  09:52:36,353 ProgressMeter -      1:52123416   1.3500172E7    26.0 m     115.0 s       20.9%     2.1 h      98.5 m 
+INFO  09:53:06,412 ProgressMeter -      1:53149852   1.3800175E7    26.5 m     115.0 s       21.3%     2.1 h      97.9 m 
+INFO  09:53:36,802 ProgressMeter -      1:54181006   1.4000177E7    27.0 m     115.0 s       21.7%     2.1 h      97.3 m 
+INFO  09:54:06,803 ProgressMeter -      1:55204628   1.430018E7    27.5 m     115.0 s       22.1%     2.1 h      96.8 m 
+INFO  09:54:38,208 ProgressMeter -      1:56135355   1.4600183E7    28.1 m     115.0 s       22.5%     2.1 h      96.6 m 
+INFO  09:55:08,209 ProgressMeter -      1:57195149   1.4800185E7    28.6 m     115.0 s       22.9%     2.1 h      95.9 m 
+INFO  09:55:38,210 ProgressMeter -      1:58187200   1.5100188E7    29.1 m     115.0 s       23.3%     2.1 h      95.4 m 
+INFO  09:56:18,211 ProgressMeter -      1:59486963   1.5500192E7    29.7 m     115.0 s       23.9%     2.1 h      94.8 m 
+INFO  09:56:48,503 ProgressMeter -      1:60466027   1.5700194E7    30.2 m     115.0 s       24.3%     2.1 h      94.4 m 
+INFO  09:57:18,504 ProgressMeter -      1:61490826   1.6000197E7    30.7 m     115.0 s       24.7%     2.1 h      93.8 m 
+INFO  09:57:48,505 ProgressMeter -      1:62553193   1.6300201E7    31.2 m     115.0 s       25.1%     2.1 h      93.2 m 
+INFO  09:58:18,507 ProgressMeter -      1:63643266   1.6600204E7    31.7 m     114.0 s       25.5%     2.1 h      92.5 m 
+INFO  09:58:48,508 ProgressMeter -      1:64705421   1.6900208E7    32.2 m     114.0 s       26.0%     2.1 h      91.9 m 
+INFO  09:59:18,509 ProgressMeter -      1:65670946   1.7200212E7    32.7 m     114.0 s       26.3%     2.1 h      91.5 m 
+INFO  09:59:48,510 ProgressMeter -      1:66665513   1.7500216E7    33.2 m     113.0 s       26.7%     2.1 h      91.0 m 
+INFO  10:00:20,005 ProgressMeter -      1:67648653   1.7800219E7    33.8 m     113.0 s       27.1%     2.1 h      90.6 m 
+INFO  10:00:50,006 ProgressMeter -      1:68728573   1.8000222E7    34.3 m     114.0 s       27.6%     2.1 h      90.0 m 
+INFO  10:01:20,007 ProgressMeter -      1:69626045   1.8300225E7    34.8 m     113.0 s       27.9%     2.1 h      89.7 m 
+INFO  10:01:50,008 ProgressMeter -      1:70642771   1.8600228E7    35.3 m     113.0 s       28.3%     2.1 h      89.2 m 
+INFO  10:02:20,009 ProgressMeter -      1:71636322   1.8900231E7    35.8 m     113.0 s       28.7%     2.1 h      88.7 m 
+INFO  10:02:50,764 ProgressMeter -      1:72653106   1.9200234E7    36.3 m     113.0 s       29.1%     2.1 h      88.2 m 
+INFO  10:03:21,935 ProgressMeter -      1:73675738   1.9500237E7    36.8 m     113.0 s       29.6%     2.1 h      87.7 m 
+INFO  10:03:52,201 ProgressMeter -      1:74727973   1.970024E7    37.3 m     113.0 s       30.0%     2.1 h      87.1 m 
+INFO  10:04:22,208 ProgressMeter -      1:75658847   2.0000243E7    37.8 m     113.0 s       30.4%     2.1 h      86.7 m 
+INFO  10:04:52,209 ProgressMeter -      1:76573547   2.0300248E7    38.3 m     113.0 s       30.7%     2.1 h      86.4 m 
+INFO  10:05:23,942 ProgressMeter -      1:77583699   2.0600252E7    38.8 m     113.0 s       31.1%     2.1 h      85.9 m 
+INFO  10:05:53,943 ProgressMeter -      1:78610052   2.0800255E7    39.3 m     113.0 s       31.5%     2.1 h      85.4 m 
+INFO  10:06:23,944 ProgressMeter -      1:79642002   2.1100258E7    39.8 m     113.0 s       32.0%     2.1 h      84.8 m 
+INFO  10:06:53,945 ProgressMeter -      1:80622098   2.1400269E7    40.3 m     113.0 s       32.3%     2.1 h      84.4 m 
+INFO  10:07:23,967 ProgressMeter -      1:81666033   2.1700272E7    40.8 m     112.0 s       32.8%     2.1 h      83.8 m 
+INFO  10:07:53,968 ProgressMeter -      1:82752981   2.2000276E7    41.3 m     112.0 s       33.2%     2.1 h      83.2 m 
+INFO  10:08:23,969 ProgressMeter -      1:83842556   2.2300279E7    41.8 m     112.0 s       33.6%     2.1 h      82.5 m 
+INFO  10:08:53,970 ProgressMeter -      1:84918116   2.2600286E7    42.3 m     112.0 s       34.1%     2.1 h      81.9 m 
+INFO  10:09:23,971 ProgressMeter -      1:85990677   2.2900289E7    42.8 m     112.0 s       34.5%     2.1 h      81.3 m 
+INFO  10:09:53,972 ProgressMeter -      1:87013342   2.3200293E7    43.3 m     112.0 s       34.9%     2.1 h      80.8 m 
+INFO  10:10:23,973 ProgressMeter -      1:88086810   2.3500298E7    43.8 m     111.0 s       35.3%     2.1 h      80.2 m 
+INFO  10:10:53,974 ProgressMeter -      1:89145192   2.3800302E7    44.3 m     111.0 s       35.8%     2.1 h      79.6 m 
+INFO  10:11:23,975 ProgressMeter -      1:90196206   2.4100307E7    44.8 m     111.0 s       36.2%     2.1 h      79.1 m 
+INFO  10:11:53,976 ProgressMeter -      1:91275890   2.440031E7    45.3 m     111.0 s       36.6%     2.1 h      78.5 m 
+INFO  10:12:23,996 ProgressMeter -      1:92352609   2.4700314E7    45.8 m     111.0 s       37.1%     2.1 h      77.9 m 
+INFO  10:12:53,997 ProgressMeter -      1:93478886   2.5000319E7    46.3 m     111.0 s       37.5%     2.1 h      77.2 m 
+INFO  10:13:24,016 ProgressMeter -      1:94614170   2.5300324E7    46.8 m     111.0 s       38.0%     2.1 h      76.5 m 
+INFO  10:13:54,017 ProgressMeter -      1:95713503   2.5600327E7    47.3 m     110.0 s       38.4%     2.1 h      75.9 m 
+INFO  10:14:24,018 ProgressMeter -      1:96820254   2.5900346E7    47.8 m     110.0 s       38.8%     2.1 h      75.3 m 
+INFO  10:14:54,019 ProgressMeter -      1:97928555   2.6200349E7    48.3 m     110.0 s       39.3%     2.1 h      74.7 m 
+INFO  10:15:24,020 ProgressMeter -      1:98988263   2.6500353E7    48.8 m     110.0 s       39.7%     2.0 h      74.1 m 
+INFO  10:15:54,021 ProgressMeter -     1:100077388   2.6900361E7    49.3 m     110.0 s       40.2%     2.0 h      73.5 m 
+INFO  10:16:34,022 ProgressMeter -     1:101528269   2.7300366E7    50.0 m     109.0 s       40.7%     2.0 h      72.7 m 
+INFO  10:17:04,023 ProgressMeter -     1:102608604   2.7600371E7    50.5 m     109.0 s       41.2%     2.0 h      72.2 m 
+INFO  10:17:34,024 ProgressMeter -     1:103682556   2.7900376E7    51.0 m     109.0 s       41.6%     2.0 h      71.6 m 
+INFO  10:18:04,025 ProgressMeter -     1:104742442   2.8200379E7    51.5 m     109.0 s       42.0%     2.0 h      71.1 m 
+INFO  10:18:34,026 ProgressMeter -     1:105854665   2.8500383E7    52.0 m     109.0 s       42.5%     2.0 h      70.4 m 
+INFO  10:19:04,027 ProgressMeter -     1:106868724   2.8800386E7    52.5 m     109.0 s       42.9%     2.0 h      69.9 m 
+INFO  10:19:34,028 ProgressMeter -     1:107947454   2.9100389E7    53.0 m     109.0 s       43.3%     2.0 h      69.4 m 
+INFO  10:20:04,029 ProgressMeter -     1:109043848   2.9400393E7    53.5 m     109.0 s       43.7%     2.0 h      68.8 m 
+INFO  10:20:34,030 ProgressMeter -     1:110078050   2.9700397E7    54.0 m     109.0 s       44.2%     2.0 h      68.3 m 
+INFO  10:21:14,031 ProgressMeter -     1:111538765   3.0100403E7    54.7 m     108.0 s       44.7%     2.0 h      67.5 m 
+INFO  10:21:44,032 ProgressMeter -     1:112579441   3.0400406E7    55.2 m     108.0 s       45.2%     2.0 h      67.0 m 
+INFO  10:22:14,041 ProgressMeter -     1:113686267   3.070041E7    55.7 m     108.0 s       45.6%     2.0 h      66.4 m 
+INFO  10:22:44,045 ProgressMeter -     1:114741231   3.1000414E7    56.2 m     108.0 s       46.0%     2.0 h      65.8 m 
+INFO  10:23:14,046 ProgressMeter -     1:115768404   3.1200416E7    56.7 m     108.0 s       46.4%     2.0 h      65.3 m 
+INFO  10:23:44,047 ProgressMeter -     1:116893363   3.1600421E7    57.2 m     108.0 s       46.9%     2.0 h      64.7 m 
+INFO  10:24:14,624 ProgressMeter -     1:117984012   3.1900424E7    57.7 m     108.0 s       47.3%     2.0 h      64.2 m 
+INFO  10:24:46,675 ProgressMeter -     1:119085301   3.2200428E7    58.2 m     108.0 s       47.8%     2.0 h      63.6 m 
+INFO  10:25:16,676 ProgressMeter -     1:120177109   3.2500432E7    58.7 m     108.0 s       48.2%     2.0 h      63.0 m 
+INFO  10:25:46,677 ProgressMeter -     1:121234019   3.2800435E7    59.2 m     108.0 s       48.6%     2.0 h      62.5 m 
+INFO  10:26:17,949 ProgressMeter -     1:121484205   3.3100486E7    59.7 m     108.0 s       48.7%     2.0 h      62.8 m 
+INFO  10:26:47,950 ProgressMeter -     1:121484653   3.3401379E7    60.2 m     108.0 s       48.7%     2.1 h      63.3 m 
+INFO  10:27:17,951 ProgressMeter -     1:121484839   3.3702215E7    60.7 m     108.0 s       48.7%     2.1 h      63.9 m 
+INFO  10:27:57,952 ProgressMeter -     1:121485153   3.4203689E7    61.4 m     107.0 s       48.7%     2.1 h      64.6 m 
+INFO  10:28:37,953 ProgressMeter -     1:121485228   3.4604411E7    62.1 m     107.0 s       48.7%     2.1 h      65.3 m 
+INFO  10:29:07,954 ProgressMeter -     1:121485269   3.5006139E7    62.6 m     107.0 s       48.7%     2.1 h      65.8 m 
+INFO  10:29:37,955 ProgressMeter -     1:121485316   3.5307201E7    63.1 m     107.0 s       48.7%     2.2 h      66.3 m 
+INFO  10:30:07,956 ProgressMeter -     1:121485366   3.5608151E7    63.6 m     107.0 s       48.7%     2.2 h      66.9 m 
+INFO  10:30:37,957 ProgressMeter -     1:121485405   3.5908353E7    64.1 m     107.0 s       48.7%     2.2 h      67.4 m 
+INFO  10:31:07,972 ProgressMeter -     1:121485438   3.6310442E7    64.6 m     106.0 s       48.7%     2.2 h      67.9 m 
+INFO  10:31:37,973 ProgressMeter -     1:142568108   3.6611013E7    65.1 m     106.0 s       57.2%   113.8 m      48.7 m 
+INFO  10:32:07,974 ProgressMeter -     1:142952728   3.6911018E7    65.6 m     106.0 s       57.4%   114.3 m      48.8 m 
+INFO  10:32:37,975 ProgressMeter -     1:144008089   3.7211023E7    66.1 m     106.0 s       57.8%   114.3 m      48.3 m 
+INFO  10:33:07,976 ProgressMeter -     1:145056563   3.7511026E7    66.6 m     106.0 s       58.2%   114.4 m      47.8 m 
+INFO  10:33:37,977 ProgressMeter -     1:145701977   3.7911031E7    67.1 m     106.0 s       58.5%   114.7 m      47.7 m 
+INFO  10:34:07,979 ProgressMeter -     1:147153175   3.8211034E7    67.6 m     106.0 s       59.0%   114.4 m      46.9 m 
+INFO  10:34:37,980 ProgressMeter -     1:148629924   3.8511037E7    68.1 m     106.0 s       59.6%   114.1 m      46.1 m 
+INFO  10:35:07,981 ProgressMeter -     1:149451365   3.8811044E7    68.6 m     106.0 s       60.0%   114.4 m      45.8 m 
+INFO  10:35:47,982 ProgressMeter -     1:151208347   3.931105E7    69.2 m     105.0 s       60.7%   114.1 m      44.9 m 
+INFO  10:36:27,983 ProgressMeter -     1:152760328   3.9711056E7    69.9 m     105.0 s       61.3%   114.1 m      44.2 m 
+INFO  10:37:07,984 ProgressMeter -     1:154306685   4.0111061E7    70.6 m     105.0 s       61.9%   114.0 m      43.4 m 
+INFO  10:37:37,985 ProgressMeter -     1:155550731   4.0411067E7    71.1 m     105.0 s       62.4%   113.9 m      42.8 m 
+INFO  10:38:07,986 ProgressMeter -     1:156763090   4.0811072E7    71.6 m     105.0 s       62.9%   113.8 m      42.2 m 
+INFO  10:38:37,987 ProgressMeter -     1:157958336   4.1111076E7    72.1 m     105.0 s       63.4%   113.7 m      41.7 m 
+INFO  10:39:07,988 ProgressMeter -     1:159148806   4.1411079E7    72.6 m     105.0 s       63.9%   113.7 m      41.1 m 
+INFO  10:39:37,989 ProgressMeter -     1:160315507   4.1711082E7    73.1 m     105.0 s       64.3%   113.6 m      40.5 m 
+INFO  10:40:07,991 ProgressMeter -     1:161437598   4.2111088E7    73.6 m     104.0 s       64.8%   113.6 m      40.0 m 
+INFO  10:40:38,072 ProgressMeter -     1:162508044   4.2411092E7    74.1 m     104.0 s       65.2%   113.6 m      39.5 m 
+INFO  10:41:08,073 ProgressMeter -     1:163731734   4.2711096E7    74.6 m     104.0 s       65.7%   113.5 m      38.9 m 
+INFO  10:41:38,074 ProgressMeter -     1:164910106   4.30111E7    75.1 m     104.0 s       66.2%   113.5 m      38.4 m 
+INFO  10:42:08,082 ProgressMeter -     1:166082068   4.3411104E7    75.6 m     104.0 s       66.6%   113.4 m      37.8 m 
+INFO  10:42:38,083 ProgressMeter -     1:167327974   4.3711108E7    76.1 m     104.0 s       67.1%   113.3 m      37.2 m 
+INFO  10:43:08,085 ProgressMeter -     1:168560903   4.4011111E7    76.6 m     104.0 s       67.6%   113.2 m      36.7 m 
+INFO  10:43:38,087 ProgressMeter -     1:169761325   4.4411116E7    77.1 m     104.0 s       68.1%   113.2 m      36.1 m 
+INFO  10:44:08,088 ProgressMeter -     1:170939498   4.4711119E7    77.6 m     104.0 s       68.6%   113.1 m      35.5 m 
+INFO  10:44:38,089 ProgressMeter -     1:172084276   4.5011122E7    78.1 m     104.0 s       69.0%   113.1 m      35.0 m 
+INFO  10:45:08,710 ProgressMeter -     1:173195578   4.5411127E7    78.6 m     103.0 s       69.5%   113.1 m      34.5 m 
+INFO  10:45:38,711 ProgressMeter -     1:174360721   4.5711131E7    79.1 m     103.0 s       70.0%   113.0 m      34.0 m 
+INFO  10:46:08,713 ProgressMeter -     1:175599160   4.6011134E7    79.6 m     103.0 s       70.5%   112.9 m      33.4 m 
+INFO  10:46:38,714 ProgressMeter -     1:176846962   4.6411139E7    80.1 m     103.0 s       71.0%   112.8 m      32.8 m 
+INFO  10:47:08,715 ProgressMeter -     1:178185105   4.6711142E7    80.6 m     103.0 s       71.5%   112.7 m      32.1 m 
+INFO  10:47:38,716 ProgressMeter -     1:179471044   4.7111146E7    81.1 m     103.0 s       72.0%   112.6 m      31.5 m 
+INFO  10:48:08,790 ProgressMeter -     1:180794431   4.7511153E7    81.6 m     103.0 s       72.5%   112.5 m      30.9 m 
+INFO  10:48:38,791 ProgressMeter -     1:182154300   4.7811157E7    82.1 m     103.0 s       73.1%   112.3 m      30.2 m 
+INFO  10:49:08,792 ProgressMeter -     1:183329389   4.8211162E7    82.6 m     102.0 s       73.6%   112.3 m      29.7 m 
+INFO  10:49:38,800 ProgressMeter -     1:184490486   4.8511167E7    83.1 m     102.0 s       74.0%   112.2 m      29.2 m 
+INFO  10:50:08,801 ProgressMeter -     1:185561365   4.881117E7    83.6 m     102.0 s       74.4%   112.2 m      28.7 m 
+INFO  10:50:38,802 ProgressMeter -     1:186785804   4.9111174E7    84.1 m     102.0 s       74.9%   112.2 m      28.1 m 
+INFO  10:51:08,803 ProgressMeter -     1:187982610   4.9511182E7    84.6 m     102.0 s       75.4%   112.1 m      27.6 m 
+INFO  10:51:38,805 ProgressMeter -     1:189230457   4.9811187E7    85.1 m     102.0 s       75.9%   112.0 m      27.0 m 
+INFO  10:52:08,806 ProgressMeter -     1:190481931   5.0211192E7    85.6 m     102.0 s       76.4%   112.0 m      26.4 m 
+INFO  10:52:38,807 ProgressMeter -     1:191711641   5.0511196E7    86.1 m     102.0 s       76.9%   111.9 m      25.8 m 
+INFO  10:53:08,808 ProgressMeter -     1:192927851   5.0911202E7    86.6 m     102.0 s       77.4%   111.8 m      25.3 m 
+INFO  10:53:38,810 ProgressMeter -     1:194096223   5.1311207E7    87.1 m     101.0 s       77.9%   111.8 m      24.7 m 
+INFO  10:54:08,811 ProgressMeter -     1:195357212   5.1611212E7    87.6 m     101.0 s       78.4%   111.7 m      24.2 m 
+INFO  10:54:38,812 ProgressMeter -     1:196565380   5.2011221E7    88.1 m     101.0 s       78.9%   111.7 m      23.6 m 
+INFO  10:55:08,813 ProgressMeter -     1:197835298   5.2311225E7    88.6 m     101.0 s       79.4%   111.6 m      23.0 m 
+INFO  10:55:38,876 ProgressMeter -     1:199035084   5.271123E7    89.1 m     101.0 s       79.9%   111.6 m      22.5 m 
+INFO  10:56:08,877 ProgressMeter -     1:200316567   5.3011234E7    89.6 m     101.0 s       80.4%   111.5 m      21.9 m 
+INFO  10:56:38,878 ProgressMeter -     1:201627172   5.3411242E7    90.1 m     101.0 s       80.9%   111.4 m      21.3 m 
+INFO  10:57:08,879 ProgressMeter -     1:202940867   5.3711245E7    90.6 m     101.0 s       81.4%   111.3 m      20.7 m 
+INFO  10:57:38,880 ProgressMeter -     1:204314277   5.4111249E7    91.1 m     100.0 s       82.0%   111.1 m      20.0 m 
+INFO  10:58:08,902 ProgressMeter -     1:205703800   5.4511255E7    91.6 m     100.0 s       82.5%   111.0 m      19.4 m 
+INFO  10:58:38,903 ProgressMeter -     1:207278604   5.481126E7    92.1 m     100.0 s       83.2%   110.7 m      18.6 m 
+INFO  10:59:08,917 ProgressMeter -     1:208583375   5.5211267E7    92.6 m     100.0 s       83.7%   110.6 m      18.1 m 
+INFO  10:59:38,918 ProgressMeter -     1:209934472   5.551127E7    93.1 m     100.0 s       84.2%   110.5 m      17.4 m 
+INFO  11:00:09,053 ProgressMeter -     1:211186806   5.5911274E7    93.6 m     100.0 s       84.7%   110.5 m      16.9 m 
+INFO  11:00:39,054 ProgressMeter -     1:212571884   5.631128E7    94.1 m     100.0 s       85.3%   110.3 m      16.2 m 
+INFO  11:01:09,056 ProgressMeter -     1:213944482   5.6611283E7    94.6 m     100.0 s       85.8%   110.2 m      15.6 m 
+INFO  11:01:39,057 ProgressMeter -     1:215266258   5.7011288E7    95.1 m     100.0 s       86.4%   110.1 m      15.0 m 
+INFO  11:02:09,058 ProgressMeter -     1:216538086   5.7411292E7    95.6 m      99.0 s       86.9%   110.0 m      14.4 m 
+INFO  11:02:39,060 ProgressMeter -     1:217895140   5.7711295E7    96.1 m      99.0 s       87.4%   109.9 m      13.8 m 
+INFO  11:03:09,061 ProgressMeter -     1:219256607   5.81113E7    96.6 m      99.0 s       88.0%   109.8 m      13.2 m 
+INFO  11:03:39,193 ProgressMeter -     1:220581940   5.8511305E7    97.1 m      99.0 s       88.5%   109.7 m      12.6 m 
+INFO  11:04:09,195 ProgressMeter -     1:221918071   5.8911316E7    97.6 m      99.0 s       89.0%   109.6 m      12.0 m 
+INFO  11:04:39,196 ProgressMeter -     1:223249215   5.921132E7    98.1 m      99.0 s       89.6%   109.5 m      11.4 m 
+INFO  11:05:09,197 ProgressMeter -     1:224601537   5.9611327E7    98.6 m      99.0 s       90.1%   109.4 m      10.8 m 
+INFO  11:05:39,275 ProgressMeter -     1:225924205   6.0011333E7    99.1 m      99.0 s       90.6%   109.3 m      10.2 m 
+INFO  11:06:09,276 ProgressMeter -     1:227333395   6.0411339E7    99.6 m      98.0 s       91.2%   109.2 m       9.6 m 
+INFO  11:06:39,277 ProgressMeter -     1:228745531   6.0711343E7   100.1 m      98.0 s       91.8%   109.1 m       9.0 m 
+INFO  11:07:09,278 ProgressMeter -     1:230072776   6.1111347E7   100.6 m      98.0 s       92.3%   109.0 m       8.4 m 
+INFO  11:07:39,279 ProgressMeter -     1:231439392   6.1511351E7   101.1 m      98.0 s       92.9%   108.9 m       7.8 m 
+INFO  11:08:09,280 ProgressMeter -     1:232846008   6.1811355E7   101.6 m      98.0 s       93.4%   108.7 m       7.2 m 
+INFO  11:08:39,281 ProgressMeter -     1:234191460   6.221136E7   102.1 m      98.0 s       94.0%   108.6 m       6.6 m 
+INFO  11:09:09,403 ProgressMeter -     1:235549593   6.2611366E7   102.6 m      98.0 s       94.5%   108.6 m       6.0 m 
+INFO  11:09:39,404 ProgressMeter -     1:236921198   6.3011371E7   103.1 m      98.0 s       95.1%   108.4 m       5.4 m 
+INFO  11:10:09,406 ProgressMeter -     1:238265496   6.3311374E7   103.6 m      98.0 s       95.6%   108.4 m       4.8 m 
+INFO  11:10:39,407 ProgressMeter -     1:239623169   6.3711378E7   104.1 m      98.0 s       96.1%   108.3 m       4.2 m 
+INFO  11:11:09,408 ProgressMeter -     1:241008360   6.4111383E7   104.6 m      97.0 s       96.7%   108.2 m       3.6 m 
+INFO  11:11:39,409 ProgressMeter -     1:242302405   6.4411388E7   105.1 m      97.0 s       97.2%   108.1 m       3.0 m 
+INFO  11:12:09,833 ProgressMeter -     1:243601391   6.4811392E7   105.6 m      97.0 s       97.7%   108.0 m       2.4 m 
+INFO  11:12:39,834 ProgressMeter -     1:244938708   6.5211399E7   106.1 m      97.0 s       98.3%   108.0 m     112.0 s 
+INFO  11:13:09,835 ProgressMeter -     1:246289653   6.5511403E7   106.6 m      97.0 s       98.8%   107.9 m      76.0 s 
+INFO  11:13:39,836 ProgressMeter -     1:247671698   6.591141E7   107.1 m      97.0 s       99.4%   107.8 m      40.0 s 
+INFO  11:14:09,838 ProgressMeter -     1:249131484   6.6311415E7   107.6 m      97.0 s      100.0%   107.6 m       3.0 s 
+INFO  11:14:12,457 Walker - [REDUCE RESULT] Traversal result is: org.broadinstitute.gatk.engine.io.stubs.SAMFileWriterStub@1f7d19f2 
+INFO  11:14:12,614 ProgressMeter -            done   6.635327E7   107.6 m      97.0 s      100.0%   107.6 m       0.0 s 
+INFO  11:14:12,614 ProgressMeter - Total runtime 6458.77 secs, 107.65 min, 1.79 hours 
+INFO  11:14:12,615 MicroScheduler - 0 reads were filtered out during the traversal out of approximately 66353270 total reads (0.00%) 
+INFO  11:14:12,615 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  11:14:12,616 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
