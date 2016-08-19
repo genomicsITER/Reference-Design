@@ -1,0 +1,179 @@
+INFO  03:49:11,926 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  03:49:11,928 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
+INFO  03:49:11,929 HelpFormatter - Copyright (c) 2010 The Broad Institute 
+INFO  03:49:11,929 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
+INFO  03:49:11,932 HelpFormatter - Program Args: -T IndelRealigner -I /mnt/ssdbroad/output/Solexa-272221_gatk_best_practices_36t_30s_2016-02-11_11-59-19/Solexa-272221_dupRem.bam -L /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleIndelRealigner-1-sg/temp_36_of_36/scatter.intervals -L unmapped -R /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.fasta -known /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.known_indels.vcf -targetIntervals /mnt/ssdbroad/output/Solexa-272221_gatk_best_practices_36t_30s_2016-02-11_11-59-19/Solexa-272221_realn.intervals -o /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleIndelRealigner-1-sg/temp_36_of_36/Solexa-272221_realign.bam -filterNoBases 
+INFO  03:49:11,958 HelpFormatter - Executing as beris@dna on Linux 2.6.32-573.el6.x86_64 amd64; OpenJDK 64-Bit Server VM 1.7.0_79-mockbuild_2015_07_24_09_26-b00. 
+INFO  03:49:11,959 HelpFormatter - Date/Time: 2016/02/12 03:49:11 
+INFO  03:49:11,959 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  03:49:11,959 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  03:49:12,099 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  03:49:12,358 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  03:49:12,377 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  03:49:12,434 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.06 
+INFO  03:49:13,058 IntervalUtils - Processing 6010812 bp from intervals 
+INFO  03:49:13,402 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  03:49:13,667 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  03:49:13,668 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  03:49:13,668 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  03:49:13,669 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  03:49:32,061 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:49:32,140 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:49:35,036 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:49:36,314 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:49:43,706 ProgressMeter - GL000197.1:27759         0.0    30.0 s      49.7 w        0.5%   108.3 m     107.8 m 
+INFO  03:49:43,786 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:49:43,788 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:49:56,282 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:49:56,284 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:49:58,657 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:49:58,659 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:50:01,262 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:50:01,264 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:50:01,411 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:50:01,413 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:50:01,568 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:50:01,570 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:50:01,852 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:50:01,854 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:50:02,082 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:50:02,084 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:50:02,903 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:50:02,910 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:50:13,707 ProgressMeter - GL000234.1:18967     64972.0    60.0 s      15.4 m        6.1%    16.3 m      15.3 m 
+INFO  03:50:20,822 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:50:20,835 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:50:43,708 ProgressMeter - GL000232.1:5699    120066.0    90.0 s      12.5 m        6.6%    22.8 m      21.3 m 
+INFO  03:51:04,220 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:51:04,228 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:51:04,457 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:51:04,458 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:51:06,263 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:51:06,264 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:51:06,691 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:51:06,692 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:51:13,709 ProgressMeter - GL000241.1:10347    220831.0   120.0 s       9.1 m        9.4%    21.2 m      19.2 m 
+INFO  03:51:28,020 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:51:28,021 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:51:29,899 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:51:29,900 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:51:30,183 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:51:30,185 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:51:31,801 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:51:31,803 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:51:37,751 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:51:37,753 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:51:39,531 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:51:39,534 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:51:44,396 ProgressMeter - GL000233.1:45590    371535.0     2.5 m       6.8 m       13.6%    18.3 m      15.8 m 
+INFO  03:52:03,687 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:52:03,689 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:52:24,397 ProgressMeter - GL000208.1:49990    518616.0     3.2 m       6.1 m       17.3%    18.3 m      15.1 m 
+INFO  03:52:31,885 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:52:31,887 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:52:32,165 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:52:32,167 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:52:34,268 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:52:34,271 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:52:39,107 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:52:39,110 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:52:54,399 ProgressMeter - GL000214.1:27865   1022480.0     3.7 m       3.6 m       24.6%    14.9 m      11.3 m 
+INFO  03:53:24,400 ProgressMeter - GL000214.1:129209   1222537.0     4.2 m       3.4 m       26.2%    15.9 m      11.7 m 
+INFO  03:53:27,993 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:53:27,996 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:53:54,401 ProgressMeter - GL000214.1:135194   1322538.0     4.7 m       3.5 m       26.3%    17.7 m      13.0 m 
+INFO  03:54:03,895 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:54:03,898 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:54:04,067 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:54:04,070 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:54:14,286 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:54:14,290 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:54:24,402 ProgressMeter - GL000220.1:40138   1653517.0     5.2 m       3.1 m       35.0%    14.8 m       9.6 m 
+INFO  03:54:54,403 ProgressMeter - GL000220.1:122048   2153567.0     5.7 m       2.6 m       36.3%    15.6 m       9.9 m 
+INFO  03:55:24,404 ProgressMeter - GL000220.1:124147   2253602.0     6.2 m       2.7 m       36.4%    17.0 m      10.8 m 
+INFO  03:55:54,406 ProgressMeter - GL000220.1:124147   2253602.0     6.7 m       3.0 m       36.4%    18.3 m      11.7 m 
+INFO  03:56:24,407 ProgressMeter - GL000220.1:124147   2253602.0     7.2 m       3.2 m       36.4%    19.7 m      12.5 m 
+INFO  03:56:54,408 ProgressMeter - GL000220.1:124147   2253602.0     7.7 m       3.4 m       36.4%    21.1 m      13.4 m 
+INFO  03:57:24,410 ProgressMeter - GL000220.1:124147   2253602.0     8.2 m       3.6 m       36.4%    22.5 m      14.3 m 
+INFO  03:57:48,785 IndelRealigner - Not attempting realignment in interval GL000220.1:137242-137723 because there are too many reads. 
+INFO  03:57:54,411 ProgressMeter - GL000220.1:139377   2953820.0     8.7 m       2.9 m       36.6%    23.7 m      15.0 m 
+INFO  03:58:08,424 IndelRealigner - Not attempting realignment in interval GL000220.1:139875-140134 because there are too many reads. 
+INFO  03:58:24,412 ProgressMeter - GL000220.1:142282   3053842.0     9.2 m       3.0 m       36.7%    25.0 m      15.8 m 
+INFO  03:58:54,414 ProgressMeter - GL000220.1:142282   3053842.0     9.7 m       3.2 m       36.7%    26.4 m      16.7 m 
+INFO  03:59:24,415 ProgressMeter - GL000220.1:142282   3053842.0    10.2 m       3.3 m       36.7%    27.7 m      17.6 m 
+INFO  03:59:52,538 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:59:52,542 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:59:54,409 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:59:54,415 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:59:54,416 ProgressMeter - GL000220.1:161798   3453924.0    10.7 m       3.1 m       37.0%    28.8 m      18.2 m 
+INFO  03:59:55,765 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:59:55,770 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:00:24,417 ProgressMeter - GL000199.1:30359   3620182.0    11.2 m       3.1 m       43.0%    26.0 m      14.8 m 
+INFO  04:00:54,418 ProgressMeter - GL000199.1:54830   3920323.0    11.7 m       3.0 m       43.4%    26.9 m      15.2 m 
+INFO  04:01:25,337 ProgressMeter - GL000199.1:78320   4420484.0    12.2 m       2.8 m       43.8%    27.8 m      15.6 m 
+INFO  04:01:34,626 IndelRealigner - Not attempting realignment in interval GL000199.1:87853-88273 because there are too many reads. 
+INFO  04:01:40,993 IndelRealigner - Not attempting realignment in interval GL000199.1:92522-92893 because there are too many reads. 
+INFO  04:01:54,404 IndelRealigner - Not attempting realignment in interval GL000199.1:107151-107588 because there are too many reads. 
+INFO  04:01:55,528 ProgressMeter - GL000199.1:107413   5020690.0    12.7 m       2.5 m       44.3%    28.6 m      16.0 m 
+INFO  04:02:14,112 IndelRealigner - Not attempting realignment in interval GL000199.1:129588-129944 because there are too many reads. 
+INFO  04:02:23,554 IndelRealigner - Not attempting realignment in interval GL000199.1:141456-141863 because there are too many reads. 
+INFO  04:02:25,529 ProgressMeter - GL000199.1:145579   5520874.0    13.2 m       2.4 m       44.9%    29.3 m      16.2 m 
+INFO  04:02:40,753 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:02:40,757 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:02:42,747 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:02:42,750 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:02:55,530 ProgressMeter - GL000217.1:171743   5929323.0    13.7 m       2.3 m       48.2%    28.4 m      14.7 m 
+INFO  04:03:25,531 ProgressMeter - GL000216.1:10916   6086286.0    14.2 m       2.3 m       48.4%    29.3 m      15.1 m 
+INFO  04:03:55,532 ProgressMeter - GL000216.1:11925   6086286.0    14.7 m       2.4 m       48.4%    30.3 m      15.7 m 
+INFO  04:04:25,534 ProgressMeter - GL000216.1:15305   6186340.0    15.2 m       2.5 m       48.4%    31.3 m      16.2 m 
+INFO  04:04:55,535 ProgressMeter - GL000216.1:15305   6186340.0    15.7 m       2.5 m       48.4%    32.4 m      16.7 m 
+INFO  04:05:25,537 ProgressMeter - GL000216.1:63092   6386796.0    16.2 m       2.5 m       49.2%    32.9 m      16.7 m 
+INFO  04:05:54,348 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:05:54,350 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:05:55,653 ProgressMeter - GL000216.1:167586   6787354.0    16.7 m       2.5 m       51.0%    32.7 m      16.0 m 
+INFO  04:05:56,149 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:05:56,152 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:06:04,421 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:06:04,426 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:06:25,654 ProgressMeter - GL000219.1:58189   7050703.0    17.2 m       2.4 m       57.8%    29.7 m      12.5 m 
+INFO  04:06:38,467 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:06:38,469 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:06:55,655 ProgressMeter - GL000224.1:1194   7216832.0    17.7 m       2.5 m       59.8%    29.6 m      11.9 m 
+INFO  04:07:25,656 ProgressMeter - GL000224.1:27407   7316837.0    18.2 m       2.5 m       60.3%    30.2 m      12.0 m 
+INFO  04:07:29,425 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:07:29,428 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:07:45,999 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:07:46,003 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:07:55,658 ProgressMeter - GL000195.1:69119   7528530.0    18.7 m       2.5 m       67.0%    27.9 m       9.2 m 
+INFO  04:08:05,952 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:08:05,955 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:08:25,659 ProgressMeter - GL000212.1:41293   8029033.0    19.2 m       2.4 m       69.5%    27.6 m       8.4 m 
+INFO  04:08:31,352 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:08:31,354 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:08:32,748 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:08:32,751 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:08:39,565 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:08:39,567 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:08:55,660 ProgressMeter - GL000193.1:83370   8240597.0    19.7 m       2.4 m       79.6%    24.7 m       5.1 m 
+INFO  04:09:08,392 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:09:08,395 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:09:21,263 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:09:21,268 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:09:25,662 ProgressMeter -  GL000225.1:535   8490425.0    20.2 m       2.4 m       84.5%    23.9 m       3.7 m 
+INFO  04:09:55,663 ProgressMeter - GL000225.1:85755   8790428.0    20.7 m       2.4 m       85.9%    24.1 m       3.4 m 
+INFO  04:10:29,607 ProgressMeter - GL000225.1:126005   8890433.0    21.3 m       2.4 m       86.6%    24.5 m       3.3 m 
+INFO  04:10:40,296 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:10:40,300 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:10:54,639 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:10:54,658 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:10:59,608 ProgressMeter -  NC_007605:5967   9311780.0    21.8 m       2.3 m       97.2%    22.4 m      37.0 s 
+INFO  04:11:29,609 ProgressMeter - NC_007605:83169   9711808.0    22.3 m       2.3 m       98.5%    22.6 m      19.0 s 
+INFO  04:11:57,065 ReadShardBalancer$1 - Loading BAM index data 
+INFO  04:11:57,065 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  04:11:59,611 ProgressMeter - NC_007605:171823   1.0111825E7    22.8 m       2.3 m      100.0%    22.8 m       0.0 s 
+INFO  04:12:29,612 ProgressMeter - NC_007605:171823   1.0111825E7    23.3 m       2.3 m      100.0%    23.3 m       0.0 s 
+INFO  04:12:38,376 ProgressMeter -            done   1.2469819E7    23.4 m     112.0 s      100.0%    23.4 m       0.0 s 
+INFO  04:12:38,376 ProgressMeter - Total runtime 1404.71 secs, 23.41 min, 0.39 hours 
+INFO  04:12:38,382 MicroScheduler - 35052128 reads were filtered out during the traversal out of approximately 47521947 total reads (73.76%) 
+INFO  04:12:38,383 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  04:12:38,383 MicroScheduler -   -> 35052128 reads (73.76% of total) failing MalformedReadFilter 

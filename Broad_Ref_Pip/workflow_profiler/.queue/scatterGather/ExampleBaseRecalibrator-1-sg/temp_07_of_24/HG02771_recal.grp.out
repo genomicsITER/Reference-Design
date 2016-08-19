@@ -1,0 +1,53 @@
+INFO  19:54:47,787 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  19:54:47,793 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
+INFO  19:54:47,796 HelpFormatter - Copyright (c) 2010 The Broad Institute 
+INFO  19:54:47,796 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
+INFO  19:54:47,800 HelpFormatter - Program Args: -T BaseRecalibrator -I /mnt/nvme0n1/data/broadout/HG02771_gatk_best_practices_8t_30s_2016-07-06_18-21-02/HG02771_realign.bam -L /mnt/nvme0n1/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleBaseRecalibrator-1-sg/temp_07_of_24/scatter.intervals -R /mnt/nvme0n1/Broad_Ref_Pipeline_approved_package/b37bundle/human_g1k_v37.fasta -knownSites /mnt/nvme0n1/Broad_Ref_Pipeline_approved_package/b37bundle/dbsnp_138.b37.vcf -o /mnt/nvme0n1/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleBaseRecalibrator-1-sg/temp_07_of_24/HG02771_recal.grp 
+INFO  19:54:47,834 HelpFormatter - Executing as bshifaw@application-1-1.hudson.intel.com on Linux 3.10.0-327.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_91-b14. 
+INFO  19:54:47,836 HelpFormatter - Date/Time: 2016/07/06 19:54:47 
+INFO  19:54:47,836 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  19:54:47,837 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  19:54:48,122 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  19:54:48,513 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  19:54:48,525 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  19:54:48,809 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.28 
+INFO  19:54:49,961 IntervalUtils - Processing 2414879 bp from intervals 
+INFO  19:54:50,302 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  19:54:50,945 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  19:54:50,959 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  19:54:50,960 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  19:54:50,969 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  19:54:51,096 BaseRecalibrator - The covariates being used here:  
+INFO  19:54:51,105 BaseRecalibrator - 	ReadGroupCovariate 
+INFO  19:54:51,107 BaseRecalibrator - 	QualityScoreCovariate 
+INFO  19:54:51,107 BaseRecalibrator - 	ContextCovariate 
+INFO  19:54:51,107 ContextCovariate - 		Context sizes: base substitution model 2, indel substitution model 3 
+INFO  19:54:51,107 BaseRecalibrator - 	CycleCovariate 
+INFO  19:54:51,109 ReadShardBalancer$1 - Loading BAM index data 
+INFO  19:54:51,675 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  19:55:21,389 ProgressMeter -        7:618917         0.0    30.0 s      50.3 w        0.1%     6.3 h       6.3 h 
+INFO  19:55:51,931 ProgressMeter -       7:5254045    100003.0    60.0 s      10.1 m        4.9%    20.4 m      19.4 m 
+INFO  19:56:21,958 ProgressMeter -      7:18067244    200006.0    90.0 s       7.6 m       10.9%    13.7 m      12.2 m 
+INFO  19:56:56,660 ProgressMeter -      7:27203491    400010.0     2.1 m       5.2 m       15.7%    13.3 m      11.2 m 
+INFO  19:57:26,663 ProgressMeter -      7:42957356    600013.0     2.6 m       4.3 m       22.9%    11.3 m       8.7 m 
+INFO  19:57:56,664 ProgressMeter -      7:55221787    800018.0     3.1 m       3.9 m       29.8%    10.3 m       7.3 m 
+INFO  19:58:26,672 ProgressMeter -      7:76871055   1000021.0     3.6 m       3.6 m       38.4%     9.3 m       5.8 m 
+INFO  19:58:56,674 ProgressMeter -      7:95761010   1400032.0     4.1 m       2.9 m       49.0%     8.3 m       4.2 m 
+INFO  19:59:26,676 ProgressMeter -     7:100680272   1700041.0     4.6 m       2.7 m       58.4%     7.8 m       3.3 m 
+INFO  19:59:56,772 ProgressMeter -     7:121652747   2200052.0     5.1 m       2.3 m       70.5%     7.2 m       2.1 m 
+INFO  20:00:26,774 ProgressMeter -     7:142139326   2700060.0     5.6 m       2.1 m       85.3%     6.5 m      57.0 s 
+INFO  20:00:50,001 BaseRecalibrator - Calculating quantized quality scores... 
+INFO  20:00:50,026 BaseRecalibrator - Writing recalibration report... 
+INFO  20:00:50,892 BaseRecalibrator - ...done! 
+INFO  20:00:50,893 BaseRecalibrator - BaseRecalibrator was able to recalibrate 3140200 reads 
+INFO  20:00:50,895 ProgressMeter -            done   3140200.0     6.0 m     114.0 s      100.0%     6.0 m       0.0 s 
+INFO  20:00:50,896 ProgressMeter - Total runtime 359.94 secs, 6.00 min, 0.10 hours 
+INFO  20:00:50,896 MicroScheduler - 806414 reads were filtered out during the traversal out of approximately 3946614 total reads (20.43%) 
+INFO  20:00:50,896 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  20:00:50,896 MicroScheduler -   -> 513880 reads (13.02% of total) failing DuplicateReadFilter 
+INFO  20:00:50,896 MicroScheduler -   -> 0 reads (0.00% of total) failing FailsVendorQualityCheckFilter 
+INFO  20:00:50,897 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
+INFO  20:00:50,897 MicroScheduler -   -> 0 reads (0.00% of total) failing MappingQualityUnavailableFilter 
+INFO  20:00:50,897 MicroScheduler -   -> 292212 reads (7.40% of total) failing MappingQualityZeroFilter 
+INFO  20:00:50,897 MicroScheduler -   -> 322 reads (0.01% of total) failing NotPrimaryAlignmentFilter 
+INFO  20:00:50,897 MicroScheduler -   -> 0 reads (0.00% of total) failing UnmappedReadFilter 

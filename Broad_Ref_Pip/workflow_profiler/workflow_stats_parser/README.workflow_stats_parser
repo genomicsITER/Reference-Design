@@ -1,0 +1,216 @@
+################################################################################
+#                                                                              #
+# ----------             Workflow Stats Parser v0.1                 ---------- #
+#                                                                              #            
+# ----------            README.workflow_stats_parser               ----------  #
+#                                                                              #
+# ----------    	Copyright (c) Intel Corporation             ---------  #
+#							    	    	       #
+# ----------          PLEASE DO NOT SHARE WITHOUT NDA               ---------- #
+#                                                            	    	       #
+#                                                                              #
+################################################################################
+
+1. Software Requirements
+
+   Software          |   Version  | Test Version  |           PURPOSE
+   -----------------------------------------------------------------------------
+
+   Python            | 2.6 or 2.7 |     2.6       | post-processing
+
+   gnuplot           | >= 4.6     |    4.6.3      | plots for post-processing 
+
+
+2. Introduction
+
+The goal of the Workflow Stats Parser is to parse system-level profiling 
+data and generate charts which illustrate resource utilization for workflows.
+The parser supports post-processing both a single stage workflow as well as 
+a multi-stage workflow.
+
+This documentation pertains to the parser as as stand-alone tool. The parser
+is part of the the Workflow Profiler package, which is documented at top-level 
+directory.
+
+The parser package assumes data is collected using collect_stats.ksh, please
+refer to README in top-level directory.
+
+
+3. Contents:
+
+     1 workflow_stats_parser.py: automates parsing and plotting of profiled data, 
+         for multiple stages or a single stage of the workflow.
+
+     2 argparse.py: module included for 2.6 versions of Python
+
+     3 OrderedDict.py: module included for 2.6 versions of Python to 
+            support ordered dictionaries
+
+     4 Template Files for gnuplot
+         The directory 'plot_templates' contains *.plt files used to create the
+         gnuplot graphs 
+ 
+     5 Sample Data 
+         The following is a directory listing of sample input profile data 
+         from a workflow and corresponding sample output data (*.png plots and
+         csv files). 
+
+         1) Multi-stage (three stages : Stage1, Stage2, Stage3)
+              sample_multistage_input
+              sample_multistage_output 
+
+         2) Single Stage (Stage1) 
+              sample_onestage_input
+              sample_onestage_output
+ 
+
+4. HOW-TOs
+
+   a. Usage and Argument/Options Description
+
+      workflow_stats_parser.py root [arguments]
+         arguments = [-N workflow_name] [-i | -s | -A] [-h] \
+		     [-S substring] [-o output_folder] [-p] [-w size] [-t tag] \
+                     [-l level] 
+
+      a.1 Positional Arguments
+          root             path of directory containing workflow's profile data
+
+      a.2 Required Arguments
+         -N, --workflow_name  workflow_name
+             Enter the name of your workflow. Default is 'sample'.
+         
+         Statistics:
+         -i              parse iostat data
+         -s              parse sar data
+         -A              parse all data (iostat and sar)
+         
+
+      a.3 Optional Arguments
+         -h, --help                           
+             show help message and exit
+
+         -S, --single_step stepSearchString
+             To process a single stage of a known workflow.
+             Specify a substring that is present in the stage output directory
+               name. This will correspond to the 2nd item in the two-tuple in
+               the ordered dictionary for the workflow.  See 'How to Add a New
+               Workflow' section below.
+
+         -o, --output outputDir               
+             Specify path to directory in which to save post-procesed data and 
+               plots. The parser creates the directory if it does not exist.
+             Default is post_processed_stats/ in current directory.
+
+         -p, --plot
+             plot all data
+
+         -w, --sliding_window window          
+             Window size in seconds to use for smoothing graphs. 
+             Default is 100.
+             We recommend starting with the default; if the graphs are not 
+              smooth, then reprocess with a lower or higher window until the
+              graphs look good.
+
+
+         -t, --tag
+             Supply an optional identifier for the plot files
+             Defaults to the name of the root directory for the profile data
+
+         -l, --log level                      
+             Set the log level.
+             Default level is 'info'.
+             See 'Output Logger' section below for details.
+
+   b. Usage Examples
+      We show several examples of running the parser.  For sample output data 
+        that is in the parser's directory, we have indicated this with an '*'.
+
+      b.1 Full workflow using sample data
+          - From sample_multistage_input:
+             Run:
+              ./workflow_stats_parser.py ./sample_multistage_input -N sample \
+               -o ~/WP_out/sample_multistage_output/ -isp
+
+             *Output Sample Data: sample_multistage_output/
+
+      b.2 Single stage using sample data
+          - From sample_onestage_input:
+             Run:
+              ./workflow_stats_parser.py sample_onestage_input/ -N sample -S stage1 \
+               -o ~/myOutput-sampe -isp
+
+             *Output Sample: sample_onestage_output/
+          
+
+          - One stage from sample_multistage_input:
+             ./workflow_stats_parser.py sample_multistage_input -N sample -S stage2 \
+              -o ~/myOutput-stage2 -isp 
+
+   c. How to Add a New Workflow
+
+      c.1 Python Ordered Dictionaries in the Parser
+          To provide support for a new workflow, edit the workflow_dictionaries.py 
+          script by adding a new Ordered Dictionary that defines the order of the 
+          workflow steps and search substrings that must exist in the directory 
+          names of the workflow step's output.
+
+          A dictionary is a structure which contains (key, value) pairs mapping 
+          each key to its corresponding value . A traditional Python dictionary 
+          does not honor the insertion order of pairs, but an ordered 
+          dictionary does.  An ordered dictionary is implemented as a list of 
+          two-tuples where each tuple is a (key,value) pair. 
+
+          We use ordered dictionaries to represent workflows because we need to 
+          know the order of the pipline steps for summarizing profiled data in our 
+          plots. We require a mapping of each step to the location of the its 
+          profile data. 
+
+     c.2 Structure of a Workflow Ordered Dictionary 
+         The format for a two-tuple in a workflow ordered dictionary is:
+  
+           ('stepName', 'dirSearchSubstring')
+
+          where:
+
+           stepName           - the name of the workflow step (stage name)
+
+           dirSearchSubstring - a unique substring from all other steps that 
+                                 is present in the step's output directory
+                                 name. 
+
+           We use the user-supplied 'root' argument and the dirSearchSubtring
+           to locate the correct data directory for each step. 
+         
+          
+     c.3 Ordered Dictionary Examples
+
+         The dictionary for the sample data set in this release is:
+
+           sample_dict = OrderedDict([('Stage1','stage1'),
+                                      ('Stage2','stage2'),
+                                      ('Stage3','stage3')])
+         
+           The directory names for each step contains the substring specified
+           for the step (second item in the two-tuple):
+
+                 run.test..stage1.1u
+                 run.test..stage2.1u
+                 run.test..stage3.1u
+     
+         User can add their own dictionaries in workflow_dictionaries.py file. 
+
+   d. Ouput Logger
+      The logging level can be set to one of the levels listed below via the
+      command line option.  Only messages as severe or more severe than the 
+      level will be printed.
+
+      Possible values (there are five Python-defined levels):
+      critical, error - For unrecoverable problems
+      warning         - Important messages that aren't an error
+      info            - For routine event that might be of interest
+      debug           - For messages useful to debugging, such as dumping variables
+      none            - nothing is logged
+
+      Additional information about Python's logging module can be found at:
+        https://docs.python.org/2.6/library/logging.html

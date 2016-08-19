@@ -1,0 +1,26 @@
+INFO  03:49:07,012 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  03:49:07,028 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
+INFO  03:49:07,028 HelpFormatter - Copyright (c) 2010 The Broad Institute 
+INFO  03:49:07,029 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
+INFO  03:49:07,033 HelpFormatter - Program Args: -T IndelRealigner -I /mnt/ssdbroad/output/Solexa-272221_gatk_best_practices_36t_30s_2016-02-11_11-59-19/Solexa-272221_dupRem.bam -L /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleIndelRealigner-1-sg/temp_31_of_36/scatter.intervals -R /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.fasta -known /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.known_indels.vcf -targetIntervals /mnt/ssdbroad/output/Solexa-272221_gatk_best_practices_36t_30s_2016-02-11_11-59-19/Solexa-272221_realn.intervals -o /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleIndelRealigner-1-sg/temp_31_of_36/Solexa-272221_realign.bam -filterNoBases 
+INFO  03:49:07,059 HelpFormatter - Executing as beris@dna on Linux 2.6.32-573.el6.x86_64 amd64; OpenJDK 64-Bit Server VM 1.7.0_79-mockbuild_2015_07_24_09_26-b00. 
+INFO  03:49:07,060 HelpFormatter - Date/Time: 2016/02/12 03:49:07 
+INFO  03:49:07,060 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  03:49:07,060 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  03:49:07,348 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  03:49:07,795 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  03:49:07,839 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  03:49:07,891 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.05 
+INFO  03:49:08,085 IntervalUtils - Processing 33824 bp from intervals 
+INFO  03:49:08,301 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  03:49:08,399 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  03:49:08,406 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  03:49:08,406 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  03:49:08,407 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  03:49:26,526 ReadShardBalancer$1 - Loading BAM index data 
+INFO  03:49:26,533 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  03:49:39,307 ProgressMeter -            done     26936.0    30.0 s      19.1 m      100.0%    30.0 s       0.0 s 
+INFO  03:49:39,307 ProgressMeter - Total runtime 30.90 secs, 0.52 min, 0.01 hours 
+INFO  03:49:39,310 MicroScheduler - 5962 reads were filtered out during the traversal out of approximately 32898 total reads (18.12%) 
+INFO  03:49:39,311 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  03:49:39,358 MicroScheduler -   -> 5962 reads (18.12% of total) failing MalformedReadFilter 

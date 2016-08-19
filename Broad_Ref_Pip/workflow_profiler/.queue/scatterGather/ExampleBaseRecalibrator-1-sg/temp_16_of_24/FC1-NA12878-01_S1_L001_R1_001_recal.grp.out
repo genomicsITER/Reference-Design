@@ -1,0 +1,45 @@
+INFO  20:17:54,024 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  20:17:54,026 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
+INFO  20:17:54,026 HelpFormatter - Copyright (c) 2010 The Broad Institute 
+INFO  20:17:54,026 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
+INFO  20:17:54,029 HelpFormatter - Program Args: -T BaseRecalibrator -I /home/opt/data/broadout/FC1-NA12878-01_S1_L001_R1_001_gatk_best_practices_36t_30s_2015-11-05_19-14-59/FC1-NA12878-01_S1_L001_R1_001_realign.bam -L /home/beris/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleBaseRecalibrator-1-sg/temp_16_of_24/scatter.intervals -R /home/beris/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.fasta -knownSites /home/beris/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.dbsnp.vcf -o /home/beris/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleBaseRecalibrator-1-sg/temp_16_of_24/FC1-NA12878-01_S1_L001_R1_001_recal.grp 
+INFO  20:17:54,036 HelpFormatter - Executing as beris@dna on Linux 2.6.32-573.el6.x86_64 amd64; OpenJDK 64-Bit Server VM 1.7.0_79-mockbuild_2015_07_24_09_26-b00. 
+INFO  20:17:54,036 HelpFormatter - Date/Time: 2015/11/05 20:17:54 
+INFO  20:17:54,037 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  20:17:54,037 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  20:17:54,119 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  20:17:54,231 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  20:17:54,238 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  20:17:54,271 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.03 
+INFO  20:17:54,695 IntervalUtils - Processing 1598956 bp from intervals 
+INFO  20:17:54,785 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  20:17:55,108 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  20:17:55,109 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  20:17:55,110 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  20:17:55,110 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  20:17:55,211 BaseRecalibrator - The covariates being used here:  
+INFO  20:17:55,212 BaseRecalibrator - 	ReadGroupCovariate 
+INFO  20:17:55,212 BaseRecalibrator - 	QualityScoreCovariate 
+INFO  20:17:55,213 BaseRecalibrator - 	ContextCovariate 
+INFO  20:17:55,213 ContextCovariate - 		Context sizes: base substitution model 2, indel substitution model 3 
+INFO  20:17:55,213 BaseRecalibrator - 	CycleCovariate 
+INFO  20:17:55,216 ReadShardBalancer$1 - Loading BAM index data 
+INFO  20:17:55,539 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  20:18:28,775 ProgressMeter -      16:8955517         0.0    33.0 s      55.7 w       21.2%     2.6 m       2.0 m 
+INFO  20:18:59,124 ProgressMeter -     16:30199900    100002.0    64.0 s      10.7 m       46.7%     2.3 m      73.0 s 
+INFO  20:19:29,128 ProgressMeter -     16:89289736    400008.0    94.0 s       3.9 m       96.4%    97.0 s       3.0 s 
+INFO  20:19:30,578 BaseRecalibrator - Calculating quantized quality scores... 
+INFO  20:19:30,632 BaseRecalibrator - Writing recalibration report... 
+INFO  20:19:31,322 BaseRecalibrator - ...done! 
+INFO  20:19:31,322 BaseRecalibrator - BaseRecalibrator was able to recalibrate 447050 reads 
+INFO  20:19:31,323 ProgressMeter -            done    447050.0    96.0 s       3.6 m      100.0%    96.0 s       0.0 s 
+INFO  20:19:31,323 ProgressMeter - Total runtime 96.21 secs, 1.60 min, 0.03 hours 
+INFO  20:19:31,324 MicroScheduler - 217837 reads were filtered out during the traversal out of approximately 664887 total reads (32.76%) 
+INFO  20:19:31,324 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  20:19:31,324 MicroScheduler -   -> 150672 reads (22.66% of total) failing DuplicateReadFilter 
+INFO  20:19:31,325 MicroScheduler -   -> 0 reads (0.00% of total) failing FailsVendorQualityCheckFilter 
+INFO  20:19:31,325 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
+INFO  20:19:31,325 MicroScheduler -   -> 0 reads (0.00% of total) failing MappingQualityUnavailableFilter 
+INFO  20:19:31,325 MicroScheduler -   -> 67075 reads (10.09% of total) failing MappingQualityZeroFilter 
+INFO  20:19:31,325 MicroScheduler -   -> 90 reads (0.01% of total) failing NotPrimaryAlignmentFilter 
+INFO  20:19:31,325 MicroScheduler -   -> 0 reads (0.00% of total) failing UnmappedReadFilter 

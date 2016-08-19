@@ -1,0 +1,83 @@
+INFO  07:30:27,357 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  07:30:27,359 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
+INFO  07:30:27,359 HelpFormatter - Copyright (c) 2010 The Broad Institute 
+INFO  07:30:27,359 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
+INFO  07:30:27,363 HelpFormatter - Program Args: -T BaseRecalibrator -I /mnt/ssdbroad/output/Solexa-272221_gatk_best_practices_36t_30s_2016-02-11_11-59-19/Solexa-272221_realign.bam -L /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleBaseRecalibrator-1-sg/temp_21_of_36/scatter.intervals -R /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.fasta -knownSites /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.dbsnp.vcf -o /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleBaseRecalibrator-1-sg/temp_21_of_36/Solexa-272221_recal.grp 
+INFO  07:30:27,394 HelpFormatter - Executing as beris@dna on Linux 2.6.32-573.el6.x86_64 amd64; OpenJDK 64-Bit Server VM 1.7.0_79-mockbuild_2015_07_24_09_26-b00. 
+INFO  07:30:27,395 HelpFormatter - Date/Time: 2016/02/12 07:30:27 
+INFO  07:30:27,395 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  07:30:27,395 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  07:30:27,452 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  07:30:27,567 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  07:30:27,576 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  07:30:27,609 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.03 
+INFO  07:30:27,899 IntervalUtils - Processing 48129895 bp from intervals 
+INFO  07:30:28,061 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  07:30:28,625 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  07:30:28,626 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  07:30:28,626 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  07:30:28,627 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  07:30:29,318 BaseRecalibrator - The covariates being used here:  
+INFO  07:30:29,319 BaseRecalibrator - 	ReadGroupCovariate 
+INFO  07:30:29,319 BaseRecalibrator - 	QualityScoreCovariate 
+INFO  07:30:29,319 BaseRecalibrator - 	ContextCovariate 
+INFO  07:30:29,319 ContextCovariate - 		Context sizes: base substitution model 2, indel substitution model 3 
+INFO  07:30:29,319 BaseRecalibrator - 	CycleCovariate 
+INFO  07:30:29,322 ReadShardBalancer$1 - Loading BAM index data 
+INFO  07:30:29,934 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  07:31:01,994 ProgressMeter -      21:9650600         0.0    33.0 s      55.2 w       20.1%     2.7 m       2.2 m 
+INFO  07:31:31,996 ProgressMeter -     21:10409297    200003.0    63.0 s       5.3 m       21.6%     4.9 m       3.8 m 
+INFO  07:32:02,006 ProgressMeter -     21:10700403    300004.0    93.0 s       5.2 m       22.2%     7.0 m       5.4 m 
+INFO  07:32:32,008 ProgressMeter -     21:10733945    500012.0     2.1 m       4.1 m       22.3%     9.2 m       7.1 m 
+INFO  07:33:02,010 ProgressMeter -     21:10819705    600013.0     2.6 m       4.3 m       22.5%    11.3 m       8.8 m 
+INFO  07:33:32,011 ProgressMeter -     21:11052688    803787.0     3.1 m       3.8 m       23.0%    13.3 m      10.2 m 
+INFO  07:34:02,013 ProgressMeter -     21:11154775   1003789.0     3.6 m       3.5 m       23.2%    15.3 m      11.8 m 
+INFO  07:34:32,588 ProgressMeter -     21:14609195   1203909.0     4.1 m       3.4 m       30.4%    13.3 m       9.3 m 
+INFO  07:35:02,589 ProgressMeter -     21:15730103   1403912.0     4.6 m       3.3 m       32.7%    13.9 m       9.4 m 
+INFO  07:35:33,250 ProgressMeter -     21:16670579   1603914.0     5.1 m       3.2 m       34.6%    14.6 m       9.6 m 
+INFO  07:36:03,252 ProgressMeter -     21:17629609   1903918.0     5.6 m       2.9 m       36.6%    15.2 m       9.6 m 
+INFO  07:36:33,253 ProgressMeter -     21:18571152   2103920.0     6.1 m       2.9 m       38.6%    15.7 m       9.7 m 
+INFO  07:37:03,275 ProgressMeter -     21:19539903   2303922.0     6.6 m       2.9 m       40.6%    16.2 m       9.6 m 
+INFO  07:37:33,276 ProgressMeter -     21:20452368   2503924.0     7.1 m       2.8 m       42.5%    16.6 m       9.6 m 
+INFO  07:38:03,278 ProgressMeter -     21:21409131   2803927.0     7.6 m       2.7 m       44.5%    17.0 m       9.4 m 
+INFO  07:38:33,379 ProgressMeter -     21:22407759   3003929.0     8.1 m       2.7 m       46.6%    17.3 m       9.3 m 
+INFO  07:39:04,303 ProgressMeter -     21:23396472   3203931.0     8.6 m       2.7 m       48.6%    17.7 m       9.1 m 
+INFO  07:39:34,304 ProgressMeter -     21:24390289   3503934.0     9.1 m       2.6 m       50.7%    17.9 m       8.8 m 
+INFO  07:40:04,306 ProgressMeter -     21:25349404   3703936.0     9.6 m       2.6 m       52.7%    18.2 m       8.6 m 
+INFO  07:40:34,308 ProgressMeter -     21:26277721   4003939.0    10.1 m       2.5 m       54.6%    18.5 m       8.4 m 
+INFO  07:41:04,309 ProgressMeter -     21:27246304   4203941.0    10.6 m       2.5 m       56.6%    18.7 m       8.1 m 
+INFO  07:41:34,311 ProgressMeter -     21:28225526   4403943.0    11.1 m       2.5 m       58.6%    18.9 m       7.8 m 
+INFO  07:42:04,328 ProgressMeter -     21:29154261   4703946.0    11.6 m       2.5 m       60.6%    19.1 m       7.5 m 
+INFO  07:42:34,330 ProgressMeter -     21:30038970   4903948.0    12.1 m       2.5 m       62.4%    19.4 m       7.3 m 
+INFO  07:43:04,331 ProgressMeter -     21:31061427   5103950.0    12.6 m       2.5 m       64.5%    19.5 m       6.9 m 
+INFO  07:43:34,592 ProgressMeter -     21:32003766   5403953.0    13.1 m       2.4 m       66.5%    19.7 m       6.6 m 
+INFO  07:44:04,613 ProgressMeter -     21:33030397   5603955.0    13.6 m       2.4 m       68.6%    19.8 m       6.2 m 
+INFO  07:44:34,615 ProgressMeter -     21:33978795   5803957.0    14.1 m       2.4 m       70.6%    19.9 m       5.9 m 
+INFO  07:45:04,616 ProgressMeter -     21:34998944   6003959.0    14.6 m       2.4 m       72.7%    20.1 m       5.5 m 
+INFO  07:45:34,618 ProgressMeter -     21:35999974   6303963.0    15.1 m       2.4 m       74.8%    20.2 m       5.1 m 
+INFO  07:46:04,619 ProgressMeter -     21:37026548   6503965.0    15.6 m       2.4 m       76.9%    20.3 m       4.7 m 
+INFO  07:46:34,740 ProgressMeter -     21:38049391   6803968.0    16.1 m       2.4 m       79.1%    20.4 m       4.3 m 
+INFO  07:47:04,742 ProgressMeter -     21:39052296   7003970.0    16.6 m       2.4 m       81.1%    20.5 m       3.9 m 
+INFO  07:47:34,825 ProgressMeter -     21:40080852   7203972.0    17.1 m       2.4 m       83.3%    20.5 m       3.4 m 
+INFO  07:48:04,826 ProgressMeter -     21:41080234   7503976.0    17.6 m       2.3 m       85.4%    20.6 m       3.0 m 
+INFO  07:48:34,828 ProgressMeter -     21:42084953   7703978.0    18.1 m       2.3 m       87.4%    20.7 m       2.6 m 
+INFO  07:49:04,903 ProgressMeter -     21:43174386   7903980.0    18.6 m       2.4 m       89.7%    20.7 m       2.1 m 
+INFO  07:49:34,925 ProgressMeter -     21:44140750   8203984.0    19.1 m       2.3 m       91.7%    20.8 m     103.0 s 
+INFO  07:50:04,944 ProgressMeter -     21:45261786   8403986.0    19.6 m       2.3 m       94.0%    20.8 m      74.0 s 
+INFO  07:50:34,945 ProgressMeter -     21:46339836   8603988.0    20.1 m       2.3 m       96.3%    20.9 m      46.0 s 
+INFO  07:51:04,947 ProgressMeter -     21:47349806   8903992.0    20.6 m       2.3 m       98.4%    20.9 m      20.0 s 
+INFO  07:51:25,814 BaseRecalibrator - Calculating quantized quality scores... 
+INFO  07:51:25,874 BaseRecalibrator - Writing recalibration report... 
+INFO  07:51:27,236 BaseRecalibrator - ...done! 
+INFO  07:51:27,236 BaseRecalibrator - BaseRecalibrator was able to recalibrate 9093203 reads 
+INFO  07:51:27,237 ProgressMeter -            done   9093203.0    21.0 m       2.3 m      100.0%    21.0 m       0.0 s 
+INFO  07:51:27,237 ProgressMeter - Total runtime 1258.61 secs, 20.98 min, 0.35 hours 
+INFO  07:51:27,238 MicroScheduler - 2092018 reads were filtered out during the traversal out of approximately 11185221 total reads (18.70%) 
+INFO  07:51:27,238 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  07:51:27,238 MicroScheduler -   -> 1282690 reads (11.47% of total) failing DuplicateReadFilter 
+INFO  07:51:27,238 MicroScheduler -   -> 0 reads (0.00% of total) failing FailsVendorQualityCheckFilter 
+INFO  07:51:27,239 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
+INFO  07:51:27,239 MicroScheduler -   -> 0 reads (0.00% of total) failing MappingQualityUnavailableFilter 
+INFO  07:51:27,239 MicroScheduler -   -> 752042 reads (6.72% of total) failing MappingQualityZeroFilter 
+INFO  07:51:27,239 MicroScheduler -   -> 57286 reads (0.51% of total) failing NotPrimaryAlignmentFilter 
+INFO  07:51:27,239 MicroScheduler -   -> 0 reads (0.00% of total) failing UnmappedReadFilter 
