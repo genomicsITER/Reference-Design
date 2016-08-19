@@ -1,0 +1,64 @@
+Required Bioinformatic Tools:
+  GATK
+  BWA
+  Picard
+
+Required  yum install packages 
+	yum install openssl openssl-devel 
+	yum install epel-release 
+	yum install gcc
+	yum install gcc-c++
+	yum install freetype freetype-devel libpng-devel
+	yum install collectl
+	yum install sysstat
+	yum install strace 
+	yum install gnuplot
+If python is not being installed by source install the packages below.
+	yum install python-pip python-wheel
+	yum install python-devel 
+
+Python 
+Python 3 and two of its packages are needed to run the pipeline scripts. If not already installed, you can install python locally.
+After downloading Python3 zip follow instruciotn below
+	1. tar -xvzf Python-3.5.0.tgz
+	2. cd Python-3.5.0.tgz
+	3. mkdir install
+	4.  ./configure --with-ensurepip --prefix=<full path of current directory>/install/
+	5. make -j4
+	6. make install
+	7. Update PATH to point to the bin directory of Python-3.5.0
+		a. export PATH=/path/to/python/Python-3.5.0/install/bin:$PATH 
+	8.  Install additional modules
+	    a. python3 -m pip install numpy
+	    b. python3 -m pip install matplotlib
+
+Pipeline Script
+You'll need to edit the pipeline scripts to correct the tools and data paths.
+Move to pipeline script directory:
+	cd /path/to/workflow_profiler
+
+For the pipeline you would like to run 
+	open the WES/WGS script 
+		vi wgs_end2end_data_collection_gatk_best_practices.pl
+	
+	Edit the input file extenstion so that it matches your input file  extenstion so that it matches your input file
+		# INPUT FASTQ FILES
+		#OTHER FORMATS FOR FQ: "_1.fastq.gz; #"_1.fastq";
+		my $fqFile1, $fqFile2;
+		$fqFile1 = $inDataDir.$sample."_1.fq";
+		$fqFile2 = $inDataDir.$sample."_2.fq";
+		
+	edit the broad, Queue, and homoref direcotry path relative to your computer.
+		# Pipeline executables and its directories
+		### ENTER THE CORRECT PATH TO THE FOLLOWING 3 VARIABLES ###
+		my $broadDir = '/path/to/package/Broad_Ref_Pipeline_approved_package/broad';
+		my $QueueBroadBestPracticesDir = '/path/to/Queue_Broad_BestPractices';
+		my $homosapiensrefgenomeDir = '/path/to/homosapiensrefgenome';
+	
+Running the script
+From the /path/to/workflow_profiler enter the command below to run the pipeline. 
+
+python3 workflow_profiler.py <pipeline script to be run> gatk_best_practices <name of fastq files> <number of threads> <path to fastq files> <path for output files> -Ap
+
+
+python3 workflow_profiler.py wgs_end2end_data_collection_gatk_best_practices_optimized.pl gatk_best_practices Solexa-272221 36 /home/opt/data/broadwgs/ /home/opt/data/broadout/ -Ap
