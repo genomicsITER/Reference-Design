@@ -51,7 +51,7 @@ For the pipeline you would like to run
 	edit the broad, Queue, and homoref direcotry path relative to your computer.
 		# Pipeline executables and its directories
 		### ENTER THE CORRECT PATH TO THE FOLLOWING 3 VARIABLES ###
-		my $broadDir = '/path/to/package/Broad_Ref_Pipeline_approved_package/broad';
+		my $broadDir = '/path/to/bioinformatic_tools_GATK_Picard_BWA';
 		my $QueueBroadBestPracticesDir = '/path/to/Queue_Broad_BestPractices';
 		my $homosapiensrefgenomeDir = '/path/to/homosapiensrefgenome';
 	
