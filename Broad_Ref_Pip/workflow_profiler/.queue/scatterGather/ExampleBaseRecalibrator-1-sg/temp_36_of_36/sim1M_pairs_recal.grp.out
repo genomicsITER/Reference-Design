@@ -1,141 +1,140 @@
-INFO  11:29:12,934 HelpFormatter - --------------------------------------------------------------------------------- 
-INFO  11:29:12,950 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
-INFO  11:29:12,950 HelpFormatter - Copyright (c) 2010 The Broad Institute 
-INFO  11:29:12,950 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
-INFO  11:29:12,954 HelpFormatter - Program Args: -T BaseRecalibrator -I /mnt/ssdbroad/output/sim1M_pairs_gatk_best_practices_36t_30s_2016-02-11_11-03-56/sim1M_pairs_realign.bam -L /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleBaseRecalibrator-1-sg/temp_36_of_36/scatter.intervals -R /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.fasta -knownSites /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.dbsnp.vcf -o /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleBaseRecalibrator-1-sg/temp_36_of_36/sim1M_pairs_recal.grp 
-INFO  11:29:12,983 HelpFormatter - Executing as beris@dna on Linux 2.6.32-573.el6.x86_64 amd64; OpenJDK 64-Bit Server VM 1.7.0_79-mockbuild_2015_07_24_09_26-b00. 
-INFO  11:29:12,984 HelpFormatter - Date/Time: 2016/02/11 11:29:12 
-INFO  11:29:12,984 HelpFormatter - --------------------------------------------------------------------------------- 
-INFO  11:29:12,984 HelpFormatter - --------------------------------------------------------------------------------- 
-INFO  11:29:13,152 GenomeAnalysisEngine - Strictness is SILENT 
-INFO  11:29:13,339 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
-INFO  11:29:13,347 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
-INFO  11:29:13,420 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.07 
-WARN  11:33:09,963 RMDTrackBuilder - Unable to write to /mnt/ssdbroad/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.dbsnp.vcf.idx for the index file, creating index in memory only 
-INFO  11:33:09,985 IntervalUtils - Processing 6010811 bp from intervals 
-INFO  11:33:10,052 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
-INFO  11:33:10,170 GenomeAnalysisEngine - Done preparing for traversal 
-INFO  11:33:10,171 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
-INFO  11:33:10,171 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
-INFO  11:33:10,172 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
-INFO  11:33:10,218 BaseRecalibrator - The covariates being used here:  
-INFO  11:33:10,219 BaseRecalibrator - 	ReadGroupCovariate 
-INFO  11:33:10,219 BaseRecalibrator - 	QualityScoreCovariate 
-INFO  11:33:10,219 BaseRecalibrator - 	ContextCovariate 
-INFO  11:33:10,220 ContextCovariate - 		Context sizes: base substitution model 2, indel substitution model 3 
-INFO  11:33:10,220 BaseRecalibrator - 	CycleCovariate 
-INFO  11:33:10,222 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,227 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,247 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,249 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,253 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,255 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,304 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,305 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,310 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,312 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,376 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,378 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,391 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,393 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,425 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,427 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,465 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,467 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,483 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,485 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,491 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,492 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,532 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,544 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,583 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,585 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,591 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,594 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,635 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,637 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,648 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,649 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,670 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,672 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,674 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,676 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,688 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,690 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,697 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,699 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,706 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,708 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,723 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,725 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,748 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,750 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,767 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,769 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,827 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,830 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,868 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,885 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,909 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,912 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:10,939 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:10,942 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,019 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,022 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,055 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,058 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,129 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,132 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,202 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,216 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,281 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,294 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,322 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,325 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,376 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,379 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,418 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,421 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,448 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,451 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,474 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,476 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,487 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,490 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,524 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,530 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,555 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,557 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,607 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,610 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,619 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,622 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,646 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,649 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,670 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,679 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,686 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,689 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,702 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,706 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,727 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,731 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,773 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,778 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,809 ReadShardBalancer$1 - Loading BAM index data 
-INFO  11:33:11,810 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  11:33:11,850 BaseRecalibrator - Calculating quantized quality scores... 
-INFO  11:33:11,922 BaseRecalibrator - Writing recalibration report... 
-INFO  11:33:14,058 BaseRecalibrator - ...done! 
-INFO  11:33:14,059 BaseRecalibrator - BaseRecalibrator was able to recalibrate 2144 reads 
-INFO  11:33:14,061 ProgressMeter -            done      2144.0     3.0 s      30.2 m       93.3%     3.0 s       0.0 s 
-INFO  11:33:14,061 ProgressMeter - Total runtime 3.89 secs, 0.06 min, 0.00 hours 
-INFO  11:33:14,064 MicroScheduler - 1590 reads were filtered out during the traversal out of approximately 3734 total reads (42.58%) 
-INFO  11:33:14,065 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
-INFO  11:33:14,065 MicroScheduler -   -> 0 reads (0.00% of total) failing DuplicateReadFilter 
-INFO  11:33:14,065 MicroScheduler -   -> 0 reads (0.00% of total) failing FailsVendorQualityCheckFilter 
-INFO  11:33:14,065 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
-INFO  11:33:14,066 MicroScheduler -   -> 0 reads (0.00% of total) failing MappingQualityUnavailableFilter 
-INFO  11:33:14,074 MicroScheduler -   -> 1590 reads (42.58% of total) failing MappingQualityZeroFilter 
-INFO  11:33:14,074 MicroScheduler -   -> 0 reads (0.00% of total) failing NotPrimaryAlignmentFilter 
-INFO  11:33:14,075 MicroScheduler -   -> 0 reads (0.00% of total) failing UnmappedReadFilter 
+INFO  16:01:11,171 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  16:01:11,186 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
+INFO  16:01:11,186 HelpFormatter - Copyright (c) 2010 The Broad Institute 
+INFO  16:01:11,186 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
+INFO  16:01:11,198 HelpFormatter - Program Args: -T BaseRecalibrator -I /mnt/sdb/data/broadout/sim1M_pairs_gatk_best_practices_36t_30s_2016-09-26_15-40-42/sim1M_pairs_realign.bam -L /home/bshifaw/gitrepos/Reference-Design/Broad_Ref_Pip/workflow_profiler/.queue/scatterGather/ExampleBaseRecalibrator-1-sg/temp_36_of_36/scatter.intervals -R /mnt/sdb/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.fasta -knownSites /mnt/sdb/Broad_Ref_Pipeline_approved_package/homosapiensrefgenome/Homo_sapiens_assembly19.dbsnp.vcf -o /home/bshifaw/gitrepos/Reference-Design/Broad_Ref_Pip/workflow_profiler/.queue/scatterGather/ExampleBaseRecalibrator-1-sg/temp_36_of_36/sim1M_pairs_recal.grp 
+INFO  16:01:11,210 HelpFormatter - Executing as bshifaw@application-0-1.hudson.intel.com on Linux 3.10.0-327.13.1.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_102-b14. 
+INFO  16:01:11,210 HelpFormatter - Date/Time: 2016/09/26 16:01:11 
+INFO  16:01:11,210 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  16:01:11,211 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  16:01:11,312 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  16:01:11,445 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  16:01:11,450 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  16:01:11,630 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.18 
+INFO  16:01:12,125 IntervalUtils - Processing 6010811 bp from intervals 
+INFO  16:01:12,297 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  16:01:12,582 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  16:01:12,590 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  16:01:12,619 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  16:01:12,633 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  16:01:12,827 BaseRecalibrator - The covariates being used here:  
+INFO  16:01:12,834 BaseRecalibrator - 	ReadGroupCovariate 
+INFO  16:01:12,838 BaseRecalibrator - 	QualityScoreCovariate 
+INFO  16:01:12,838 BaseRecalibrator - 	ContextCovariate 
+INFO  16:01:12,838 ContextCovariate - 		Context sizes: base substitution model 2, indel substitution model 3 
+INFO  16:01:12,838 BaseRecalibrator - 	CycleCovariate 
+INFO  16:01:12,840 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:12,865 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:13,060 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:13,095 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:13,103 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:13,113 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:13,406 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:13,418 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:13,420 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:13,506 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:13,563 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:13,566 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:13,573 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:13,576 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:13,653 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:13,665 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:13,749 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:13,768 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:13,834 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:13,845 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:13,934 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:13,945 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:13,979 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:13,980 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,043 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:14,047 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,072 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:14,073 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,175 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:14,176 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,218 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:14,220 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,305 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:14,329 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,397 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:14,410 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,510 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:14,512 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,552 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:14,560 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,655 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:14,668 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,697 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:14,701 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,824 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:14,839 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,885 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:14,926 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:14,979 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:15,026 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:15,032 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:15,133 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:15,183 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:15,203 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:15,263 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:15,283 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:15,419 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:15,446 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:15,555 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:15,600 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:15,707 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:15,729 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:15,961 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:15,963 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,141 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,166 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,234 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,399 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,411 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,424 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,442 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,466 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,489 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,534 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,610 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,617 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,642 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,656 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,679 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,697 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,775 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,786 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,805 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,807 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,811 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,812 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,825 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,826 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,840 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,844 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,846 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,848 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,858 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,861 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,883 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,885 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,898 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,903 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:16,975 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:01:16,981 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:01:17,035 BaseRecalibrator - Calculating quantized quality scores... 
+INFO  16:01:17,069 BaseRecalibrator - Writing recalibration report... 
+INFO  16:01:17,989 BaseRecalibrator - ...done! 
+INFO  16:01:17,989 BaseRecalibrator - BaseRecalibrator was able to recalibrate 2144 reads 
+INFO  16:01:17,991 ProgressMeter -            done      2144.0     5.0 s      42.0 m       93.3%     5.0 s       0.0 s 
+INFO  16:01:17,991 ProgressMeter - Total runtime 5.40 secs, 0.09 min, 0.00 hours 
+INFO  16:01:17,991 MicroScheduler - 1590 reads were filtered out during the traversal out of approximately 3734 total reads (42.58%) 
+INFO  16:01:17,992 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  16:01:17,992 MicroScheduler -   -> 0 reads (0.00% of total) failing DuplicateReadFilter 
+INFO  16:01:17,992 MicroScheduler -   -> 0 reads (0.00% of total) failing FailsVendorQualityCheckFilter 
+INFO  16:01:17,992 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
+INFO  16:01:17,992 MicroScheduler -   -> 0 reads (0.00% of total) failing MappingQualityUnavailableFilter 
+INFO  16:01:17,992 MicroScheduler -   -> 1590 reads (42.58% of total) failing MappingQualityZeroFilter 
+INFO  16:01:17,992 MicroScheduler -   -> 0 reads (0.00% of total) failing NotPrimaryAlignmentFilter 
+INFO  16:01:17,992 MicroScheduler -   -> 0 reads (0.00% of total) failing UnmappedReadFilter 

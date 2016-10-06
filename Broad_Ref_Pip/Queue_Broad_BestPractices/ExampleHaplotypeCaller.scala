@@ -64,7 +64,7 @@ class ExampleHaplotypeCaller extends QScript {
 
   
   def script() {
-      nContigs = 16//QScriptUtils.getNumberOfContigs(bamFile)
+      nContigs = 36//QScriptUtils.getNumberOfContigs(bamFile)
       val recalBam = qscript.bamFile
       val finalVCF = swapExt(recalBam.getParent, recalBam, "_final.bam", "_HaplotypeCaller.g.vcf")
       add(varcall(recalBam, finalVCF))

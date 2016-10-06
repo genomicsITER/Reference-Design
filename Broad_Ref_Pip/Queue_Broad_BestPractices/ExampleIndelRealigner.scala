@@ -64,7 +64,7 @@ class ExampleIndelRealigner extends QScript {
 
   
   def script() {
-      nContigs = 16//QScriptUtils.getNumberOfContigs(bamFile)
+      nContigs = 36//QScriptUtils.getNumberOfContigs(bamFile)
       val dupRemBam = bamFile
       val targetIntervals  = swapExt(dupRemBam.getParent, dupRemBam, "_dupRem.bam", "_realn.intervals")
       val realignBam = swapExt(dupRemBam.getParent, dupRemBam, "_dupRem.bam", "_realign.bam")

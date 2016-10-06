@@ -67,7 +67,7 @@ class ExamplePrintReads extends QScript {
 
 
   def script() {
-      nContigs = 16//QScriptUtils.getNumberOfContigs(bamFile)
+      nContigs = 36//QScriptUtils.getNumberOfContigs(bamFile)
       val dedupedBam = qscript.bamFile
       val preRecalFile  = qscript.recalFile
       val recalBam = swapExt(dedupedBam.getParent, dedupedBam, "_realign.bam", "_final.bam")

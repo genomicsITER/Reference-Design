@@ -69,7 +69,7 @@ class ExampleBaseRecalibrator extends QScript {
   }
 
   def script() {
-      nContigs = 16//QScriptUtils.getNumberOfContigs(bamFile)
+      nContigs = 36//QScriptUtils.getNumberOfContigs(bamFile)
       val dedupedBam = bamFile
       val preRecalFile  = swapExt(dedupedBam.getParent, dedupedBam, "_realign.bam", "_recal.grp")
       add(cov(dedupedBam, preRecalFile))
