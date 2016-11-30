@@ -1,9 +1,0 @@
-/mnt/nvme0n1/data/broadout/HG02571_gatk_best_practices_8t_30s_2016-07-06_18-21-01/.exec5350930492033898758: fork: retry: No child processes
-/mnt/nvme0n1/data/broadout/HG02571_gatk_best_practices_8t_30s_2016-07-06_18-21-01/.exec5350930492033898758: fork: retry: No child processes
-/mnt/nvme0n1/data/broadout/HG02571_gatk_best_practices_8t_30s_2016-07-06_18-21-01/.exec5350930492033898758: fork: retry: No child processes
-/mnt/nvme0n1/data/broadout/HG02571_gatk_best_practices_8t_30s_2016-07-06_18-21-01/.exec5350930492033898758: fork: retry: No child processes
-#
-# There is insufficient memory for the Java Runtime Environment to continue.
-# Cannot create GC thread. Out of system resources.
-# An error report file with more information is saved as:
-# /mnt/nvme0n1/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleHaplotypeCaller-1-sg/temp_23_of_36/hs_err_pid12078.log
