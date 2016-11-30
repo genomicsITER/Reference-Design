@@ -2,23 +2,25 @@ Required Bioinformatic Tools:
   GATK
   BWA
   Picard
+Suggested Benchmarking Tool:
+  Workflow Profiler
 
-Required  yum install packages 
-	yum install openssl openssl-devel 
-	yum install epel-release 
-	yum install gcc
-	yum install gcc-c++
-	yum install freetype freetype-devel libpng-devel
-	yum install collectl
-	yum install sysstat
-	yum install strace 
-	yum install gnuplot
-If python is not being installed by source install the packages below.
-	yum install python-pip python-wheel
-	yum install python-devel 
+Required yum packages: 
+	openssl 
+	openssl-devel 
+	epel-release 
+	gcc
+	gcc-c++
+	freetype 
+	freetype-devel 
+	libpng-devel
+	collectl
+	sysstat
+	strace 
+	gnuplot
 
-Python 
-Python 3 and two of its packages are needed to run the pipeline scripts. If not already installed, you can install python locally.
+Installing Python from source:
+Python 3 and two of its packages are required to run the workflow profiler and the pipeline scripts. If not already installed, you can install python3 from source. Download source file (https://www.python.org/downloads/)
 After downloading Python3 zip follow instruciotn below
 	1. tar -xvzf Python-3.5.0.tgz
 	2. cd Python-3.5.0.tgz
@@ -33,22 +35,22 @@ After downloading Python3 zip follow instruciotn below
 	    b. python3 -m pip install matplotlib
 
 Pipeline Script
-You'll need to edit the pipeline scripts to correct the tools and data paths.
+You'll need to edit the directory paths for tools and data files listed in the pipeline scripts.
 Move to pipeline script directory:
-	cd /path/to/workflow_profiler
+	cd /path/to/scripts
 
 For the pipeline you would like to run 
 	open the WES/WGS script 
-		vi wgs_end2end_data_collection_gatk_best_practices.pl
+		vi wgs_sample_calling_data_collection_gatk_best_practices_optimized.pl
 	
-	Edit the input file extenstion so that it matches your input file  extenstion so that it matches your input file
+	Edit the input file extenstion so that it matches your input file
 		# INPUT FASTQ FILES
 		#OTHER FORMATS FOR FQ: "_1.fastq.gz; #"_1.fastq";
 		my $fqFile1, $fqFile2;
 		$fqFile1 = $inDataDir.$sample."_1.fq";
 		$fqFile2 = $inDataDir.$sample."_2.fq";
 		
-	edit the broad, Queue, and homoref direcotry path relative to your computer.
+	edit the broad, Queue, and reference direcotry path relative to your computer.
 		# Pipeline executables and its directories
 		### ENTER THE CORRECT PATH TO THE FOLLOWING 3 VARIABLES ###
 		my $broadDir = '/path/to/bioinformatic_tools_GATK_Picard_BWA';
