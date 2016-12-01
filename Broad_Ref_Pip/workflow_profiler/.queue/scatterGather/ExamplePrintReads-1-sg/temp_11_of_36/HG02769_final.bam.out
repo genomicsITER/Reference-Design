@@ -1,46 +1,38 @@
-INFO  18:27:24,538 HelpFormatter - --------------------------------------------------------------------------------- 
-INFO  18:27:24,540 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
-INFO  18:27:24,540 HelpFormatter - Copyright (c) 2010 The Broad Institute 
-INFO  18:27:24,541 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
-INFO  18:27:24,560 HelpFormatter - Program Args: -T PrintReads -I /mnt/sdb/data/broadout/HG02769_gatk_best_practices_8t_30s_2016-07-25_16-38-44/HG02769_realign.bam -L /mnt/sdb/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExamplePrintReads-1-sg/temp_11_of_36/scatter.intervals -R /mnt/sdb/Broad_Ref_Pipeline_approved_package/b37bundle/human_g1k_v37.fasta -BQSR /mnt/sdb/data/broadout/HG02769_gatk_best_practices_8t_30s_2016-07-25_16-38-44/HG02769_recal.grp -o /mnt/sdb/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExamplePrintReads-1-sg/temp_11_of_36/HG02769_final.bam 
-INFO  18:27:24,585 HelpFormatter - Executing as bshifaw@application-0-1.hudson.intel.com on Linux 3.10.0-327.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_101-b13. 
-INFO  18:27:24,586 HelpFormatter - Date/Time: 2016/07/25 18:27:24 
-INFO  18:27:24,587 HelpFormatter - --------------------------------------------------------------------------------- 
-INFO  18:27:24,587 HelpFormatter - --------------------------------------------------------------------------------- 
-INFO  18:27:24,938 GenomeAnalysisEngine - Strictness is SILENT 
-INFO  18:27:26,826 ContextCovariate - 		Context sizes: base substitution model 2, indel substitution model 3 
-INFO  18:27:26,980 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
-INFO  18:27:27,011 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
-INFO  18:27:27,109 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.10 
-INFO  18:27:27,160 IntervalUtils - Processing 135006516 bp from intervals 
-INFO  18:27:27,490 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
-INFO  18:27:28,714 GenomeAnalysisEngine - Done preparing for traversal 
-INFO  18:27:28,733 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
-INFO  18:27:28,738 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
-INFO  18:27:28,761 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
-INFO  18:27:28,833 ReadShardBalancer$1 - Loading BAM index data 
-INFO  18:27:29,737 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  18:28:02,261 ProgressMeter -        11:87118         0.0    33.0 s      55.4 w        0.1%    14.2 h      14.2 h 
-INFO  18:29:02,933 ProgressMeter -      11:2161459    200004.0    94.0 s       7.9 m        1.6%    97.9 m      96.3 m 
-INFO  18:29:36,800 ProgressMeter -      11:4626456    400010.0     2.1 m       5.3 m        3.4%    62.3 m      60.1 m 
-INFO  18:30:06,836 ProgressMeter -      11:6977092    600014.0     2.6 m       4.4 m        5.2%    51.0 m      48.3 m 
-INFO  18:30:36,837 ProgressMeter -     11:10825881    900019.0     3.1 m       3.5 m        8.0%    39.1 m      35.9 m 
-INFO  18:31:06,881 ProgressMeter -     11:18373928   1100023.0     3.6 m       3.3 m       13.6%    26.7 m      23.1 m 
-INFO  18:31:36,882 ProgressMeter -     11:31815652   1300026.0     4.1 m       3.2 m       23.6%    17.5 m      13.4 m 
-INFO  18:32:06,883 ProgressMeter -     11:45877649   1600030.0     4.6 m       2.9 m       34.0%    13.6 m       9.0 m 
-INFO  18:32:36,892 ProgressMeter -     11:48511199   1900036.0     5.1 m       2.7 m       35.9%    14.3 m       9.2 m 
-INFO  18:33:09,597 ProgressMeter -     11:57467327   2200049.0     5.7 m       2.6 m       42.6%    13.3 m       7.6 m 
-INFO  18:33:39,598 ProgressMeter -     11:61205571   2500060.0     6.2 m       2.5 m       45.3%    13.6 m       7.4 m 
-INFO  18:34:09,599 ProgressMeter -     11:62800103   2800075.0     6.7 m       2.4 m       46.5%    14.3 m       7.7 m 
-INFO  18:34:39,600 ProgressMeter -     11:65417073   3200082.0     7.2 m       2.2 m       48.5%    14.8 m       7.6 m 
-INFO  18:35:09,601 ProgressMeter -     11:68131374   3500088.0     7.7 m       2.2 m       50.5%    15.2 m       7.5 m 
-INFO  18:35:39,603 ProgressMeter -     11:75113454   3900111.0     8.2 m       2.1 m       55.6%    14.7 m       6.5 m 
-INFO  18:36:09,605 ProgressMeter -     11:94113587   4300121.0     8.7 m       2.0 m       69.7%    12.4 m       3.8 m 
-INFO  18:36:39,607 ProgressMeter -    11:116793051   4800135.0     9.2 m     114.0 s       86.5%    10.6 m      85.0 s 
-INFO  18:37:09,609 ProgressMeter -    11:124545209   5400160.0     9.7 m     107.0 s       92.3%    10.5 m      48.0 s 
-INFO  18:37:25,894 Walker - [REDUCE RESULT] Traversal result is: org.broadinstitute.gatk.engine.io.stubs.SAMFileWriterStub@2a6e54c2 
-INFO  18:37:26,013 ProgressMeter -            done   5752086.0    10.0 m     103.0 s       99.9%    10.0 m       0.0 s 
-INFO  18:37:26,014 ProgressMeter - Total runtime 597.29 secs, 9.95 min, 0.17 hours 
-INFO  18:37:26,015 MicroScheduler - 0 reads were filtered out during the traversal out of approximately 5752086 total reads (0.00%) 
-INFO  18:37:26,015 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
-INFO  18:37:26,015 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
+INFO  17:06:48,197 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  17:06:48,199 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
+INFO  17:06:48,199 HelpFormatter - Copyright (c) 2010 The Broad Institute 
+INFO  17:06:48,200 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
+INFO  17:06:48,203 HelpFormatter - Program Args: -T PrintReads -I /cluster_share/data/out/HG02769_gatk_best_practices_36t_30s_2016-11-28_15-18-37/HG02769_realign.bam -L /cluster_share/data/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExamplePrintReads-1-sg/temp_11_of_36/scatter.intervals -R /cluster_share/data/reference/b37bundle/human_g1k_v37.fasta -BQSR /cluster_share/data/out/HG02769_gatk_best_practices_36t_30s_2016-11-28_15-18-37/HG02769_recal.grp -o /cluster_share/data/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExamplePrintReads-1-sg/temp_11_of_36/HG02769_final.bam 
+INFO  17:06:48,208 HelpFormatter - Executing as bshifaw@compute-1-1.hudson.intel.com on Linux 3.10.0-327.13.1.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_111-b15. 
+INFO  17:06:48,208 HelpFormatter - Date/Time: 2016/11/28 17:06:48 
+INFO  17:06:48,208 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  17:06:48,208 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  17:06:48,417 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  17:06:49,927 ContextCovariate - 		Context sizes: base substitution model 2, indel substitution model 3 
+INFO  17:06:50,040 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  17:06:50,086 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  17:06:50,183 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.10 
+INFO  17:06:50,286 IntervalUtils - Processing 135006516 bp from intervals 
+INFO  17:06:50,560 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  17:06:51,771 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  17:06:51,774 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  17:06:51,781 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  17:06:51,783 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  17:06:51,800 ReadShardBalancer$1 - Loading BAM index data 
+INFO  17:06:52,792 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  17:07:21,822 ProgressMeter -      11:3781718    300006.0    30.0 s     100.0 s        2.8%    17.8 m      17.3 m 
+INFO  17:07:51,826 ProgressMeter -     11:10580923    800018.0    60.0 s      75.0 s        7.8%    12.8 m      11.8 m 
+INFO  17:08:21,828 ProgressMeter -     11:33117882   1400034.0    90.0 s      64.0 s       24.5%     6.1 m       4.6 m 
+INFO  17:08:51,918 ProgressMeter -     11:50003954   2000044.0   120.0 s      60.0 s       37.0%     5.4 m       3.4 m 
+INFO  17:09:21,919 ProgressMeter -     11:61504816   2500055.0     2.5 m      60.0 s       45.6%     5.5 m       3.0 m 
+INFO  17:09:51,921 ProgressMeter -     11:65048648   3100072.0     3.0 m      58.0 s       48.2%     6.2 m       3.2 m 
+INFO  17:10:21,922 ProgressMeter -     11:71726534   3700082.0     3.5 m      56.0 s       53.1%     6.6 m       3.1 m 
+INFO  17:10:51,923 ProgressMeter -     11:92533639   4200090.0     4.0 m      57.0 s       68.5%     5.8 m     110.0 s 
+INFO  17:11:21,924 ProgressMeter -    11:117063385   4800107.0     4.5 m      56.0 s       86.7%     5.2 m      41.0 s 
+INFO  17:11:51,925 ProgressMeter -    11:125484238   5500132.0     5.0 m      54.0 s       92.9%     5.4 m      22.0 s 
+INFO  17:12:02,695 Walker - [REDUCE RESULT] Traversal result is: org.broadinstitute.gatk.engine.io.stubs.SAMFileWriterStub@2a6e54c2 
+INFO  17:12:03,145 ProgressMeter -            done   5752089.0     5.2 m      54.0 s       99.9%     5.2 m       0.0 s 
+INFO  17:12:03,145 ProgressMeter - Total runtime 311.37 secs, 5.19 min, 0.09 hours 
+INFO  17:12:03,146 MicroScheduler - 0 reads were filtered out during the traversal out of approximately 5752089 total reads (0.00%) 
+INFO  17:12:03,146 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  17:12:03,147 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 

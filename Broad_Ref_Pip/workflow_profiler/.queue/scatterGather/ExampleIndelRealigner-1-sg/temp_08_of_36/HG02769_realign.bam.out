@@ -1,34 +1,29 @@
-INFO  17:50:51,726 HelpFormatter - --------------------------------------------------------------------------------- 
-INFO  17:50:51,729 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
-INFO  17:50:51,730 HelpFormatter - Copyright (c) 2010 The Broad Institute 
-INFO  17:50:51,730 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
-INFO  17:50:51,733 HelpFormatter - Program Args: -T IndelRealigner -I /mnt/sdb/data/broadout/HG02769_gatk_best_practices_8t_30s_2016-07-25_16-38-44/HG02769_dupRem.bam -L /mnt/sdb/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleIndelRealigner-1-sg/temp_08_of_36/scatter.intervals -R /mnt/sdb/Broad_Ref_Pipeline_approved_package/b37bundle/human_g1k_v37.fasta -known /mnt/sdb/Broad_Ref_Pipeline_approved_package/b37bundle/1000G_phase1.indels.b37.vcf -targetIntervals /mnt/sdb/data/broadout/HG02769_gatk_best_practices_8t_30s_2016-07-25_16-38-44/HG02769_realn.intervals -o /mnt/sdb/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleIndelRealigner-1-sg/temp_08_of_36/HG02769_realign.bam -filterNoBases 
-INFO  17:50:51,751 HelpFormatter - Executing as bshifaw@application-0-1.hudson.intel.com on Linux 3.10.0-327.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_101-b13. 
-INFO  17:50:51,752 HelpFormatter - Date/Time: 2016/07/25 17:50:51 
-INFO  17:50:51,752 HelpFormatter - --------------------------------------------------------------------------------- 
-INFO  17:50:51,753 HelpFormatter - --------------------------------------------------------------------------------- 
-INFO  17:50:52,073 GenomeAnalysisEngine - Strictness is SILENT 
-INFO  17:50:52,249 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
-INFO  17:50:52,275 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
-INFO  17:50:52,362 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.09 
-INFO  17:50:52,580 IntervalUtils - Processing 146364022 bp from intervals 
-INFO  17:50:52,811 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
-INFO  17:50:53,452 GenomeAnalysisEngine - Done preparing for traversal 
-INFO  17:50:53,458 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
-INFO  17:50:53,459 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
-INFO  17:50:53,459 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
-INFO  17:50:53,973 ReadShardBalancer$1 - Loading BAM index data 
-INFO  17:50:54,714 ReadShardBalancer$1 - Done loading BAM index data 
-INFO  17:51:23,494 ProgressMeter -       8:7130533         0.0    30.0 s      49.7 w        4.9%    10.3 m       9.8 m 
-INFO  17:51:53,510 ProgressMeter -      8:24300088    600007.0    60.0 s     100.0 s       16.6%     6.0 m       5.0 m 
-INFO  17:52:23,536 ProgressMeter -      8:37602259    900011.0    90.0 s     100.0 s       25.7%     5.8 m       4.3 m 
-INFO  17:52:56,596 ProgressMeter -      8:41906005   1100017.0     2.1 m     111.0 s       28.6%     7.2 m       5.1 m 
-INFO  17:53:26,614 ProgressMeter -      8:56986312   1300021.0     2.6 m     117.0 s       38.9%     6.5 m       4.0 m 
-INFO  17:53:56,615 ProgressMeter -      8:83203980   1800030.0     3.1 m     101.0 s       56.8%     5.4 m       2.3 m 
-INFO  17:54:26,616 ProgressMeter -     8:101177634   2200038.0     3.6 m      96.0 s       69.1%     5.1 m      95.0 s 
-INFO  17:54:56,617 ProgressMeter -     8:126067810   2700052.0     4.1 m      90.0 s       86.1%     4.7 m      39.0 s 
-INFO  17:55:21,592 ProgressMeter -            done   3249246.0     4.5 m      82.0 s       99.9%     4.5 m       0.0 s 
-INFO  17:55:21,592 ProgressMeter - Total runtime 268.13 secs, 4.47 min, 0.07 hours 
-INFO  17:55:21,595 MicroScheduler - 126584 reads were filtered out during the traversal out of approximately 3375830 total reads (3.75%) 
-INFO  17:55:21,596 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
-INFO  17:55:21,596 MicroScheduler -   -> 126584 reads (3.75% of total) failing MalformedReadFilter 
+INFO  16:35:32,452 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  16:35:32,454 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
+INFO  16:35:32,454 HelpFormatter - Copyright (c) 2010 The Broad Institute 
+INFO  16:35:32,455 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
+INFO  16:35:32,465 HelpFormatter - Program Args: -T IndelRealigner -I /cluster_share/data/out/HG02769_gatk_best_practices_36t_30s_2016-11-28_15-18-37/HG02769_dupRem.bam -L /cluster_share/data/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleIndelRealigner-1-sg/temp_08_of_36/scatter.intervals -R /cluster_share/data/reference/b37bundle/human_g1k_v37.fasta -known /cluster_share/data/reference/b37bundle/1000G_phase1.indels.b37.vcf -targetIntervals /cluster_share/data/out/HG02769_gatk_best_practices_36t_30s_2016-11-28_15-18-37/HG02769_realn.intervals -o /cluster_share/data/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleIndelRealigner-1-sg/temp_08_of_36/HG02769_realign.bam -filterNoBases 
+INFO  16:35:32,488 HelpFormatter - Executing as bshifaw@compute-1-1.hudson.intel.com on Linux 3.10.0-327.13.1.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_111-b15. 
+INFO  16:35:32,489 HelpFormatter - Date/Time: 2016/11/28 16:35:32 
+INFO  16:35:32,489 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  16:35:32,489 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  16:35:32,657 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  16:35:32,884 GenomeAnalysisEngine - Downsampling Settings: No downsampling 
+INFO  16:35:32,890 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  16:35:33,026 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.14 
+WARN  16:35:33,129 FSLockWithShared$LockAcquisitionTask - WARNING: Unable to lock file /cluster_share/data/reference/b37bundle/1000G_phase1.indels.b37.vcf.idx because an IOException occurred with message: Function not implemented. 
+INFO  16:35:33,155 RMDTrackBuilder - Could not acquire a shared lock on index file /cluster_share/data/reference/b37bundle/1000G_phase1.indels.b37.vcf.idx, falling back to using an in-memory index for this GATK run. 
+INFO  16:35:44,539 IntervalUtils - Processing 146364022 bp from intervals 
+INFO  16:35:44,719 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  16:35:45,492 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  16:35:45,505 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  16:35:45,506 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  16:35:45,506 ProgressMeter -        Location |     reads | elapsed |     reads | completed | runtime |   runtime 
+INFO  16:35:45,759 ReadShardBalancer$1 - Loading BAM index data 
+INFO  16:35:46,071 ReadShardBalancer$1 - Done loading BAM index data 
+INFO  16:36:15,517 ProgressMeter -      8:56986320   1300032.0    30.0 s      23.0 s       38.9%    77.0 s      47.0 s 
+INFO  16:36:44,546 ProgressMeter -            done   3249241.0    59.0 s      18.0 s       99.9%    59.0 s       0.0 s 
+INFO  16:36:44,547 ProgressMeter - Total runtime 59.04 secs, 0.98 min, 0.02 hours 
+INFO  16:36:44,553 MicroScheduler - 126897 reads were filtered out during the traversal out of approximately 3376138 total reads (3.76%) 
+INFO  16:36:44,553 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  16:36:44,553 MicroScheduler -   -> 126897 reads (3.76% of total) failing MalformedReadFilter 

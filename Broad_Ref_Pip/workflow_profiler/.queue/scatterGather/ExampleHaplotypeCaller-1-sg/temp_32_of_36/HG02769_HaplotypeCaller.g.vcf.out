@@ -1,65 +1,51 @@
-INFO  19:03:21,741 HelpFormatter - --------------------------------------------------------------------------------- 
-INFO  19:03:21,768 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
-INFO  19:03:21,769 HelpFormatter - Copyright (c) 2010 The Broad Institute 
-INFO  19:03:21,770 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
-INFO  19:03:21,796 HelpFormatter - Program Args: -T HaplotypeCaller -I /mnt/sdb/data/broadout/HG02769_gatk_best_practices_8t_30s_2016-07-25_16-38-44/HG02769_final.bam -L /mnt/sdb/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleHaplotypeCaller-1-sg/temp_32_of_36/scatter.intervals -R /mnt/sdb/Broad_Ref_Pipeline_approved_package/b37bundle/human_g1k_v37.fasta -variant_index_type LINEAR -variant_index_parameter 128000 -o /mnt/sdb/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleHaplotypeCaller-1-sg/temp_32_of_36/HG02769_HaplotypeCaller.g.vcf -ERC GVCF 
-INFO  19:03:21,843 HelpFormatter - Executing as bshifaw@application-0-1.hudson.intel.com on Linux 3.10.0-327.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_101-b13. 
-INFO  19:03:21,843 HelpFormatter - Date/Time: 2016/07/25 19:03:21 
-INFO  19:03:21,843 HelpFormatter - --------------------------------------------------------------------------------- 
-INFO  19:03:21,844 HelpFormatter - --------------------------------------------------------------------------------- 
-WARN  19:03:21,900 GATKVCFUtils - Naming your output file using the .g.vcf extension will automatically set the appropriate values  for --variant_index_type and --variant_index_parameter 
-INFO  19:03:22,234 GenomeAnalysisEngine - Strictness is SILENT 
-INFO  19:03:22,641 GenomeAnalysisEngine - Downsampling Settings: Method: BY_SAMPLE, Target Coverage: 500 
-INFO  19:03:22,659 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
-INFO  19:03:22,857 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.20 
-INFO  19:03:22,919 HCMappingQualityFilter - Filtering out reads with MAPQ < 20 
-INFO  19:03:23,230 IntervalUtils - Processing 1437965 bp from intervals 
-INFO  19:03:23,603 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
-INFO  19:03:24,375 GenomeAnalysisEngine - Done preparing for traversal 
-INFO  19:03:24,380 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
-INFO  19:03:24,387 ProgressMeter -                 |      processed |    time |         per 1M |           |   total | remaining 
-INFO  19:03:24,392 ProgressMeter -        Location | active regions | elapsed | active regions | completed | runtime |   runtime 
-INFO  19:03:24,429 HaplotypeCaller - Standard Emitting and Calling confidence set to 0.0 for reference-model confidence output 
-INFO  19:03:24,429 HaplotypeCaller - All sites annotated with PLs forced to true for reference-model confidence output 
-INFO  19:03:25,059 HaplotypeCaller - Using global mismapping rate of 45 => -4.5 in log10 likelihood units 
+INFO  17:36:58,255 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  17:36:58,257 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.4-46-g8ea4dca, Compiled 2015/08/13 20:41:56 
+INFO  17:36:58,258 HelpFormatter - Copyright (c) 2010 The Broad Institute 
+INFO  17:36:58,258 HelpFormatter - For support and documentation go to http://www.broadinstitute.org/gatk 
+INFO  17:36:58,302 HelpFormatter - Program Args: -T HaplotypeCaller -I /cluster_share/data/out/HG02769_gatk_best_practices_36t_30s_2016-11-28_15-18-37/HG02769_final.bam -L /cluster_share/data/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleHaplotypeCaller-1-sg/temp_32_of_36/scatter.intervals -R /cluster_share/data/reference/b37bundle/human_g1k_v37.fasta -variant_index_type LINEAR -variant_index_parameter 128000 -o /cluster_share/data/Broad_Ref_Pipeline_approved_package/workflow_profiler/.queue/scatterGather/ExampleHaplotypeCaller-1-sg/temp_32_of_36/HG02769_HaplotypeCaller.g.vcf -ERC GVCF 
+INFO  17:36:58,314 HelpFormatter - Executing as bshifaw@compute-1-1.hudson.intel.com on Linux 3.10.0-327.13.1.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_111-b15. 
+INFO  17:36:58,315 HelpFormatter - Date/Time: 2016/11/28 17:36:58 
+INFO  17:36:58,320 HelpFormatter - --------------------------------------------------------------------------------- 
+INFO  17:36:58,324 HelpFormatter - --------------------------------------------------------------------------------- 
+WARN  17:36:58,334 GATKVCFUtils - Naming your output file using the .g.vcf extension will automatically set the appropriate values  for --variant_index_type and --variant_index_parameter 
+INFO  17:36:58,498 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  17:36:58,809 GenomeAnalysisEngine - Downsampling Settings: Method: BY_SAMPLE, Target Coverage: 500 
+INFO  17:36:58,815 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  17:36:59,013 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.20 
+INFO  17:36:59,048 HCMappingQualityFilter - Filtering out reads with MAPQ < 20 
+INFO  17:36:59,175 IntervalUtils - Processing 1437965 bp from intervals 
+INFO  17:36:59,465 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  17:36:59,825 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  17:36:59,825 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  17:36:59,826 ProgressMeter -                 |      processed |    time |         per 1M |           |   total | remaining 
+INFO  17:36:59,826 ProgressMeter -        Location | active regions | elapsed | active regions | completed | runtime |   runtime 
+INFO  17:36:59,826 HaplotypeCaller - Standard Emitting and Calling confidence set to 0.0 for reference-model confidence output 
+INFO  17:36:59,826 HaplotypeCaller - All sites annotated with PLs forced to true for reference-model confidence output 
+INFO  17:37:00,250 HaplotypeCaller - Using global mismapping rate of 45 => -4.5 in log10 likelihood units 
 Using AVX accelerated implementation of PairHMM
-INFO  19:03:34,841 VectorLoglessPairHMM - libVectorLoglessPairHMM unpacked successfully from GATK jar file 
-INFO  19:03:34,841 VectorLoglessPairHMM - Using vectorized implementation of PairHMM 
-WARN  19:03:35,520 HaplotypeScore - Annotation will not be calculated, must be called from UnifiedGenotyper 
-WARN  19:03:35,521 InbreedingCoeff - Annotation will not be calculated, must provide a valid PED file (-ped) from the command line. 
-INFO  19:03:54,509 ProgressMeter -     19:14023173          44575.0    30.0 s           11.3 m        0.4%     2.1 h       2.1 h 
-INFO  19:04:24,512 ProgressMeter -     19:14088752         384454.0    60.0 s            2.6 m        1.4%    73.5 m      72.5 m 
-INFO  19:04:54,514 ProgressMeter -     19:14580923        2873010.0    90.0 s           31.0 s        3.3%    45.0 m      43.5 m 
-INFO  19:05:24,515 ProgressMeter -     19:15052984        7190898.0   120.0 s           16.0 s        5.2%    38.6 m      36.6 m 
-INFO  19:05:54,516 ProgressMeter -     19:15739401      1.9836924E7     2.5 m            7.0 s        9.0%    27.8 m      25.3 m 
-INFO  19:06:24,517 ProgressMeter -     19:15852852       2.235376E7     3.0 m            8.0 s        9.5%    31.5 m      28.5 m 
-INFO  19:06:54,518 ProgressMeter -     19:17056307       5.161982E7     3.5 m            4.0 s       13.5%    25.9 m      22.4 m 
-INFO  19:07:34,519 ProgressMeter -     19:17949024     1.06729837E8     4.2 m            2.0 s       19.3%    21.6 m      17.5 m 
-INFO  19:08:04,520 ProgressMeter -     19:18894949     1.66123619E8     4.7 m            1.0 s       24.0%    19.4 m      14.8 m 
-INFO  19:08:34,520 ProgressMeter -     19:19825118     2.46296672E8     5.2 m            1.0 s       29.6%    17.4 m      12.3 m 
-INFO  19:09:04,525 ProgressMeter -     19:31039498     3.08770374E8     5.7 m            1.0 s       34.8%    16.3 m      10.6 m 
-INFO  19:09:34,529 ProgressMeter -     19:35232472     4.34636146E8     6.2 m            0.0 s       40.0%    15.4 m       9.3 m 
-INFO  19:10:04,530 ProgressMeter -     19:36221593     5.33244358E8     6.7 m            0.0 s       45.1%    14.8 m       8.1 m 
-INFO  19:10:34,531 ProgressMeter -     19:37314135     6.48232049E8     7.2 m            0.0 s       50.7%    14.1 m       7.0 m 
-INFO  19:11:04,532 ProgressMeter -     19:38976396     7.74245708E8     7.7 m            0.0 s       56.1%    13.7 m       6.0 m 
-INFO  19:11:34,533 ProgressMeter -     19:39936479     9.61053063E8     8.2 m            0.0 s       62.0%    13.2 m       5.0 m 
-INFO  19:12:04,534 ProgressMeter -     19:40900680    1.100881096E9     8.7 m            0.0 s       66.8%    13.0 m       4.3 m 
-INFO  19:12:34,535 ProgressMeter -     19:41889414    1.306169509E9     9.2 m            0.0 s       72.0%    12.7 m       3.6 m 
-INFO  19:13:04,536 ProgressMeter -     19:42911870     1.51077666E9     9.7 m            0.0 s       77.6%    12.5 m       2.8 m 
-INFO  19:13:34,537 ProgressMeter -     19:43268432     1.54552797E9    10.2 m            0.0 s       78.3%    13.0 m       2.8 m 
-INFO  19:14:04,539 ProgressMeter -     19:43707986    1.594217509E9    10.7 m            0.0 s       79.2%    13.5 m       2.8 m 
-INFO  19:14:34,540 ProgressMeter -     19:45565360    1.928425142E9    11.2 m            0.0 s       87.1%    12.8 m      98.0 s 
-INFO  19:14:58,196 VectorLoglessPairHMM - Time spent in setup for JNI call : 0.549480602 
-INFO  19:14:58,196 PairHMM - Total compute time in PairHMM computeLikelihoods() : 94.486553205 
-INFO  19:14:58,197 HaplotypeCaller - Ran local assembly on 8769 active regions 
-INFO  19:14:58,202 ProgressMeter -            done    2.562981775E9    11.6 m            0.0 s      100.0%    11.6 m       0.0 s 
-INFO  19:14:58,202 ProgressMeter - Total runtime 693.82 secs, 11.56 min, 0.19 hours 
-INFO  19:14:58,202 MicroScheduler - 439566 reads were filtered out during the traversal out of approximately 2474081 total reads (17.77%) 
-INFO  19:14:58,203 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
-INFO  19:14:58,203 MicroScheduler -   -> 353022 reads (14.27% of total) failing DuplicateReadFilter 
-INFO  19:14:58,203 MicroScheduler -   -> 0 reads (0.00% of total) failing FailsVendorQualityCheckFilter 
-INFO  19:14:58,203 MicroScheduler -   -> 86236 reads (3.49% of total) failing HCMappingQualityFilter 
-INFO  19:14:58,203 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
-INFO  19:14:58,204 MicroScheduler -   -> 0 reads (0.00% of total) failing MappingQualityUnavailableFilter 
-INFO  19:14:58,204 MicroScheduler -   -> 308 reads (0.01% of total) failing NotPrimaryAlignmentFilter 
-INFO  19:14:58,204 MicroScheduler -   -> 0 reads (0.00% of total) failing UnmappedReadFilter 
+INFO  17:37:06,671 VectorLoglessPairHMM - libVectorLoglessPairHMM unpacked successfully from GATK jar file 
+INFO  17:37:06,672 VectorLoglessPairHMM - Using vectorized implementation of PairHMM 
+WARN  17:37:07,199 HaplotypeScore - Annotation will not be calculated, must be called from UnifiedGenotyper 
+WARN  17:37:07,199 InbreedingCoeff - Annotation will not be calculated, must provide a valid PED file (-ped) from the command line. 
+INFO  17:37:29,860 ProgressMeter -     19:14507837        1796767.0    30.0 s           16.0 s        2.6%    18.9 m      18.4 m 
+INFO  17:37:59,861 ProgressMeter -     19:15793147      2.1544904E7    60.0 s            2.0 s        9.3%    10.8 m       9.8 m 
+INFO  17:38:29,863 ProgressMeter -     19:18375682     1.37983056E8    90.0 s            0.0 s       21.8%     6.9 m       5.4 m 
+INFO  17:38:59,864 ProgressMeter -     19:33608679     3.70766769E8   120.0 s            0.0 s       37.3%     5.4 m       3.4 m 
+INFO  17:39:29,865 ProgressMeter -     19:38684125     7.03938387E8     2.5 m            0.0 s       53.8%     4.6 m       2.1 m 
+INFO  17:39:59,866 ProgressMeter -     19:41351809    1.217270644E9     3.0 m            0.0 s       70.0%     4.3 m      76.0 s 
+INFO  17:40:29,867 ProgressMeter -     19:43268432     1.54552797E9     3.5 m            0.0 s       78.3%     4.5 m      58.0 s 
+INFO  17:40:59,869 ProgressMeter -     19:45868047     2.00177232E9     4.0 m            0.0 s       88.7%     4.5 m      30.0 s 
+INFO  17:41:17,869 VectorLoglessPairHMM - Time spent in setup for JNI call : 0.19290567900000002 
+INFO  17:41:17,869 PairHMM - Total compute time in PairHMM computeLikelihoods() : 37.650356912 
+INFO  17:41:17,869 HaplotypeCaller - Ran local assembly on 8769 active regions 
+INFO  17:41:17,879 ProgressMeter -            done    2.562981775E9     4.3 m            0.0 s      100.0%     4.3 m       0.0 s 
+INFO  17:41:17,879 ProgressMeter - Total runtime 258.05 secs, 4.30 min, 0.07 hours 
+INFO  17:41:17,880 MicroScheduler - 439539 reads were filtered out during the traversal out of approximately 2474081 total reads (17.77%) 
+INFO  17:41:17,880 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  17:41:17,880 MicroScheduler -   -> 353022 reads (14.27% of total) failing DuplicateReadFilter 
+INFO  17:41:17,881 MicroScheduler -   -> 0 reads (0.00% of total) failing FailsVendorQualityCheckFilter 
+INFO  17:41:17,881 MicroScheduler -   -> 86209 reads (3.48% of total) failing HCMappingQualityFilter 
+INFO  17:41:17,881 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
+INFO  17:41:17,881 MicroScheduler -   -> 0 reads (0.00% of total) failing MappingQualityUnavailableFilter 
+INFO  17:41:17,881 MicroScheduler -   -> 308 reads (0.01% of total) failing NotPrimaryAlignmentFilter 
+INFO  17:41:17,882 MicroScheduler -   -> 0 reads (0.00% of total) failing UnmappedReadFilter 

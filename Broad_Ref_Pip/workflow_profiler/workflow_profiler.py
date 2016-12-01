@@ -365,7 +365,7 @@ class workflowParser():
         global retcode_workflow
         
         # location of collect_stats.ksh script to be passed in to the pipeline script
-        collect_stats_path = os.getcwd() + '/collect_stats.ksh'
+        collect_stats_path = os.path.dirname(os.path.realpath(__file__)) + '/collect_stats.ksh'
 
         #Args for running the workflow
         collect_stats = []

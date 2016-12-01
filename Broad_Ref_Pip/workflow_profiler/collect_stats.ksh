@@ -462,9 +462,13 @@ start_collection() {
 	fi
 }
 kill_all() {
-  for file in kill_scripts/*.sh; do
+  DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" #added to get dir of current file
+  full_path=$DIR"/kill_scripts/*.sh"
+  for file in $full_path; do
+  #for file in kill_scripts/*; do
     echo $file
-    ./"$file"
+    #full_path=$DIR"/"$file
+    source "$file"
   done
 }
 collect_sar() {
