@@ -402,7 +402,8 @@ class workflowParser():
         global retcode_parser
         
         #Creating folder for storing the post processed stats
-        parser_path= os.getcwd() + "/workflow_stats_parser/workflow_stats_parser.py"
+        #parser_path= os.getcwd() + "/workflow_stats_parser/workflow_stats_parser.py"
+        parser_path= os.path.dirname(os.path.realpath(__file__)) + "/workflow_stats_parser/workflow_stats_parser.py"
         profiling_folder = args.output_directory + 'post_processed_stats'
         if not os.path.exists(profiling_folder): os.makedirs(profiling_folder)
         

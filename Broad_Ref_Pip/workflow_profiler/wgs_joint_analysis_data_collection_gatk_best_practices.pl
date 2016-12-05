@@ -32,8 +32,8 @@ $vcf_list = $inDataDir.$sample.".list"; #passing foo.list with paths to multiple
 
 # Pipeline executables and its directories
 ### ENTER THE CORRECT PATH TO THE FOLLOWING 3 VARIABLES ###
-my $broadDir = '/mnt/sdb/Broad_Ref_Pipeline_approved_package/broad';
-my $homosapiensrefgenomeDir = '/mnt/sdb/Broad_Ref_Pipeline_approved_package/b37bundle';
+my $broadDir = '/cluster_share/tools';
+my $homosapiensrefgenomeDir = '/cluster_share/data/reference/b37bundle';
 
 # TOOLS
 my $bwaDir = "$broadDir/bwa";

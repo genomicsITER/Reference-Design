@@ -33,9 +33,9 @@ $fqFileU = $inDataDir.$sample."_unpaired.fq";
 
 # Pipeline executables and its directories
 ### ENTER THE CORRECT PATH TO THE FOLLOWING 3 VARIABLES ###
-my $broadDir = '/mnt/sdb/Broad_Ref_Pipeline_approved_package/broad';
-my $QueueBroadBestPracticesDir = '/mnt/sdb/Broad_Ref_Pipeline_approved_package/Queue_Broad_BestPractices';
-my $homosapiensrefgenomeDir = '/mnt/sdb/Broad_Ref_Pipeline_approved_package/b37bundle';
+my $broadDir = '/cluster_share/tools';
+my $QueueBroadBestPracticesDir = '/cluster_share/data/Reference-Design/Broad_Ref_Pip/Queue_Broad_BestPractices';
+my $homosapiensrefgenomeDir = '/cluster_share/data/reference/b37bundle';
 # TOOLS
 my $bwaDir = "$broadDir/bwa";
 my $bwa = "$bwaDir/bwa";
@@ -59,9 +59,9 @@ my $nfs_ExampleHaplotypeCaller = "$QueueBroadBestPracticesDir/ExampleHaplotypeCa
 # REMOVE QUEUE RELATED FOLDERS AFTER COMPLETION
 my $cwd = `cwd`;
 print "$cwd\n";
-my $queueDir = $cwd . "/.queue";
+my $queueDir = $tmpDir . "/.queue";
 print "$queueDir\n";
-my $jobReport = $cwd . "*.jobreport.txt";
+my $jobReport = $tmpDir . "*.jobreport.txt";
 my $ExampleDir = $tmpDir . "/Example*";
 	
 unless(-d $inDataDir) {

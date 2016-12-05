@@ -32,8 +32,8 @@ $fqFile2 = $inDataDir.$sample."_R2_001.fastq.gz"; #"_2.fq";
 
 # Pipeline executables and its directories
 ### ENTER THE CORRECT PATH TO THE FOLLOWING 3 VARIABLES ###
-my $broadDir = '/mnt/app_hdd/scratch/aprabh2/Broad_Ref_Pipeline/broad';
-my $homosapiensrefgenomeDir = '/mnt/app_hdd/scratch/aprabh2/Broad_Ref_Pipeline/homosapiensrefgenome';
+my $broadDir = '/cluster_share/tools';
+my $homosapiensrefgenomeDir = '/cluster_share/data/reference/b37bundle';
 # TOOLS
 my $bwaDir = "$broadDir/bwa";
 my $bwa = "$bwaDir/bwa";
