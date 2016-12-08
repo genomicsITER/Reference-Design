@@ -70,6 +70,7 @@ benchmarking tools need to be downloaded separately.
    from source. Download source file (https://www.python.org/downloads/)
    
    After downloading Python3 zip follow instructions below
+   ```
 	1. tar -xvzf Python-3.5.0.tgz
 	2. cd Python-3.5.0.tgz
 	3. mkdir install
@@ -81,7 +82,8 @@ benchmarking tools need to be downloaded separately.
 	8.  Install additional modules
 	    a. python3 -m pip install numpy
 	    b. python3 -m pip install matplotlib
-	    
+    ```
+    
 * Directory Structure
 
    The directory structure may resemble the diagram below:
