@@ -63,14 +63,12 @@ benchmarking tools need to be downloaded separately.
 
 * Install as you would normally GATK, BWA, Picard, and Workflow profiler
 
-* Python 
-
-   Python 3 and two of its packages are required to run the workflow profiler 
-   and the pipeline scripts. If not already installed, you can install python3 
-   from source. Download source file (https://www.python.org/downloads/)
+* Python 3 and two of its packages are required to run the workflow profiler 
+  and the pipeline scripts. If not already installed, you can install python3 
+  from source. Download source file (https://www.python.org/downloads/)
    
-   After downloading Python3 zip follow instructions below
-   ```
+  After downloading Python3 zip follow instructions below
+  ```
 	1. tar -xvzf Python-3.5.0.tgz
 	2. cd Python-3.5.0.tgz
 	3. mkdir install
@@ -82,12 +80,10 @@ benchmarking tools need to be downloaded separately.
 	8.  Install additional modules
 	    a. python3 -m pip install numpy
 	    b. python3 -m pip install matplotlib
-    ```
+  ```
     
-* Directory Structure
-
-   The directory structure may resemble the diagram below:
-   ```
+* The directory structure may resemble the flow below:
+  ```
    ├── Broad_Ref_Pip
       ├── b37bundle                 # resource files and reference genome
       ├── broad                     # binformatic tools
@@ -98,27 +94,25 @@ benchmarking tools need to be downloaded separately.
       ├── Queue_Broad_BestPractices # scala scripts for scatter gather
       ├── scripts                   # perl pipeline
       └── workflow_profiler         # Benchmarking tool
-   ```
+  ```
    
 -------------------------------------------------------------------------
 
 #### Configuration 
 
-Pipeline Script
+Edit the directory paths for tools and data files listed in the pipeline scripts.
    
-   Edit the directory paths for tools and data files listed in the pipeline scripts.
-   
-   Move to pipeline script directory:
+Move to pipeline script directory:
    ```
    cd /path/to/scripts
    ```
    
-   For the pipeline you would like to run, open the WES/WGS script 
+For the pipeline you would like to run, open the WES/WGS script 
    ```
    vi wgs_sample_calling_data_collection_gatk_best_practices_optimized.pl
    ```
 	
-   Edit the input file extenstion so that it matches your input file
+Edit the input file extenstion so that it matches your input file
    ```
    # INPUT FASTQ FILES
    #OTHER FORMATS FOR FQ: "_1.fastq.gz; #"_1.fastq";
@@ -127,7 +121,7 @@ Pipeline Script
    $fqFile2 = $inDataDir.$sample."_2.fq";
    ```
    
-   Edit the broad, Queue, and reference direcotry path relative to your computer.
+Edit the Broad, Queue, and reference directory path relative to your file system.
    ```
    # Pipeline executables and its directories
    ### ENTER THE CORRECT PATH TO THE FOLLOWING 3 VARIABLES ###
