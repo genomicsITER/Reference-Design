@@ -29,7 +29,7 @@ benchmarking tools need to be downloaded separately.
 
 * Data:
   - b37bundle - https://software.broadinstitute.org/gatk/documentation/article.php?id=1213
-  - WES/WGS - Please see refer to the Broad Institute.
+  - WES/WGS - Please refer to the Broad Institute.
   
 * Bioinformatic Tools:
   - GATK - https://software.broadinstitute.org/gatk/download/
@@ -63,6 +63,7 @@ benchmarking tools need to be downloaded separately.
 * Install as you would normally GATK, BWA, Picard, and Workflow profiler
 
 * Python 
+
    Python 3 and two of its packages are required to run the workflow profiler 
    and the pipeline scripts. If not already installed, you can install python3 
    from source. Download source file (https://www.python.org/downloads/)
@@ -71,7 +72,7 @@ benchmarking tools need to be downloaded separately.
 	1. tar -xvzf Python-3.5.0.tgz
 	2. cd Python-3.5.0.tgz
 	3. mkdir install
-	4.  ./configure --with-ensurepip --prefix=<full path of current directory>/install/
+	4. ./configure --with-ensurepip --prefix=<full path of current directory>/install/
 	5. make -j4
 	6. make install
 	7. Update PATH to point to the bin directory of Python-3.5.0
@@ -81,7 +82,9 @@ benchmarking tools need to be downloaded separately.
 	    b. python3 -m pip install matplotlib
 	    
 * Directory Structure
+
    The directory structure may resemble the diagram below:
+   ```
    ├── Broad_Ref_Pip
       ├── b37bundle                 # resource files and reference genome
       ├── broad                     # binformatic tools
@@ -92,41 +95,55 @@ benchmarking tools need to be downloaded separately.
       ├── Queue_Broad_BestPractices # scala scripts for scatter gather
       ├── scripts                   # perl pipeline
       └── workflow_profiler         # Benchmarking tool
-
+   ```
+   
 -------------------------------------------------------------------------
 
 #### Configuration 
 
 Pipeline Script
+   
    Edit the directory paths for tools and data files listed in the pipeline scripts.
+   
    Move to pipeline script directory:
-	cd /path/to/scripts
-
-   For the pipeline you would like to run 
-	open the WES/WGS script 
-		vi wgs_sample_calling_data_collection_gatk_best_practices_optimized.pl
+   ```
+   cd /path/to/scripts
+   ```
+   
+   For the pipeline you would like to run, open the WES/WGS script 
+   ```
+   vi wgs_sample_calling_data_collection_gatk_best_practices_optimized.pl
+   ```
 	
-	Edit the input file extenstion so that it matches your input file
-		# INPUT FASTQ FILES
-		#OTHER FORMATS FOR FQ: "_1.fastq.gz; #"_1.fastq";
-		my $fqFile1, $fqFile2;
-		$fqFile1 = $inDataDir.$sample."_1.fq";
-		$fqFile2 = $inDataDir.$sample."_2.fq";
-		
-	Edit the broad, Queue, and reference direcotry path relative to your computer.
-		# Pipeline executables and its directories
-		### ENTER THE CORRECT PATH TO THE FOLLOWING 3 VARIABLES ###
-		my $broadDir = '/path/to/bioinformatic_tools_GATK_Picard_BWA';
-		my $QueueBroadBestPracticesDir = '/path/to/Queue_Broad_BestPractices';
-		my $homosapiensrefgenomeDir = '/path/to/homosapiensrefgenome';
-
+   Edit the input file extenstion so that it matches your input file
+   ```
+   # INPUT FASTQ FILES
+   #OTHER FORMATS FOR FQ: "_1.fastq.gz; #"_1.fastq";
+   my $fqFile1, $fqFile2;
+   $fqFile1 = $inDataDir.$sample."_1.fq";
+   $fqFile2 = $inDataDir.$sample."_2.fq";
+   ```
+   
+   Edit the broad, Queue, and reference direcotry path relative to your computer.
+   ```
+   # Pipeline executables and its directories
+   ### ENTER THE CORRECT PATH TO THE FOLLOWING 3 VARIABLES ###
+   my $broadDir = '/path/to/bioinformatic_tools_GATK_Picard_BWA';
+   my $QueueBroadBestPracticesDir = '/path/to/Queue_Broad_BestPractices';
+   my $homosapiensrefgenomeDir = '/path/to/homosapiensrefgenome';
+   ```
+   
 -------------------------------------------------------------------------
 
 #### Running the script 
 
 From the /path/to/workflow_profiler enter the command below to run the pipeline. 
 
-python3 workflow_profiler.py <pipeline script to be run> <workflow dictionary> <name of fastq files> <number of threads> <path to fastq files> <path for output files> -Ap
+python3 workflow_profiler.py <pipeline script to be run> <workflow dictionary> 
+<name of fastq files> <number of threads> <path to fastq files> <path for output files> -Ap
 
 Example:
-python3 workflow_profiler.py wgs_sample_calling_data_collection_gatk_best_practices_optimized.pl gatk_best_practices Solexa-272221 36 /home/opt/data/broadwgs/ /home/opt/data/broadout/ -Ap
+```
+python3 workflow_profiler.py wgs_sample_calling_data_collection_gatk_best_practices_optimized.pl 
+gatk_best_practices Solexa-272221 36 /home/opt/data/broadwgs/ /home/opt/data/broadout/ -Ap
+```
