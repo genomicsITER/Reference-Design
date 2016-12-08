@@ -1,10 +1,9 @@
-######################################################################
-Title: Broad Reference Pipeline Benchmarking                          #
-Date: 01 December 2016                                                #
-Organizations: Broad Institute and Intel's Health and Life Sciences   #
-######################################################################
 
-== Table of Content ==
+### Title: Broad Reference Pipeline Benchmarking                         
+### Date: 01 December 2016                                               
+### Organizations: Broad Institute and Intel's Health and Life Sciences   
+
+#### Table of Content
 
  * Introduction
  * Requirements
@@ -13,7 +12,7 @@ Organizations: Broad Institute and Intel's Health and Life Sciences   #
 
 -------------------------------------------------------------------------
 
-== Introduction ==
+#### Introduction 
 
 The Broad Reference Pipeline Benchmarking repo contains scripts utilized 
 in the "Infrastructure for Deploying GATK* Best Practices Pipeline" white 
@@ -23,7 +22,7 @@ benchmarking tools need to be downloaded separately.
 
 -------------------------------------------------------------------------
 
-== Requirements ==
+#### Requirements
 
 * Data:
   - b37bundle - https://software.broadinstitute.org/gatk/documentation/article.php?id=1213
@@ -51,12 +50,12 @@ benchmarking tools need to be downloaded separately.
   - strace 
   - gnuplot
   
- * Recommended:
+* Recommended:
    - Python3
 
 -------------------------------------------------------------------------
 
-== Installation ==
+#### Installation
 
 * Install as you would normally GATK, BWA, Picard, and Workflow profiler
 
@@ -93,7 +92,7 @@ benchmarking tools need to be downloaded separately.
 
 -------------------------------------------------------------------------
 
-== Configuration ==
+#### Configuration 
 
 * Pipeline Script
    Edit the directory paths for tools and data files listed in the pipeline scripts.
@@ -120,7 +119,7 @@ benchmarking tools need to be downloaded separately.
 
 -------------------------------------------------------------------------
 
-== Running the script ==
+#### Running the script 
 
 From the /path/to/workflow_profiler enter the command below to run the pipeline. 
 
