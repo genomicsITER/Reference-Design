@@ -5,7 +5,7 @@
 
 -------------------------------------------------------------------------
 
-#### Table of Content
+#### Table of Contents
 
  * [Introduction](https://github.com/Intel-HLS/Reference-Design/blob/master/README.md#introduction)
  * [Requirements](https://github.com/Intel-HLS/Reference-Design/blob/master/README.md#requirements)
@@ -18,8 +18,9 @@
 #### Introduction 
 
 The Broad Reference Pipeline Benchmarking repo contains scripts utilized 
-in the "Infrastructure for Deploying GATK* Best Practices Pipeline" white 
-paper. Scripts for running and benchmarking the pipeline are provided in 
+in the "Infrastructure for Deploying GATK* Best Practices Pipeline" 
+[white paper](http://www.intel.com/content/www/us/en/healthcare-it/solutions/documents/deploying-gatk-best-practices-paper.html). 
+Scripts for running and benchmarking the pipeline are provided in 
 this git directory, but the resource/reference files, bioinformatics and 
 benchmarking tools need to be downloaded separately. 
 
@@ -76,7 +77,7 @@ benchmarking tools need to be downloaded separately.
 	5. make -j4
 	6. make install
 	7. Update PATH to point to the bin directory of Python-3.5.0
-		a. export PATH=/path/to/python/Python-3.5.0/install/bin:$PATH 
+	    a. export PATH=/path/to/python/Python-3.5.0/install/bin:$PATH 
 	8.  Install additional modules
 	    a. python3 -m pip install numpy
 	    b. python3 -m pip install matplotlib
@@ -139,8 +140,10 @@ Pipeline Script
 
 From the /path/to/workflow_profiler enter the command below to run the pipeline. 
 
+```
 python3 workflow_profiler.py <pipeline script to be run> <workflow dictionary> 
 <name of fastq files> <number of threads> <path to fastq files> <path for output files> -Ap
+```
 
 Example:
 ```
