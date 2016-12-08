@@ -2,14 +2,15 @@
 ### Title: Broad Reference Pipeline Benchmarking                         
 ### Date: 01 December 2016                                               
 ### Organizations: Broad Institute and Intel's Health and Life Sciences   
+-------------------------------------------------------------------------
 
 #### Table of Content
 
- * Introduction
- * Requirements
- * Installation
- * Configuration
-
+ * [Introduction](https://github.com/Intel-HLS/Reference-Design/blob/master/README.md#introduction)
+ * [Requirements](https://github.com/Intel-HLS/Reference-Design/blob/master/README.md#requirements)
+ * [Installation](https://github.com/Intel-HLS/Reference-Design/blob/master/README.md#installation)
+ * [Configuration](https://github.com/Intel-HLS/Reference-Design/blob/master/README.md#configuration)
+ * [Running the script](https://github.com/Intel-HLS/Reference-Design/blob/master/README.md#runningthescript)
 -------------------------------------------------------------------------
 
 #### Introduction 
@@ -19,7 +20,6 @@ in the "Infrastructure for Deploying GATK* Best Practices Pipeline" white
 paper. Scripts for running and benchmarking the pipeline are provided in 
 this git directory, but the resource/reference files, bioinformatics and 
 benchmarking tools need to be downloaded separately. 
-
 -------------------------------------------------------------------------
 
 #### Requirements
@@ -52,7 +52,6 @@ benchmarking tools need to be downloaded separately.
   
 * Recommended:
    - Python3
-
 -------------------------------------------------------------------------
 
 #### Installation
@@ -89,12 +88,11 @@ benchmarking tools need to be downloaded separately.
       ├── Queue_Broad_BestPractices # scala scripts for scatter gather
       ├── scripts                   # perl pipeline
       └── workflow_profiler         # Benchmarking tool
-
 -------------------------------------------------------------------------
 
 #### Configuration 
 
-* Pipeline Script
+Pipeline Script
    Edit the directory paths for tools and data files listed in the pipeline scripts.
    Move to pipeline script directory:
 	cd /path/to/scripts
@@ -116,7 +114,6 @@ benchmarking tools need to be downloaded separately.
 		my $broadDir = '/path/to/bioinformatic_tools_GATK_Picard_BWA';
 		my $QueueBroadBestPracticesDir = '/path/to/Queue_Broad_BestPractices';
 		my $homosapiensrefgenomeDir = '/path/to/homosapiensrefgenome';
-
 -------------------------------------------------------------------------
 
 #### Running the script 
