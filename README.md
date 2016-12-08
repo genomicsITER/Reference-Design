@@ -10,7 +10,7 @@
  * [Requirements](https://github.com/Intel-HLS/Reference-Design/blob/master/README.md#requirements)
  * [Installation](https://github.com/Intel-HLS/Reference-Design/blob/master/README.md#installation)
  * [Configuration](https://github.com/Intel-HLS/Reference-Design/blob/master/README.md#configuration)
- * [Running the script](https://github.com/Intel-HLS/Reference-Design/blob/master/README.md#runningthescript)
+ * [Running the script](https://github.com/Intel-HLS/Reference-Design/blob/master/README.md#running-the-script)
 -------------------------------------------------------------------------
 
 #### Introduction 
