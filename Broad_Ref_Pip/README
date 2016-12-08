@@ -4,7 +4,7 @@ Date: 01 December 2016                                                #
 Organizations: Broad Institute and Intel's Health and Life Sciences   #
 ######################################################################
 
-# Table of Content
+== Table of Content ==
 
  * Introduction
  * Requirements
@@ -15,27 +15,27 @@ Organizations: Broad Institute and Intel's Health and Life Sciences   #
 
 == Introduction ==
 
-The Broad Reference Pipeline Benchmarking repo contains scripts ustilized in the "Benchmark Recipe for GATK* Best Practices Pipeline Deployment" white paper. 
-Scripts for running and benchmarking the pipeline are provided in the git directory, but the resource/reference files, bioinformatics and benchmarking tools 
-need to be downloaded separately. Links to download these files are listed below.
-For detailes about the tools and scripts please view the white paper : 
-http://www.intel.com/content/www/us/en/healthcare-it/solutions/documents/gatk-best-practices-recipe.html 
+The Broad Reference Pipeline Benchmarking repo contains scripts utilized 
+in the "Infrastructure for Deploying GATK* Best Practices Pipeline" white 
+paper. Scripts for running and benchmarking the pipeline are provided in 
+this git directory, but the resource/reference files, bioinformatics and 
+benchmarking tools need to be downloaded separately. 
 
 -------------------------------------------------------------------------
 
-== Requirments ==
+== Requirements ==
 
 * Data:
-  - b37bundle- https://software.broadinstitute.org/gatk/documentation/article.php?id=1213
-  - WES/WGS- Please see refer to the Broad Institute.
+  - b37bundle - https://software.broadinstitute.org/gatk/documentation/article.php?id=1213
+  - WES/WGS - Please see refer to the Broad Institute.
   
 * Bioinformatic Tools:
-  - GATK- https://software.broadinstitute.org/gatk/download/
-  - BWA- https://sourceforge.net/projects/bio-bwa/files/
-  - Picard- https://broadinstitute.github.io/picard/
+  - GATK - https://software.broadinstitute.org/gatk/download/
+  - BWA - https://sourceforge.net/projects/bio-bwa/files/
+  - Picard - https://broadinstitute.github.io/picard/
   
 * Benchmarking Tool:
-  - Workflow Profiler -https://01.org/workflow-profiler
+  - Workflow Profiler - https://01.org/workflow-profiler
 
 * Yum packages: 
   - openssl 
@@ -61,8 +61,11 @@ http://www.intel.com/content/www/us/en/healthcare-it/solutions/documents/gatk-be
 * Install as you would normally GATK, BWA, Picard, and Workflow profiler
 
 * Python 
-   Python 3 and two of its packages are required to run the workflow profiler and the pipeline scripts. If not already installed, you can install python3 from source. Download source file (https://www.python.org/downloads/)
-   After downloading Python3 zip follow instruciotn below
+   Python 3 and two of its packages are required to run the workflow profiler 
+   and the pipeline scripts. If not already installed, you can install python3 
+   from source. Download source file (https://www.python.org/downloads/)
+   
+   After downloading Python3 zip follow instructions below
 	1. tar -xvzf Python-3.5.0.tgz
 	2. cd Python-3.5.0.tgz
 	3. mkdir install
@@ -75,15 +78,14 @@ http://www.intel.com/content/www/us/en/healthcare-it/solutions/documents/gatk-be
 	    a. python3 -m pip install numpy
 	    b. python3 -m pip install matplotlib
 	    
-* Directory Strutucture
-   The dreictory structure may resemble the diagram below:
+* Directory Structure
+   The directory structure may resemble the diagram below:
    ├── Broad_Ref_Pip
       ├── b37bundle                 # resource files and reference genome
       ├── broad                     # binformatic tools
       │   ├── bwa
       │   ├── gatk3.4
       │   └── picard
-      │
       ├── Python-3.5.0
       ├── Queue_Broad_BestPractices # scala scripts for scatter gather
       ├── scripts                   # perl pipeline
@@ -124,5 +126,5 @@ From the /path/to/workflow_profiler enter the command below to run the pipeline.
 
 python3 workflow_profiler.py <pipeline script to be run> <workflow dictionary> <name of fastq files> <number of threads> <path to fastq files> <path for output files> -Ap
 
-
+Example:
 python3 workflow_profiler.py wgs_sample_calling_data_collection_gatk_best_practices_optimized.pl gatk_best_practices Solexa-272221 36 /home/opt/data/broadwgs/ /home/opt/data/broadout/ -Ap
