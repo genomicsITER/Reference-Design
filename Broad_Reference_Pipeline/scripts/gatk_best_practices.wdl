@@ -1,4 +1,4 @@
-task Bwa_Mem {
+task bwa_mem {
     File reference_genome
     File fasta_amb
     File fasta_ann
@@ -27,7 +27,7 @@ task Bwa_Mem {
     }
 }
 
-task Picard_SortSam {
+task picard_sort_sam {
     File input_sam
     String output_dir
 	
@@ -35,16 +35,16 @@ task Picard_SortSam {
          picard SortSam I=${input_sam} O="${output_dir}sorted_output.bam" SO=coordinate CREATE_INDEX=true
     }
     output {
-        File picard_sortsam_bam_file = "sorted_output.bam"
+        File response = "sorted_output.bam"
     }
         
     runtime {
-        tool: "picard-markduplicates"
+        tool: "picard-sortsam"
         strategy: "routed_file"
     }
 }
 
-task Picard_MarkDuplicates {
+task picard_mark_duplicates {
     File picard_markduplicates_input_bam
     String output_dir
 	
@@ -62,15 +62,15 @@ task Picard_MarkDuplicates {
     }
 }
 
-task Gatk_RealignerTargetCreator {
-	File reference_genome
-	File reference_genome_fai
-	File dict
+task gatk_realigner_target_creator {
+    File reference_genome
+    File reference_genome_fai
+    File dict
     File global_indels
     File global_dbsnp
-	File realigner_target_creator_input_bam
-	File realigner_target_creator_input_bai
-	String output_dir
+    File realigner_target_creator_input_bam
+    File realigner_target_creator_input_bai
+    String output_dir
 	
     command {
         GenomeAnalysisTK -T RealignerTargetCreator -nt 4 -R ${reference_genome} -o "${output_dir}gatk_realignertargetcreator.intervals" -known:indels,vcf ${global_indels} -I ${realigner_target_creator_input_bam} 
@@ -80,12 +80,12 @@ task Gatk_RealignerTargetCreator {
     }
         
     runtime {
-        tool: "GATK-RealignerTargetCreator"
+        tool: "gatk-realignertargetcreator"
         strategy: "routed_file"
     }
 }
 
-task Gatk_IndelRealigner {
+task gatk_indel_realigner {
     File reference_genome
     File reference_genome_fai
     File dict
@@ -105,7 +105,7 @@ task Gatk_IndelRealigner {
     }
         
     runtime {
-        tool: "GATK-IndelRealigner"
+        tool: "gatk-indelrealigner"
         strategy: "routed_file"
     }
 }
@@ -129,7 +129,7 @@ task samtools_index_indel_realigner {
     }
 }
 
-task Gatk_BaseRecalibrator {
+task gatk_base_recalibrator {
     
     File reference_genome
     File reference_genome_fai
@@ -141,19 +141,19 @@ task Gatk_BaseRecalibrator {
     String output_dir
 	
     command {
-		GenomeAnalysisTK -T BaseRecalibrator -I ${base_recalibrator_input_bam}  -R ${reference_genome} -knownSites:mask,vcf ${global_dbsnp} -o "${output_dir}gatk_baserecalibrator.grp"
+	GenomeAnalysisTK -T BaseRecalibrator -I ${base_recalibrator_input_bam}  -R ${reference_genome} -knownSites:mask,vcf ${global_dbsnp} -o "${output_dir}gatk_baserecalibrator.grp"
     }
     output {
         File response = "gatk_baserecalibrator.grp"
     }
         
     runtime {
-        tool: "GATK-BaseRecalibrator"
+        tool: "gatk-baserecalibrator"
         strategy: "routed_file"
     }
 }
 
-task Gatk_PrintReads {
+task gatk_print_reads {
     
     File reference_genome
     File reference_genome_fai
@@ -174,12 +174,12 @@ task Gatk_PrintReads {
     }
         
     runtime {
-        tool: "GATK-PrintReads"
+        tool: "gatk-printreads"
         strategy: "routed_file"
     }
 }
 
-task Gatk_HaplotypeCaller {
+task gatk_haplotype_caller {
     
     File reference_genome
     File reference_genome_fai
@@ -198,27 +198,11 @@ task Gatk_HaplotypeCaller {
     }
         
     runtime {
-        tool: "GATK-HaplotypeCaller"
+        tool: "gatk-haplotypecaller"
         strategy: "routed_file"
     }
 }
 
-task samtools_flagstat {
-    File samtools_flagstat_input_bam
-    File samtools_flagstat_input_bai
-			
-    command {
-        samtools flagstat ${samtools_flagstat_input_bam} 
-    }
-    output {
-        File response = stdout()
-    }
-        
-    runtime {
-        tool: "samtools-flagstat"
-        strategy: "routed_file"
-    }
-}
 
 workflow Broad_GATK_BestPractices {
     
@@ -256,29 +240,16 @@ workflow Broad_GATK_BestPractices {
 	    g_indels_vcf_idx = g_indels_vcf_idx,
     	    dbsnp_all_vcf_idx = dbsnp_all_vcf_idx
     }
-    call samtools_view 
+    call picard_sort_sam 
     {
         input: 
-	    reference_genome_fai = reference_genome_fai,
-	    samtools_view_input_sam = bwa_mem.response,
+	    input_sam = bwa_mem.response,
 	    output_dir = global_output_dir
-    }
-    call samtools_sort 
-    {
-	input:
-	    samtools_sort_input_bam = samtools_view.response,
-	    output_dir = global_output_dir
-    }
-    call samtools_index
-    {
-        input:
-	    samtools_index_input_file = samtools_sort.response, 
-	    output_dir = global_output_dir     
     }
     call picard_mark_duplicates 
     {
         input:
-	     picard_markduplicates_input_bam = samtools_sort.response,
+	     picard_markduplicates_input_bam = picard_sort_sam.response,
 	     output_dir = global_output_dir
     }
     call gatk_realigner_target_creator 
@@ -336,10 +307,16 @@ workflow Broad_GATK_BestPractices {
 	    print_reads_input_grp = gatk_base_recalibrator.response,
 	    output_dir = global_output_dir
     }
-    call samtools_flagstat
+    call gatk_haplotype_caller 
     {
-        input: 
-	    samtools_flagstat_input_bam = gatk_print_reads.response_bam,
-	    samtools_flagstat_input_bai = gatk_print_reads.response_bai
+        input:
+	    reference_genome = reference_genome,
+	    reference_genome_fai = reference_genome_fai,
+	    dict = dict,
+	    global_indels = global_indels,
+	    global_dbsnp = global_dbsnp,
+	    haplotype_caller_input_bam = gatk_print_reads.response_bam,
+	    haplotype_caller_input_bai = gatk_print_reads.response_bai,
+	    output_dir = global_output_dir
     }
 }
