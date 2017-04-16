@@ -545,7 +545,7 @@ workflow PairedEndSingleSampleWorkflow {
     # Because of a wdl/cromwell bug this is not currently valid so we have to sub(sub()) in each task
     # String base_name = sub(sub(unmapped_bam, "gs://.*/", ""), unmapped_bam_suffix + "$", "")
 
-    String sub_strip_path = "/home/aprabh2/Reference-Design/.*/"
+    String sub_strip_path = "/mnt/app_hdd/aprabh2/RefArch_Broad_data/.*/"
     String sub_strip_unmapped = unmapped_bam_suffix + "$"
 
     # Map reads to reference

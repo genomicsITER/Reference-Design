@@ -1109,12 +1109,12 @@ workflow PairedEndSingleSampleWorkflow {
     String sub_strip_unmapped = unmapped_bam_suffix + "$"
 
     # QC the unmapped BAM 
-    #call CollectQualityYieldMetrics {
-    #  input:
-    #    input_bam = unmapped_bam,
-    #    metrics_filename = sub(sub(unmapped_bam, sub_strip_path, ""), sub_strip_unmapped, "") + ".unmapped.quality_yield_metrics",
-    #    disk_size = flowcell_small_disk,
-    #}
+    call CollectQualityYieldMetrics {
+      input:
+        input_bam = unmapped_bam,
+        metrics_filename = sub(sub(unmapped_bam, sub_strip_path, ""), sub_strip_unmapped, "") + ".unmapped.quality_yield_metrics",
+        disk_size = flowcell_small_disk,
+    }
 
     # Map reads to reference
     call SamToFastqAndBwaMem {
@@ -1150,12 +1150,12 @@ workflow PairedEndSingleSampleWorkflow {
 
     # QC the aligned but unsorted readgroup BAM
     # No reference needed as the input here is unsorted; providing a reference would cause an error
-    #call CollectUnsortedReadgroupBamQualityMetrics {
-    #  input:
-    #    input_bam = MergeBamAlignment.output_bam,
-    #    output_bam_prefix = sub(sub(unmapped_bam, sub_strip_path, ""), sub_strip_unmapped, "") + ".readgroup",
-    #    disk_size = flowcell_medium_disk
-    #}
+    call CollectUnsortedReadgroupBamQualityMetrics {
+      input:
+        input_bam = MergeBamAlignment.output_bam,
+        output_bam_prefix = sub(sub(unmapped_bam, sub_strip_path, ""), sub_strip_unmapped, "") + ".readgroup",
+        disk_size = flowcell_medium_disk
+    }
 
     # Sort and fix tags in the merged BAM
     call SortAndFixTags as SortAndFixReadGroupBam {
@@ -1287,16 +1287,16 @@ workflow PairedEndSingleSampleWorkflow {
   }
   
   # QC the final BAM (consolidated after scattered BQSR)
-  #call CollectReadgroupBamQualityMetrics {
-  #  input:
-  #    input_bam = GatherBamFiles.output_bam,
-  #    input_bam_index = GatherBamFiles.output_bam_index,
-  #    output_bam_prefix = base_file_name + ".readgroup",
-  #    ref_dict = ref_dict,
-  #    ref_fasta = ref_fasta,
-  #    ref_fasta_index = ref_fasta_index,
-  #    disk_size = agg_small_disk
-  #}
+  call CollectReadgroupBamQualityMetrics {
+    input:
+      input_bam = GatherBamFiles.output_bam,
+      input_bam_index = GatherBamFiles.output_bam_index,
+      output_bam_prefix = base_file_name + ".readgroup",
+      ref_dict = ref_dict,
+      ref_fasta = ref_fasta,
+      ref_fasta_index = ref_fasta_index,
+      disk_size = agg_small_disk
+  }
 
   # Validate the final BAM 
   call ValidateSamFile as ValidateAggregatedSamFile {
@@ -1311,16 +1311,16 @@ workflow PairedEndSingleSampleWorkflow {
   }
   
   # QC the final BAM some more (no such thing as too much QC)
-  #call CollectAggregationMetrics {
-  #  input:
-  #    input_bam = GatherBamFiles.output_bam,
-  #    input_bam_index = GatherBamFiles.output_bam_index,
-  #    output_bam_prefix = base_file_name,
-  #    ref_dict = ref_dict,
-  #    ref_fasta = ref_fasta,
-  #    ref_fasta_index = ref_fasta_index,
-  #    disk_size = agg_small_disk
-  #}
+  call CollectAggregationMetrics {
+    input:
+      input_bam = GatherBamFiles.output_bam,
+      input_bam_index = GatherBamFiles.output_bam_index,
+      output_bam_prefix = base_file_name,
+      ref_dict = ref_dict,
+      ref_fasta = ref_fasta,
+      ref_fasta_index = ref_fasta_index,
+      disk_size = agg_small_disk
+  }
   
   # Check the sample BAM fingerprint against the sample array 
   call CheckFingerprint {
@@ -1335,28 +1335,28 @@ workflow PairedEndSingleSampleWorkflow {
   }
   
   # QC the sample WGS metrics (stringent thresholds)
-  #call CollectWgsMetrics {
-  #  input:
-  #    input_bam = GatherBamFiles.output_bam,
-  #    input_bam_index = GatherBamFiles.output_bam_index,
-  #    metrics_filename = base_file_name + ".wgs_metrics",
-  #    ref_fasta = ref_fasta,
-  #    ref_fasta_index = ref_fasta_index,
-  #    wgs_coverage_interval_list = wgs_coverage_interval_list,
-  #    disk_size = agg_small_disk
-  #}
+  call CollectWgsMetrics {
+    input:
+      input_bam = GatherBamFiles.output_bam,
+      input_bam_index = GatherBamFiles.output_bam_index,
+      metrics_filename = base_file_name + ".wgs_metrics",
+      ref_fasta = ref_fasta,
+      ref_fasta_index = ref_fasta_index,
+      wgs_coverage_interval_list = wgs_coverage_interval_list,
+      disk_size = agg_small_disk
+  }
   
   # QC the sample raw WGS metrics (common thresholds)
-  #call CollectRawWgsMetrics {
-  #  input:
-  #    input_bam = GatherBamFiles.output_bam,
-  #    input_bam_index = GatherBamFiles.output_bam_index,
-  #    metrics_filename = base_file_name + ".raw_wgs_metrics",
-  #    ref_fasta = ref_fasta,
-  #    ref_fasta_index = ref_fasta_index,
-  #    wgs_coverage_interval_list = wgs_coverage_interval_list,
-  #    disk_size = agg_small_disk
-  #}
+  call CollectRawWgsMetrics {
+    input:
+      input_bam = GatherBamFiles.output_bam,
+      input_bam_index = GatherBamFiles.output_bam_index,
+      metrics_filename = base_file_name + ".raw_wgs_metrics",
+      ref_fasta = ref_fasta,
+      ref_fasta_index = ref_fasta_index,
+      wgs_coverage_interval_list = wgs_coverage_interval_list,
+      disk_size = agg_small_disk
+  }
   
   # Generate a checksum per readgroup in the final BAM
   call CalculateReadGroupChecksum {
@@ -1444,34 +1444,34 @@ workflow PairedEndSingleSampleWorkflow {
   }
   
   # QC the GVCF
-  #call CollectGvcfCallingMetrics {
-  #  input:
-  #    input_vcf = MergeVCFs.output_vcf,
-  #    input_vcf_index = MergeVCFs.output_vcf_index,
-  #    metrics_basename = base_file_name,
-  #    dbSNP_vcf = dbSNP_vcf,
-  #    dbSNP_vcf_index = dbSNP_vcf_index,
-  #    ref_dict = ref_dict,
-  #    wgs_evaluation_interval_list = wgs_evaluation_interval_list,
-  #    disk_size = agg_small_disk,
-  #}
+  call CollectGvcfCallingMetrics {
+    input:
+      input_vcf = MergeVCFs.output_vcf,
+      input_vcf_index = MergeVCFs.output_vcf_index,
+      metrics_basename = base_file_name,
+      dbSNP_vcf = dbSNP_vcf,
+      dbSNP_vcf_index = dbSNP_vcf_index,
+      ref_dict = ref_dict,
+      wgs_evaluation_interval_list = wgs_evaluation_interval_list,
+      disk_size = agg_small_disk,
+  }
 
   # Outputs that will be retained when execution is complete  
   output {
-    #CollectQualityYieldMetrics.*
+    CollectQualityYieldMetrics.*
     ValidateReadGroupSamFile.*
-    #CollectReadgroupBamQualityMetrics.*
-    #CollectUnsortedReadgroupBamQualityMetrics.*
+    CollectReadgroupBamQualityMetrics.*
+    CollectUnsortedReadgroupBamQualityMetrics.*
     CrossCheckFingerprints.*
     ValidateBamFromCram.*
     CalculateReadGroupChecksum.*
     ValidateAggregatedSamFile.*
-    #CollectAggregationMetrics.*
+    CollectAggregationMetrics.*
     CheckFingerprint.*
-    #CollectWgsMetrics.*
-    #CollectRawWgsMetrics.*
+    CollectWgsMetrics.*
+    CollectRawWgsMetrics.*
     CheckContamination.*
-    #CollectGvcfCallingMetrics.*
+    CollectGvcfCallingMetrics.*
     MarkDuplicates.duplicate_metrics
     GatherBqsrReports.*
     ConvertToCram.*
