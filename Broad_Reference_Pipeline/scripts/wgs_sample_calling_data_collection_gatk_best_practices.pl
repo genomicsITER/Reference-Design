@@ -32,8 +32,8 @@ $fqFile2 = $inDataDir.$sample."_2.fq";
 
 # Pipeline executables and its directories
 ### ENTER THE CORRECT PATH TO THE FOLLOWING 3 VARIABLES ###
-my $broadDir = '/mnt/app_hdd/scratch/aprabh2/Broad_Ref_Pipeline/broad';
-my $homosapiensrefgenomeDir = '/mnt/app_hdd/scratch/aprabh2/Broad_Ref_Pipeline/homosapiensrefgenome';
+my $broadDir = '/Broad_Ref_Pip/broad';
+my $homosapiensrefgenomeDir = '/Broad_Ref_Pip/b37bundle';
 # TOOLS
 my $bwaDir = "$broadDir/bwa";
 my $bwa = "$bwaDir/bwa";
@@ -42,12 +42,11 @@ my $gatk = "$gatkDir/GenomeAnalysisTK.jar";
 my $picardDir ="$broadDir/picard/dist";
 my $picard = "$picardDir/picard.jar";
 # HOMOSAPIENSREFGENOME
-my $refgenomeFastaFile = "$homosapiensrefgenomeDir/Homo_sapiens_assembly19.fasta";
-my $refgenomeBwtFile = "$homosapiensrefgenomeDir/Homo_sapiens_assembly19.fasta.bwt";
-my $dbSNPvcf = "$homosapiensrefgenomeDir/Homo_sapiens_assembly19.dbsnp.vcf";
-my $dbSNPindel = "$homosapiensrefgenomeDir/Homo_sapiens_assembly19.known_indels.vcf";
+my $refgenomeFastaFile = "$homosapiensrefgenomeDir/human_g1k_v37.fasta";
+my $dbSNPvcf = "$homosapiensrefgenomeDir/dbsnp_138.b37.vcf";
+my $dbSNPindel = "$homosapiensrefgenomeDir/1000G_phase1.indels.b37.vcf";
 # EXOME TARGET INTERVALS
-my $exome_targets_intervals = "$homosapiensrefgenomeDir/nexterarapidcapture_exome_uniqueintervals.bed";
+my $exome_targets_intervals = "$homosapiensrefgenomeDir/Broad.human.exome.b37.interval_list";
 unless(-d $inDataDir) {
     die("Error: The InputDataDirectory $inDataDir doesn't exist\n");
 }
