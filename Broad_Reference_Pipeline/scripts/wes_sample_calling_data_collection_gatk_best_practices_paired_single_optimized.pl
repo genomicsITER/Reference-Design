@@ -27,15 +27,15 @@ my $sampleprefix = $sample.'_'.$numThreads.'T';
 # INPUT FASTQ FILES
 #OTHER FORMATS FOR FQ: "_1.fastq.gz; #"_1.fastq";
 my $fqFile1, $fqFile2, $fqFileU;
-$fqFile1 = $inDataDir.$sample."_1.fq";#".fastq.gz"; #"_1.fq";
-$fqFile2 = $inDataDir.$sample."_2.fq";#".fastq.gz"; #"_2.fq";
+$fqFile1 = $inDataDir.$sample."_1.fq";
+$fqFile2 = $inDataDir.$sample."_2.fq";
 $fqFileU = $inDataDir.$sample."_unpaired.fq";
 
 # Pipeline executables and its directories
 ### ENTER THE CORRECT PATH TO THE FOLLOWING 3 VARIABLES ###
-my $broadDir = '/mnt/sdb/Broad_Ref_Pipeline_approved_package/broad';
-my $QueueBroadBestPracticesDir = '/mnt/sdb/Broad_Ref_Pipeline_approved_package/Queue_Broad_BestPractices';
-my $homosapiensrefgenomeDir = '/mnt/sdb/Broad_Ref_Pipeline_approved_package/b37bundle';
+my $broadDir = '/Broad_Ref_Pip/broad';
+my $QueueBroadBestPracticesDir = '/Broad_Ref_Pip/Queue_Broad_BestPractices';
+my $homosapiensrefgenomeDir = '/Broad_Ref_Pip/b37bundle';
 # TOOLS
 my $bwaDir = "$broadDir/bwa";
 my $bwa = "$bwaDir/bwa";
@@ -46,7 +46,6 @@ my $picardDir ="$broadDir/picard/dist";
 my $picard = "$picardDir/picard.jar";
 # HOMOSAPIENSREFGENOME
 my $refgenomeFastaFile = "$homosapiensrefgenomeDir/human_g1k_v37.fasta";
-#my $refgenomeBwtFile = "$homosapiensrefgenomeDir/Homo_sapiens_assembly19.fasta.bwt";
 my $dbSNPvcf = "$homosapiensrefgenomeDir/dbsnp_138.b37.vcf";
 my $dbSNPindel = "$homosapiensrefgenomeDir/1000G_phase1.indels.b37.vcf";
 # EXOME TARGET INTERVALS
