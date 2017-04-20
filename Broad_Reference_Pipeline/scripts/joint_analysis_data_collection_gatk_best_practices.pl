@@ -32,15 +32,14 @@ $vcf_list = $inDataDir.$sample.".list"; #passing foo.list with paths to multiple
 
 # Pipeline executables and its directories
 ### ENTER THE CORRECT PATH TO THE FOLLOWING 3 VARIABLES ###
-my $broadDir = '/mnt/sdb/Broad_Ref_Pipeline_approved_package/broad';
-my $homosapiensrefgenomeDir = '/mnt/sdb/Broad_Ref_Pipeline_approved_package/b37bundle';
+my $broadDir = '/Broad_Ref_Pip/broad';
+my $homosapiensrefgenomeDir = '/Broad_Ref_Pip/b37bundle';
 
 # TOOLS
 my $bwaDir = "$broadDir/bwa";
 my $bwa = "$bwaDir/bwa";
 my $gatkDir = "$broadDir/gatk-protected/target";
 my $gatk = "$gatkDir/GenomeAnalysisTK.jar";
-#my $gatk = "$broadDir/gatk3.6/GenomeAnalysisTK.jar"; #gatk3.6
 my $picardDir ="$broadDir/picard/dist";
 my $picard = "$picardDir/picard.jar";
 
@@ -51,12 +50,6 @@ my $hapmap = "$homosapiensrefgenomeDir/hapmap_3.3.b37.vcf";
 my $omni = "$homosapiensrefgenomeDir/1000G_omni2.5.b37.vcf";
 my $phase1_snp = "$homosapiensrefgenomeDir/1000G_phase1.snps.high_confidence.b37.vcf";
 my $mills = "$homosapiensrefgenomeDir/Mills_and_1000G_gold_standard.indels.b37.vcf";
-
-#my $dbsnp138 = "$homosapiensrefgenomeDir/dbsnp_138.b37.vcf"; #*********Removeable?
-#my $axiom_exome_plus = "$homosapiensrefgenomeDir/?"; #************For exomes
-#my $dbSNPindel = "$homosapiensrefgenomeDir/Mills_and_1000G_gold_standard.indels.b37.vcf"; #*****Removealbe?
-#my $refgenomeBwtFile = "$homosapiensrefgenomeDir/?.fasta.bwt";
-
 
 # EXOME TARGET INTERVALS
 my $exome_targets_intervals = "$homosapiensrefgenomeDir/nexterarapidcapture_exome_uniqueintervals.bed";
