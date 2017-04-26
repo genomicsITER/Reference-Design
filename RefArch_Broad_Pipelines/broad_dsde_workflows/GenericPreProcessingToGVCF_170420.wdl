@@ -356,7 +356,7 @@ task ApplyBQSR {
       -R ${ref_fasta} \
       -I ${input_bam} \
       --useOriginalQualities \
-      -O ${output_bam_basename}.bam \
+      -o ${output_bam_basename}.bam \
       -BQSR ${recalibration_report} \
       -SQQ 10 -SQQ 20 -SQQ 30 \
       -L ${sep=" -L " sequence_group_interval}
