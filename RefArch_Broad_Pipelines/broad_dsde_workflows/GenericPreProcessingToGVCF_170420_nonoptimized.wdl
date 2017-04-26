@@ -32,6 +32,9 @@
 
 # Get version of BWA
 task GetBwaVersion {
+  String memory 
+  Int cpu
+
   command {
     # Not setting "set -o pipefail" here because /bwa has a rc=1 and we don't want to allow rc=1 to succeed 
     # because the sed may also fail with that error and that is something we actually want to fail on.
@@ -41,7 +44,8 @@ task GetBwaVersion {
   }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
-    memory: "1 GB"
+    memory: memory
+    cpu: cpu
   }
   output {
     String version = read_string(stdout())
@@ -68,6 +72,8 @@ task SamToFastqAndBwaMem {
   File ref_pac
   File ref_sa
 
+  String memory
+  Int cpu 
 
   command <<<
     set -o pipefail
@@ -88,8 +94,8 @@ task SamToFastqAndBwaMem {
   >>>
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
-    memory: "14 GB"
-    cpu: "16"
+    memory: memory
+    cpu: cpu
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -108,6 +114,8 @@ task MergeBamAlignment {
   File ref_fasta_index
   File ref_dict
 
+  String memory
+  Int cpu
 
   command {
     # set the bash variable needed for the command-line
@@ -140,8 +148,8 @@ task MergeBamAlignment {
   }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
-    memory: "3500 MB"
-    cpu: "1"
+    memory: memory
+    cpu: cpu
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -155,6 +163,9 @@ task SortAndFixTags {
   File ref_dict
   File ref_fasta
   File ref_fasta_index
+
+  String memory
+  Int cpu
 
   command {
     set -o pipefail
@@ -176,8 +187,8 @@ task SortAndFixTags {
   }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
-    cpu: "1"
-    memory: "5000 MB"
+    memory: memory
+    cpu: cpu
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -191,6 +202,9 @@ task MarkDuplicates {
   Array[File] input_bams
   String output_bam_basename
   String metrics_filename
+
+  String memory
+  Int cpu
 
  # Task is assuming query-sorted input so that the Secondary and Supplementary reads get marked correctly.
  # This works because the output of BWA is query-grouped and therefore, so is the output of MergeBamAlignment.
@@ -208,7 +222,8 @@ task MarkDuplicates {
   }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
-    memory: "7 GB"
+    memory: memory
+    cpu: cpu
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -219,7 +234,9 @@ task MarkDuplicates {
 # Generate sets of intervals for scatter-gathering over chromosomes
 task CreateSequenceGroupingTSV {
   File ref_dict
-
+  String memory
+  Int cpu
+  
   # Use python to create the Sequencing Groupings used for BQSR and PrintReads Scatter. 
   # It outputs to stdout where it is parsed into a wdl Array[Array[String]]
   # e.g. [["1"], ["2"], ["3", "4"], ["5"], ["6", "7", "8"]]
@@ -261,7 +278,8 @@ task CreateSequenceGroupingTSV {
   >>>
   runtime {
     docker: "python:2.7"
-    memory: "2 GB"
+    memory: memory
+    cpu: cpu
   }
   output {
     Array[Array[String]] sequence_grouping = read_tsv("sequence_grouping.txt")
@@ -285,6 +303,9 @@ task BaseRecalibrator {
   String gatk_gkl_compression_jdk_deflater
   String gatk_gkl_compression_jdk_inflater
 
+  String memory
+  Int cpu 
+
   command { // 
     java -Xmx4000m \
       -jar /usr/gitc/GATK38.jar \
@@ -292,7 +313,6 @@ task BaseRecalibrator {
       -R ${ref_fasta} \
       -I ${input_bam} \
       --useOriginalQualities \
-      --bam_compression ${gatk_gkl_compression_level} \
       -o ${recalibration_report_filename} \
       -knownSites ${dbSNP_vcf} \
       -knownSites ${sep=" -knownSites " known_indels_sites_VCFs} \
@@ -302,7 +322,8 @@ task BaseRecalibrator {
   }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
-    memory: "6 GB"
+    memory: memory
+    cpu: cpu
   }
   output {
     File recalibration_report = "${recalibration_report_filename}"
@@ -314,20 +335,20 @@ task BaseRecalibrator {
 task GatherBqsrReports {
   Array[File] input_bqsr_reports
   String output_report_filename
-  String gatk_gkl_compression_jdk_deflater
-  String gatk_gkl_compression_jdk_inflater
   
+  String memory
+  Int cpu
+
   command {
     java -Xmx3000m \
       -cp /usr/gitc/GATK38.jar org.broadinstitute.gatk.tools.GatherBqsrReports \
       I= ${sep=' I= ' input_bqsr_reports} \
-      O= ${output_report_filename} \
-      ${gatk_gkl_compression_jdk_deflater} \
-      ${gatk_gkl_compression_jdk_inflater}
+      O= ${output_report_filename} 
     }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
-    memory: "3500 MB"
+    memory: memory
+    cpu: cpu
   }
   output {
     File output_bqsr_report = "${output_report_filename}"
@@ -346,6 +367,9 @@ task ApplyBQSR {
   File ref_fasta_index
   String gatk_gkl_compression_jdk_deflater
   String gatk_gkl_compression_jdk_inflater
+  
+  String memory
+  Int cpu
 
   command {  
     java -Xmx3000m \
@@ -363,7 +387,8 @@ task ApplyBQSR {
   }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
-    memory: "3500 MB"
+    memory: memory
+    cpu: cpu
   }
   output {
     File recalibrated_bam = "${output_bam_basename}.bam"
@@ -375,6 +400,9 @@ task GatherBamFiles {
   Array[File] input_bams
   String output_bam_basename
 
+  String memory
+  Int cpu
+
   command {
     java -Xmx2000m -jar /usr/gitc/picard.jar \
       GatherBamFiles \
@@ -385,7 +413,8 @@ task GatherBamFiles {
     }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
-    memory: "3 GB"
+    memory: memory
+    cpu: cpu
   }
   output {
     File output_bam = "${output_bam_basename}.bam"
@@ -407,6 +436,9 @@ task HaplotypeCaller {
   String gatk_gkl_compression_jdk_deflater
   String gatk_gkl_compression_jdk_inflater
   
+  String memory
+  Int cpu
+
   command {
     java -Xmx8000m \
       -jar /usr/gitc/GATK38.jar \
@@ -426,8 +458,8 @@ task HaplotypeCaller {
   }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
-    memory: "10 GB"
-    cpu: "1"
+    memory: memory
+    cpu: cpu
   }
   output {
     File output_gvcf = "${gvcf_basename}.vcf.gz"
@@ -440,6 +472,9 @@ task MergeVCFs {
   Array[File] input_vcfs
   Array[File] input_vcfs_indexes
   String output_vcf_name
+
+  String memory
+  Int cpu
 
   # Using MergeVcfs instead of GatherVcfs so we can create indices
   # See https://github.com/broadinstitute/picard/issues/789 for relevant GatherVcfs ticket
@@ -455,7 +490,8 @@ task MergeVCFs {
   }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
-    memory: "3 GB"
+    memory: memory
+    cpu: cpu
   }
 }
 
@@ -506,7 +542,7 @@ workflow GenericPreProcessingToGVCFWorkflow {
     # Because of a wdl/cromwell bug this is not currently valid so we have to sub(sub()) in each task
     # String base_name = sub(sub(unmapped_bam, "gs://.*/", ""), unmapped_bam_suffix + "$", "")
 
-    String sub_strip_path = "/cluster_share/data/RefArch_Broad_data/.*/"
+    String sub_strip_path = "/mnt/app_hdd/aprabh2/RefArch_Broad_data/.*/"
     String sub_strip_unmapped = unmapped_bam_suffix + "$"
 
     # Map reads to reference
@@ -602,9 +638,7 @@ workflow GenericPreProcessingToGVCFWorkflow {
   call GatherBqsrReports {
     input:
       input_bqsr_reports = BaseRecalibrator.recalibration_report,
-      output_report_filename = base_file_name + ".recal_data.csv",
-      gatk_gkl_compression_jdk_deflater = gatk_gkl_compression_jdk_deflater,
-      gatk_gkl_compression_jdk_inflater = gatk_gkl_compression_jdk_inflater
+      output_report_filename = base_file_name + ".recal_data.csv"
   }
 
   scatter (subgroup in CreateSequenceGroupingTSV.sequence_grouping_with_unmapped) {
