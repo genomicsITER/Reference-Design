@@ -490,7 +490,7 @@ task MergeVCFs {
 }
 
 # WORKFLOW DEFINITION 
-workflow GenericPreProcessingToGVCFWorkflow {
+workflow Exome_GenericPreProcessingToGVCFWorkflow {
 
   String sample_name
   String base_file_name
@@ -523,7 +523,6 @@ workflow GenericPreProcessingToGVCFWorkflow {
   String gatk_gkl_pairhmm_implementation
   Int gatk_gkl_pairhmm_threads
 
-  File MarkDuplicates_output_bam 
 
   String bwa_commandline="bwa mem -K 100000000 -p -v 3 -t $bwa_threads -Y $bash_ref_fasta"
 
@@ -533,7 +532,7 @@ workflow GenericPreProcessingToGVCFWorkflow {
 
   # Get the version of BWA to include in the PG record in the header of the BAM produced 
   # by MergeBamAlignment. 
-  #call GetBwaVersion
+  call GetBwaVersion
 
   # Align flowcell-level unmapped input bams in parallel
   scatter (unmapped_bam in flowcell_unmapped_bams) {
@@ -541,68 +540,68 @@ workflow GenericPreProcessingToGVCFWorkflow {
     # Because of a wdl/cromwell bug this is not currently valid so we have to sub(sub()) in each task
     # String base_name = sub(sub(unmapped_bam, "gs://.*/", ""), unmapped_bam_suffix + "$", "")
 
-    String sub_strip_path = "/mnt/app_hdd/aprabh2/RefArch_Broad_data/.*/"
+    String sub_strip_path = "/cluster_share/data/RefArch_Broad_data/.*/"
     String sub_strip_unmapped = unmapped_bam_suffix + "$"
 
     # Map reads to reference
-    #call SamToFastqAndBwaMem {
-    #  input:
-    #    input_bam = unmapped_bam,
-    #    bwa_commandline = bwa_commandline,
-    #    output_bam_basename = sub(sub(unmapped_bam, sub_strip_path, ""), sub_strip_unmapped, "") + ".unmerged",
-    #    ref_fasta = ref_fasta,
-    #    ref_fasta_index = ref_fasta_index,
-    #    ref_dict = ref_dict,
-    #    ref_alt = ref_alt,
-    #    ref_bwt = ref_bwt,
-    #    ref_amb = ref_amb,
-    #    ref_ann = ref_ann,
-    #    ref_pac = ref_pac,
-    #    ref_sa = ref_sa,
-    #    bwa_threads = bwa_threads, 
-    #    samtools_threads = samtools_threads
-    # }
+    call SamToFastqAndBwaMem {
+      input:
+        input_bam = unmapped_bam,
+        bwa_commandline = bwa_commandline,
+        output_bam_basename = sub(sub(unmapped_bam, sub_strip_path, ""), sub_strip_unmapped, "") + ".unmerged",
+        ref_fasta = ref_fasta,
+        ref_fasta_index = ref_fasta_index,
+        ref_dict = ref_dict,
+        ref_alt = ref_alt,
+        ref_bwt = ref_bwt,
+        ref_amb = ref_amb,
+        ref_ann = ref_ann,
+        ref_pac = ref_pac,
+        ref_sa = ref_sa,
+        bwa_threads = bwa_threads, 
+        samtools_threads = samtools_threads
+     }
 
     # Merge original uBAM and BWA-aligned BAM 
-    #call MergeBamAlignment {
-    #  input:
-    #    unmapped_bam = unmapped_bam,
-    #    bwa_commandline = bwa_commandline,
-    #    bwa_version = GetBwaVersion.version,
-    #    aligned_bam = SamToFastqAndBwaMem.output_bam,
-    #    output_bam_basename = sub(sub(unmapped_bam, sub_strip_path, ""), sub_strip_unmapped, "") + ".aligned.unsorted",
-    #    ref_fasta = ref_fasta,
-    #    ref_fasta_index = ref_fasta_index,
-    #    ref_dict = ref_dict,
-    #    bwa_threads = bwa_threads
-    #}
+    call MergeBamAlignment {
+      input:
+        unmapped_bam = unmapped_bam,
+        bwa_commandline = bwa_commandline,
+        bwa_version = GetBwaVersion.version,
+        aligned_bam = SamToFastqAndBwaMem.output_bam,
+        output_bam_basename = sub(sub(unmapped_bam, sub_strip_path, ""), sub_strip_unmapped, "") + ".aligned.unsorted",
+        ref_fasta = ref_fasta,
+        ref_fasta_index = ref_fasta_index,
+        ref_dict = ref_dict,
+        bwa_threads = bwa_threads
+    }
 
     # Sort and fix tags in the merged BAM
-    #call SortAndFixTags as SortAndFixReadGroupBam {
-    #  input:
-    #  input_bam = MergeBamAlignment.output_bam,
-    #  output_bam_basename = sub(sub(unmapped_bam, sub_strip_path, ""), sub_strip_unmapped, "") + ".sorted",
-    #  ref_dict = ref_dict,
-    #  ref_fasta = ref_fasta,
-    #  ref_fasta_index = ref_fasta_index
-    #}
+    call SortAndFixTags as SortAndFixReadGroupBam {
+      input:
+      input_bam = MergeBamAlignment.output_bam,
+      output_bam_basename = sub(sub(unmapped_bam, sub_strip_path, ""), sub_strip_unmapped, "") + ".sorted",
+      ref_dict = ref_dict,
+      ref_fasta = ref_fasta,
+      ref_fasta_index = ref_fasta_index
+    }
 
   }
 
   # Aggregate aligned+merged flowcell BAM files and mark duplicates
   # We take advantage of the tool's ability to take multiple BAM inputs and write out a single output
   # to avoid having to spend time just merging BAM files.
-  #call MarkDuplicates {
-  #  input:
-  #    input_bams = MergeBamAlignment.output_bam,
-  #    output_bam_basename = base_file_name + ".aligned.unsorted.duplicates_marked",
-  #    metrics_filename = base_file_name + ".duplicate_metrics"
-  #}
+  call MarkDuplicates {
+    input:
+      input_bams = MergeBamAlignment.output_bam,
+      output_bam_basename = base_file_name + ".aligned.unsorted.duplicates_marked",
+      metrics_filename = base_file_name + ".duplicate_metrics"
+  }
 
   # Sort aggregated+deduped BAM file and fix tags
   call SortAndFixTags as SortAndFixSampleBam {
     input:
-      input_bam = MarkDuplicates_output_bam,
+      input_bam = MarkDuplicates.output_bam,
       output_bam_basename = base_file_name + ".aligned.duplicate_marked.sorted",
       ref_dict = ref_dict,
       ref_fasta = ref_fasta,
