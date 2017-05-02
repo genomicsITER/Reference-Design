@@ -1,0 +1,76 @@
+{
+  "##_COMMENT1": "SAMPLE NAME AND UNMAPPED BAMS",
+  "Exome_GenericPreProcessingToGVCFWorkflow.sample_name": "HG02461",
+  "Exome_GenericPreProcessingToGVCFWorkflow.base_file_name": "HG02461.hg38",
+  "Exome_GenericPreProcessingToGVCFWorkflow.flowcell_unmapped_bams": [
+    "/cluster_share/data/RefArch_Broad_data/Broad_Exomes_uBAMs/HG02461.unmapped.bam"
+  ],
+  "Exome_GenericPreProcessingToGVCFWorkflow.final_gvcf_name": "HG02461.hg38.g.vcf.gz",
+  "Exome_GenericPreProcessingToGVCFWorkflow.unmapped_bam_suffix": ".unmapped.bam",
+  
+
+  "##_COMMENT2": "INTERVALS",  
+  "Exome_GenericPreProcessingToGVCFWorkflow.calling_interval_list": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/whole_exome_illumina_coding_v1.Homo_sapiens_assembly38.targets.interval_list",
+  "Exome_GenericPreProcessingToGVCFWorkflow.scattered_calling_intervals_list": "/cluster_share/data/RefArch_Broad_data/gatk-test-data/intervals/hg38_es_scattered_calling_intervals.txt",
+  "Exome_GenericPreProcessingToGVCFWorkflow.HaplotypeCaller.interval_padding": 100,
+  
+  "##_COMMENT3": "REFERENCE FILES", 
+  "Exome_GenericPreProcessingToGVCFWorkflow.ref_dict": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.dict",
+  "Exome_GenericPreProcessingToGVCFWorkflow.ref_fasta": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta",
+  "Exome_GenericPreProcessingToGVCFWorkflow.ref_fasta_index": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta.fai",
+  "Exome_GenericPreProcessingToGVCFWorkflow.ref_alt": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta.64.alt",
+  "Exome_GenericPreProcessingToGVCFWorkflow.ref_sa": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta.64.sa",
+  "Exome_GenericPreProcessingToGVCFWorkflow.ref_amb": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta.64.amb",
+  "Exome_GenericPreProcessingToGVCFWorkflow.ref_bwt": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta.64.bwt",
+  "Exome_GenericPreProcessingToGVCFWorkflow.ref_ann": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta.64.ann",
+  "Exome_GenericPreProcessingToGVCFWorkflow.ref_pac": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta.64.pac",
+  
+  "##_COMMENT4": "KNOWN SITES RESOURCES", 
+  "Exome_GenericPreProcessingToGVCFWorkflow.dbSNP_vcf": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf",
+  "Exome_GenericPreProcessingToGVCFWorkflow.dbSNP_vcf_index": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf.idx",
+  "Exome_GenericPreProcessingToGVCFWorkflow.known_indels_sites_VCFs": [
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz",
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.known_indels.vcf.gz"
+  ],
+  "Exome_GenericPreProcessingToGVCFWorkflow.known_indels_sites_indices": [
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz.tbi",
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.known_indels.vcf.gz.tbi"
+  ],
+
+  "##_COMMENT5": "OPTIMIZATION FLAGS FOR BWA, SAMTOOLS, GATK-GKL",
+  "Exome_GenericPreProcessingToGVCFWorkflow.bwa_threads": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.samtools_threads": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.gatk_gkl_compression_level": 1,
+  "Exome_GenericPreProcessingToGVCFWorkflow.gatk_gkl_pairhmm_implementation": "VECTOR_LOGLESS_CACHING_OMP",
+  "Exome_GenericPreProcessingToGVCFWorkflow.gatk_gkl_pairhmm_threads": 16,
+  
+  "##_COMMENT6": "RUNTIME SECTION MEMORY OPTIONS",
+  "Exome_GenericPreProcessingToGVCFWorkflow.GetBwaVersion.memory": "1GB",
+  "Exome_GenericPreProcessingToGVCFWorkflow.SamToFastqAndBwaMem.memory": "10GB",
+  "Exome_GenericPreProcessingToGVCFWorkflow.MergeBamAlignment.memory": "4GB",
+  "Exome_GenericPreProcessingToGVCFWorkflow.SortAndFixSampleBam.memory": "5GB",
+  "Exome_GenericPreProcessingToGVCFWorkflow.SortAndFixReadGroupBam.memory": "5GB",
+  "Exome_GenericPreProcessingToGVCFWorkflow.MarkDuplicates.memory": "7GB",
+  "Exome_GenericPreProcessingToGVCFWorkflow.CreateSequenceGroupingTSV.memory": "2GB",
+  "Exome_GenericPreProcessingToGVCFWorkflow.BaseRecalibrator.memory": "6GB",
+  "Exome_GenericPreProcessingToGVCFWorkflow.GatherBqsrReports.memory": "4GB",
+  "Exome_GenericPreProcessingToGVCFWorkflow.ApplyBQSR.memory": "4GB",
+  "Exome_GenericPreProcessingToGVCFWorkflow.GatherBamFiles.memory": "3GB",
+  "Exome_GenericPreProcessingToGVCFWorkflow.HaplotypeCaller.memory": "10GB",
+  "Exome_GenericPreProcessingToGVCFWorkflow.MergeVCFs.memory": "3GB",
+
+  "##_COMMENT7": "RUNTIME SECTION CPU OPTIONS",
+  "Exome_GenericPreProcessingToGVCFWorkflow.GetBwaVersion.cpu": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.SamToFastqAndBwaMem.cpu": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.MergeBamAlignment.cpu": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.SortAndFixSampleBam.cpu": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.SortAndFixReadGroupBam.cpu": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.MarkDuplicates.cpu": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.CreateSequenceGroupingTSV.cpu": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.BaseRecalibrator.cpu": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.GatherBqsrReports.cpu": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.ApplyBQSR.cpu": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.GatherBamFiles.cpu": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.HaplotypeCaller.cpu": 16,
+  "Exome_GenericPreProcessingToGVCFWorkflow.MergeVCFs.cpu": 16
+}

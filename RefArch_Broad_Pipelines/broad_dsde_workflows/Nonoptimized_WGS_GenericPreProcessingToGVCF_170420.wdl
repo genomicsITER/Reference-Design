@@ -34,6 +34,7 @@
 task GetBwaVersion {
   String memory 
   Int cpu
+
   command {
     # Not setting "set -o pipefail" here because /bwa has a rc=1 and we don't want to allow rc=1 to succeed 
     # because the sed may also fail with that error and that is something we actually want to fail on.
@@ -59,8 +60,6 @@ task SamToFastqAndBwaMem {
   File ref_fasta
   File ref_fasta_index
   File ref_dict
-  Int bwa_threads
-  Int samtools_threads
 
   # This is the .alt file from bwa-kit (https://github.com/lh3/bwa/tree/master/bwakit), 
   # listing the reference contigs that are "alternative". Leave blank in JSON for legacy 
@@ -82,16 +81,15 @@ task SamToFastqAndBwaMem {
 
     # set the bash variable needed for the command-line
     bash_ref_fasta=${ref_fasta}
-    bwa_threads=${bwa_threads}
 
-  	java -Xmx7000m -jar /usr/gitc/picard.jar \
+  	java -Xmx3000m -jar /usr/gitc/picard.jar \
     	SamToFastq \
     	INPUT=${input_bam} \
     	FASTQ=/dev/stdout \
     	INTERLEAVE=true \
     	NON_PF=true | \
   	/usr/gitc/${bwa_commandline} /dev/stdin -  2> >(tee ${output_bam_basename}.bwa.stderr.log >&2) | \
-  	samtools view -1 -@ ${samtools_threads} - > ${output_bam_basename}.bam
+  	samtools view -1 - > ${output_bam_basename}.bam
 
   >>>
   runtime {
@@ -115,7 +113,6 @@ task MergeBamAlignment {
   File ref_fasta
   File ref_fasta_index
   File ref_dict
-  Int bwa_threads
 
   String memory
   Int cpu
@@ -123,7 +120,6 @@ task MergeBamAlignment {
   command {
     # set the bash variable needed for the command-line
     bash_ref_fasta=${ref_fasta}
-    bwa_threads=${bwa_threads}
     java -Xmx2500m -jar /usr/gitc/picard.jar \
       MergeBamAlignment \
       VALIDATION_STRINGENCY=SILENT \
@@ -170,6 +166,7 @@ task SortAndFixTags {
 
   String memory
   Int cpu
+
   command {
     set -o pipefail
 
@@ -208,6 +205,7 @@ task MarkDuplicates {
 
   String memory
   Int cpu
+
  # Task is assuming query-sorted input so that the Secondary and Supplementary reads get marked correctly.
  # This works because the output of BWA is query-grouped and therefore, so is the output of MergeBamAlignment.
  # While query-grouped isn't actually query-sorted, it's good enough for MarkDuplicates with ASSUME_SORT_ORDER="queryname"
@@ -238,7 +236,7 @@ task CreateSequenceGroupingTSV {
   File ref_dict
   String memory
   Int cpu
-
+  
   # Use python to create the Sequencing Groupings used for BQSR and PrintReads Scatter. 
   # It outputs to stdout where it is parsed into a wdl Array[Array[String]]
   # e.g. [["1"], ["2"], ["3", "4"], ["5"], ["6", "7", "8"]]
@@ -302,7 +300,9 @@ task BaseRecalibrator {
   File ref_dict
   File ref_fasta
   File ref_fasta_index
-  String gatk_gkl_compression_level
+  String gatk_gkl_compression_jdk_deflater
+  String gatk_gkl_compression_jdk_inflater
+
   String memory
   Int cpu 
 
@@ -313,11 +313,12 @@ task BaseRecalibrator {
       -R ${ref_fasta} \
       -I ${input_bam} \
       --useOriginalQualities \
-      --bam_compression ${gatk_gkl_compression_level} \
       -o ${recalibration_report_filename} \
       -knownSites ${dbSNP_vcf} \
       -knownSites ${sep=" -knownSites " known_indels_sites_VCFs} \
-      -L ${sep=" -L " sequence_group_interval}
+      -L ${sep=" -L " sequence_group_interval} \
+      ${gatk_gkl_compression_jdk_deflater} \
+      ${gatk_gkl_compression_jdk_inflater}
   }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
@@ -334,6 +335,7 @@ task BaseRecalibrator {
 task GatherBqsrReports {
   Array[File] input_bqsr_reports
   String output_report_filename
+  
   String memory
   Int cpu
 
@@ -363,7 +365,9 @@ task ApplyBQSR {
   File ref_dict
   File ref_fasta
   File ref_fasta_index
-  String gatk_gkl_compression_level
+  String gatk_gkl_compression_jdk_deflater
+  String gatk_gkl_compression_jdk_inflater
+  
   String memory
   Int cpu
 
@@ -377,8 +381,9 @@ task ApplyBQSR {
       -o ${output_bam_basename}.bam \
       -BQSR ${recalibration_report} \
       -SQQ 10 -SQQ 20 -SQQ 30 \
-      --bam_compression ${gatk_gkl_compression_level} \
-      -L ${sep=" -L " sequence_group_interval}
+      -L ${sep=" -L " sequence_group_interval} \
+      ${gatk_gkl_compression_jdk_deflater} \
+      ${gatk_gkl_compression_jdk_inflater}
   }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
@@ -397,6 +402,7 @@ task GatherBamFiles {
 
   String memory
   Int cpu
+
   command {
     java -Xmx2000m -jar /usr/gitc/picard.jar \
       GatherBamFiles \
@@ -427,9 +433,9 @@ task HaplotypeCaller {
   File ref_dict
   File ref_fasta
   File ref_fasta_index
-  String gatk_gkl_compression_level
-  String gatk_gkl_pairhmm_implementation
-  Int gatk_gkl_pairhmm_threads
+  String gatk_gkl_compression_jdk_deflater
+  String gatk_gkl_compression_jdk_inflater
+  
   String memory
   Int cpu
 
@@ -447,9 +453,8 @@ task HaplotypeCaller {
       -variant_index_parameter 128000 \
       -variant_index_type LINEAR \
       --read_filter OverclippedRead \
-      --bam_compression ${gatk_gkl_compression_level} \
-      --pair_hmm_implementation ${gatk_gkl_pairhmm_implementation} \
-      --nativePairHmmThreads ${gatk_gkl_pairhmm_threads}
+      ${gatk_gkl_compression_jdk_deflater} \
+      ${gatk_gkl_compression_jdk_inflater}
   }
   runtime {
     docker: "broadinstitute/genomes-in-the-cloud:2.2.5-1486412288"
@@ -470,6 +475,7 @@ task MergeVCFs {
 
   String memory
   Int cpu
+
   # Using MergeVcfs instead of GatherVcfs so we can create indices
   # See https://github.com/broadinstitute/picard/issues/789 for relevant GatherVcfs ticket
   command {
@@ -490,7 +496,7 @@ task MergeVCFs {
 }
 
 # WORKFLOW DEFINITION 
-workflow GenericPreProcessingToGVCFWorkflow {
+workflow WGS_GenericPreProcessingToGVCFWorkflow {
 
   String sample_name
   String base_file_name
@@ -516,14 +522,11 @@ workflow GenericPreProcessingToGVCFWorkflow {
   Array[File] known_indels_sites_VCFs
   Array[File] known_indels_sites_indices
   
-  #Optimization flags
-  Int bwa_threads
-  Int samtools_threads
-  Int gatk_gkl_compression_level
-  String gatk_gkl_pairhmm_implementation
-  Int gatk_gkl_pairhmm_threads
+  #NON-Optimization flags
+  String gatk_gkl_compression_jdk_deflater
+  String gatk_gkl_compression_jdk_inflater
 
-  String bwa_commandline="bwa mem -K 100000000 -p -v 3 -t $bwa_threads -Y $bash_ref_fasta"
+  String bwa_commandline="bwa mem -K 100000000 -p -v 3 -Y $bash_ref_fasta"
 
   String recalibrated_bam_basename = base_file_name + ".aligned.duplicates_marked.recalibrated"
 
@@ -556,9 +559,7 @@ workflow GenericPreProcessingToGVCFWorkflow {
         ref_amb = ref_amb,
         ref_ann = ref_ann,
         ref_pac = ref_pac,
-        ref_sa = ref_sa,
-        bwa_threads = bwa_threads, 
-        samtools_threads = samtools_threads
+        ref_sa = ref_sa
      }
 
     # Merge original uBAM and BWA-aligned BAM 
@@ -571,8 +572,7 @@ workflow GenericPreProcessingToGVCFWorkflow {
         output_bam_basename = sub(sub(unmapped_bam, sub_strip_path, ""), sub_strip_unmapped, "") + ".aligned.unsorted",
         ref_fasta = ref_fasta,
         ref_fasta_index = ref_fasta_index,
-        ref_dict = ref_dict,
-        bwa_threads = bwa_threads
+        ref_dict = ref_dict
     }
 
     # Sort and fix tags in the merged BAM
@@ -629,7 +629,8 @@ workflow GenericPreProcessingToGVCFWorkflow {
         ref_dict = ref_dict,
         ref_fasta = ref_fasta,
         ref_fasta_index = ref_fasta_index,
-        gatk_gkl_compression_level = gatk_gkl_compression_level
+        gatk_gkl_compression_jdk_deflater = gatk_gkl_compression_jdk_deflater,
+        gatk_gkl_compression_jdk_inflater = gatk_gkl_compression_jdk_inflater
     }  
   }  
   
@@ -653,7 +654,8 @@ workflow GenericPreProcessingToGVCFWorkflow {
         ref_dict = ref_dict,
         ref_fasta = ref_fasta,
         ref_fasta_index = ref_fasta_index,
-        gatk_gkl_compression_level = gatk_gkl_compression_level
+        gatk_gkl_compression_jdk_deflater = gatk_gkl_compression_jdk_deflater,
+        gatk_gkl_compression_jdk_inflater = gatk_gkl_compression_jdk_inflater
     }
   } 
 
@@ -677,9 +679,8 @@ workflow GenericPreProcessingToGVCFWorkflow {
         ref_dict = ref_dict,
         ref_fasta = ref_fasta,
         ref_fasta_index = ref_fasta_index,
-        gatk_gkl_compression_level = gatk_gkl_compression_level, 
-        gatk_gkl_pairhmm_implementation = gatk_gkl_pairhmm_implementation, 
-        gatk_gkl_pairhmm_threads = gatk_gkl_pairhmm_threads
+        gatk_gkl_compression_jdk_deflater = gatk_gkl_compression_jdk_deflater,
+        gatk_gkl_compression_jdk_inflater = gatk_gkl_compression_jdk_inflater
      }
   }
   

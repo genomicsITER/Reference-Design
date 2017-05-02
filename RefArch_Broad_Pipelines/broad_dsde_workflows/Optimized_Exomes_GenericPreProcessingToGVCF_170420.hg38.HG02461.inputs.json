@@ -3,7 +3,7 @@
   "Exome_GenericPreProcessingToGVCFWorkflow.sample_name": "HG02461",
   "Exome_GenericPreProcessingToGVCFWorkflow.base_file_name": "HG02461.hg38",
   "Exome_GenericPreProcessingToGVCFWorkflow.flowcell_unmapped_bams": [
-    "/cluster_share/data/RefArch_Broad_data/Broad_ExomesFq/HG02461.unmapped.bam"
+    "/cluster_share/data/RefArch_Broad_data/Broad_Exomes_uBAMs/HG02461.unmapped.bam"
   ],
   "Exome_GenericPreProcessingToGVCFWorkflow.final_gvcf_name": "HG02461.hg38.g.vcf.gz",
   "Exome_GenericPreProcessingToGVCFWorkflow.unmapped_bam_suffix": ".unmapped.bam",
