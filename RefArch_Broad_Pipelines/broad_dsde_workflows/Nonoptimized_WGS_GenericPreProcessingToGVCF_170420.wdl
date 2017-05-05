@@ -82,7 +82,7 @@ task SamToFastqAndBwaMem {
     # set the bash variable needed for the command-line
     bash_ref_fasta=${ref_fasta}
 
-  	java -Xmx3000m -jar /usr/gitc/picard.jar \
+  	java -Djava.io.tmpdir=/workingDir -Xmx3000m -jar /usr/gitc/picard.jar \
     	SamToFastq \
     	INPUT=${input_bam} \
     	FASTQ=/dev/stdout \
@@ -120,7 +120,7 @@ task MergeBamAlignment {
   command {
     # set the bash variable needed for the command-line
     bash_ref_fasta=${ref_fasta}
-    java -Xmx2500m -jar /usr/gitc/picard.jar \
+    java -Djava.io.tmpdir=/workingDir -Xmx2500m -jar /usr/gitc/picard.jar \
       MergeBamAlignment \
       VALIDATION_STRINGENCY=SILENT \
       EXPECTED_ORIENTATIONS=FR \
@@ -170,14 +170,14 @@ task SortAndFixTags {
   command {
     set -o pipefail
 
-    java -Xmx4000m -jar /usr/gitc/picard.jar \
+    java -Djava.io.tmpdir=/workingDir -Xmx4000m -jar /usr/gitc/picard.jar \
     SortSam \
     INPUT=${input_bam} \
     OUTPUT=/dev/stdout \
     SORT_ORDER="coordinate" \
     CREATE_INDEX=false \
     CREATE_MD5_FILE=false | \
-    java -Xmx500m -jar /usr/gitc/picard.jar \
+    java -Djava.io.tmpdir=/workingDir -Xmx500m -jar /usr/gitc/picard.jar \
     SetNmAndUqTags \
     INPUT=/dev/stdin \
     OUTPUT=${output_bam_basename}.bam \
@@ -210,7 +210,7 @@ task MarkDuplicates {
  # This works because the output of BWA is query-grouped and therefore, so is the output of MergeBamAlignment.
  # While query-grouped isn't actually query-sorted, it's good enough for MarkDuplicates with ASSUME_SORT_ORDER="queryname"
   command {
-    java -Xmx4000m -jar /usr/gitc/picard.jar \
+    java -Djava.io.tmpdir=/workingDir -Xmx4000m -jar /usr/gitc/picard.jar \
       MarkDuplicates \
       INPUT=${sep=' INPUT=' input_bams} \
       OUTPUT=${output_bam_basename}.bam \
@@ -307,7 +307,7 @@ task BaseRecalibrator {
   Int cpu 
 
   command { // 
-    java -Xmx4000m \
+    java -Djava.io.tmpdir=/workingDir -Xmx4000m \
       -jar /usr/gitc/GATK38.jar \
       -T BaseRecalibrator \
       -R ${ref_fasta} \
@@ -340,7 +340,7 @@ task GatherBqsrReports {
   Int cpu
 
   command {
-    java -Xmx3000m \
+    java -Djava.io.tmpdir=/workingDir -Xmx3000m \
       -cp /usr/gitc/GATK38.jar org.broadinstitute.gatk.tools.GatherBqsrReports \
       I= ${sep=' I= ' input_bqsr_reports} \
       O= ${output_report_filename} 
@@ -372,7 +372,7 @@ task ApplyBQSR {
   Int cpu
 
   command {  
-    java -Xmx3000m \
+    java -Djava.io.tmpdir=/workingDir -Xmx3000m \
       -jar /usr/gitc/GATK38.jar \
       -T PrintReads \
       -R ${ref_fasta} \
@@ -404,7 +404,7 @@ task GatherBamFiles {
   Int cpu
 
   command {
-    java -Xmx2000m -jar /usr/gitc/picard.jar \
+    java -Djava.io.tmpdir=/workingDir -Xmx2000m -jar /usr/gitc/picard.jar \
       GatherBamFiles \
       INPUT=${sep=' INPUT=' input_bams} \
       OUTPUT=${output_bam_basename}.bam \
@@ -440,7 +440,7 @@ task HaplotypeCaller {
   Int cpu
 
   command {
-    java -Xmx8000m \
+    java -Djava.io.tmpdir=/workingDir -Xmx8000m \
       -jar /usr/gitc/GATK38.jar \
       -T HaplotypeCaller \
       -R ${ref_fasta} \
@@ -479,7 +479,7 @@ task MergeVCFs {
   # Using MergeVcfs instead of GatherVcfs so we can create indices
   # See https://github.com/broadinstitute/picard/issues/789 for relevant GatherVcfs ticket
   command {
-    java -Xmx2g -jar /usr/gitc/picard.jar \
+    java -Djava.io.tmpdir=/workingDir -Xmx2g -jar /usr/gitc/picard.jar \
     MergeVcfs \
     INPUT=${sep=' INPUT=' input_vcfs} \
     OUTPUT=${output_vcf_name}
