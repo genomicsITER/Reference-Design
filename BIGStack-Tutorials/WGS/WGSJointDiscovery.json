@@ -11,7 +11,7 @@
   "JointDiscoveryWf_GenomicsDB.input_gvcfs_list": "/cluster_share/data/RefArch_Broad_data/vcf.list", 
   "JointDiscoveryWf_GenomicsDB.input_gvcfs": ["INSERT_WGS_SINGLE_SAMPLE_VCF.GZ_FILES_HERE"],
 
-  "JointDiscoveryWf_GenomicsDB.input_gvcfs_indices":["INSERT_WGS_SINGLE_SAMPLE_VCF.GZ.TBI_FILES_HERE], 
+  "JointDiscoveryWf_GenomicsDB.input_gvcfs_indices":["INSERT_WGS_SINGLE_SAMPLE_VCF.GZ.TBI_FILES_HERE"], 
   
   "JointDiscoveryWf_GenomicsDB.SNP_resource_files": [ 
     "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/hapmap_3.3.hg38.vcf.gz",
