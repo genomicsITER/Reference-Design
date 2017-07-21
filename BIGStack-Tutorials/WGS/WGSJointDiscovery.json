@@ -1,0 +1,70 @@
+{
+  "JointDiscoveryWf_GenomicsDB.ref_dict": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.dict",
+  "JointDiscoveryWf_GenomicsDB.ref_fasta": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta",
+  "JointDiscoveryWf_GenomicsDB.ref_fasta_index": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta.fai",
+
+  "JointDiscoveryWf_GenomicsDB.scattered_calling_intervals_list": "/cluster_share/data/RefArch_Broad_data/gatk-test-data/intervals/hg38_wgs_scattered_calling_intervals.txt",
+  "JointDiscoveryWf_GenomicsDB.scatter_intervals_file_for_genomicsdb": "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/scattered_calling_intervals/genomicsdb_intervals",
+
+  "JointDiscoveryWf_GenomicsDB.cohort_vcf_name": "1000G_Exomes",
+
+  "JointDiscoveryWf_GenomicsDB.input_gvcfs_list": "/cluster_share/data/RefArch_Broad_data/vcf.list", 
+  "JointDiscoveryWf_GenomicsDB.input_gvcfs": ["INSERT_WGS_SINGLE_SAMPLE_VCF.GZ_FILES_HERE"],
+
+  "JointDiscoveryWf_GenomicsDB.input_gvcfs_indices":["INSERT_WGS_SINGLE_SAMPLE_VCF.GZ.TBI_FILES_HERE], 
+  
+  "JointDiscoveryWf_GenomicsDB.SNP_resource_files": [ 
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/hapmap_3.3.hg38.vcf.gz",
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/1000G_omni2.5.hg38.vcf.gz",
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/1000G_phase1.snps.high_confidence.hg38.vcf.gz",
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf"
+  ],
+  "JointDiscoveryWf_GenomicsDB.SNP_resource_indices": [ 
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/hapmap_3.3.hg38.vcf.gz.tbi",
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/1000G_omni2.5.hg38.vcf.gz.tbi",
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/1000G_phase1.snps.high_confidence.hg38.vcf.gz.tbi",
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf.idx"
+  ],
+
+  "JointDiscoveryWf_GenomicsDB.SNP_resources": [
+    "hapmap,known=false,training=true,truth=true,prior=15.0",
+    "omni,known=false,training=true,truth=true,prior=12.0",
+    "1000G,known=false,training=true,truth=false,prior=10.0",
+    "dbsnp,known=true,training=false,truth=false,prior=2.0"
+  ],
+  
+  "JointDiscoveryWf_GenomicsDB.INDEL_resource_files": [ 
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz",
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf"
+  ],
+
+  "JointDiscoveryWf_GenomicsDB.INDEL_resource_indices": [ 
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz.tbi",
+    "/cluster_share/data/RefArch_Broad_data/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf.idx"
+  ],
+
+  "JointDiscoveryWf_GenomicsDB.INDEL_resources": [
+    "mills,known=false,training=true,truth=true,prior=12.0",
+    "dbsnp,known=true,training=false,truth=false,prior=2.0"
+  ],
+
+  "JointDiscoveryWf_GenomicsDB.SNP_annotations": ["DP", "QD", "FS", "SOR", "MQ", "MQRankSum", "ReadPosRankSum"],
+  "JointDiscoveryWf_GenomicsDB.INDEL_annotations": ["QD", "FS", "SOR", "MQRankSum", "ReadPosRankSum"],
+
+  "JointDiscoveryWf_GenomicsDB.SNP_filter_level": 99.7,
+  "JointDiscoveryWf_GenomicsDB.INDEL_filter_level": 99.7,
+
+  "JointDiscoveryWf_GenomicsDB.SNP_tranches": [100.0, 99.99, 99.95, 99.9, 99.8, 99.7, 99.6, 99.5, 99.4, 99.3, 99.2, 99.1, 99.0, 98.0, 97.0, 96.0, 95.0, 90.0],
+  "JointDiscoveryWf_GenomicsDB.INDEL_tranches": [100.0, 99.99, 99.95, 99.9, 99.8, 99.7, 99.6, 99.5, 99.0, 98.0, 97.0, 96.0, 95.0, 94.0, 93.0, 92.0, 91.0, 90.0],
+
+  "JointDiscoveryWf_GenomicsDB.GenomicsDB_CombineVCFs.mem_size": "500 MB",
+  "JointDiscoveryWf_GenomicsDB.UnzipGVCF.mem_size": "5 GB",
+  "JointDiscoveryWf_GenomicsDB.GenotypeGVCFs.mem_size": "20 GB",
+  "JointDiscoveryWf_GenomicsDB.MergeVCFs.mem_size": "5 GB",
+  "JointDiscoveryWf_GenomicsDB.BuildVQSRModelForSNPs.mem_size": "5 GB",
+  "JointDiscoveryWf_GenomicsDB.BuildVQSRModelForINDELs.mem_size": "5 GB",
+  "JointDiscoveryWf_GenomicsDB.ApplyRecalibrationFilterForSNPs.mem_size": "5 GB",
+  "JointDiscoveryWf_GenomicsDB.ApplyRecalibrationFilterForINDELs.mem_size": "5 GB",
+  "JointDiscoveryWf_GenomicsDB.genotype_gvcf_num_threads": 16,
+  "JointDiscoveryWf_GenomicsDB.GenotypeGVCFs.cpu": 16
+}
